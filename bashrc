@@ -106,6 +106,9 @@ if [ -f ~/.bash_aliases ]; then
    echo "Define any aliases you only need on this computer in there."
 fi
 
+# Make tmux assume that the outside terminal supports 256-color
+alias tmux="tmux -2"
+
 # end Aliases
 
 # Highlighted man page output in linux and macos {{{

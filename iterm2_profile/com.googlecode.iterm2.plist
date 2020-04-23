@@ -1184,7 +1184,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1280 922 1280 698 -2560 202 2560 1418 </string>
+	<string>-1279 0 1278 1418 -2560 0 2560 1418 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1201,7 +1201,7 @@
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
-			<true/>
+			<false/>
 			<key>ASCII Ligatures</key>
 			<false/>
 			<key>AWDS Pane Directory</key>
@@ -1464,6 +1464,8 @@
 			<string></string>
 			<key>Blend</key>
 			<real>0.27291791866987175</real>
+			<key>Blink Allowed</key>
+			<false/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -1958,11 +1960,13 @@
 			<key>Name</key>
 			<string>Jummidark</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>TerminessTTFNerdFontCompleteM-Medium 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
+			<key>Non-ASCII Ligatures</key>
+			<false/>
 			<key>Normal Font</key>
-			<string>Iosevka-Term 14</string>
+			<string>Dinamedium 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -2037,7 +2041,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>4</integer>
+			<integer>3</integer>
 			<key>Title Components</key>
 			<integer>512</integer>
 			<key>Transparency</key>
@@ -2049,7 +2053,7 @@
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
-			<true/>
+			<false/>
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
@@ -2059,13 +2063,13 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.94999999999999996</real>
+			<real>0.93000000000000005</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -4709,22 +4713,31 @@
 	<array>
 		<string>3.3.7</string>
 	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>GB18030 Bitmap</string>
+		<string>Cozette</string>
+		<string>Iosevka Term</string>
+		<string>Iosevka Type</string>
+	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Iosevka Nerd Font Mono</string>
-		<string>Iosevka Term</string>
+		<string>Dina</string>
+		<string>Fixed</string>
+		<string>TerminessTTF Nerd Font Mono</string>
+		<string>GB18030 Bitmap</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-2560, 202}, {2560, 1440}}</string>
+		<string>{{-2560, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{-2277, 1289}</string>
+		<string>{-2307, 752}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DF74BC26-A6D6-4FDF-B164-2273FFE31B8E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>65</integer>
+	<integer>91</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>596305608.18408501</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>

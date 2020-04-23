@@ -1,67 +1,67 @@
-! #include "other-x-resource"
+!XTerm.termName: xterm-256color
+!! utf8 support
+!XTerm*utf8: 1
+!XTerm.vt100.locale: true
+!XTerm.vt100.loginShell: true
+!XTerm.vt100.metaSendsEscape: true
+!XTerm.vt100.backarrowKey : false
+!XTerm.ttyModes: erase ^?
 
-XTerm.termName: xterm-256color
-! utf8 support
-XTerm*utf8: 1
-! set a simplified unicode font for XTerm
-XTerm*font: -*-terminus-medium-*-*-*-13-*-*-*-*-*-iso10646-1
-XTerm.vt100.locale: true
-XTerm.vt100.loginShell: true
-XTerm.vt100.metaSendsEscape: true
-XTerm.vt100.backarrowKey : false
-XTerm.ttyModes: erase ^?
-
-XTerm.vt100.saveLines: 10000
+!XTerm.vt100.saveLines: 10000
 
 ! White text on black instead of the default
-*reverseVideo: true
+!*reverseVideo: true
 !XTerm.vt100.foreground: #ffffff
 !XTerm.vt100.background: black
 
-!*font: terminus-13
-!*boldFont: terminus-13
-!*xterm*faceSize: 13
 ! Disable bold font faces, use color instead
-*.colorBDMode: true
-*.colorBD: blue
+!*.colorBDMode: true
+!*.colorBD: blue
 
-xterm*rightScrollBar:   true
-xterm*ScrollBar:    true
+!xterm*rightScrollBar:   true
+!xterm*ScrollBar:    true
+
+! All typography
+*.font: 7x14
+
+!! X Resources used by URXvt
+! Appearance
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.borderLess: false
+URxvt.internalBorder: 9
+!URxvt.fading: 25
+!URxvt.fadeColor: #262626
+! Typography
+URxvt.letterSpace: 0
+URxvt.intensityStyles: true
 
 ! Jummidark color scheme
 ! special
-*.foreground:   #e1e1e1
-*.background:   #262626
-*.cursorColor:  #b1951d
-
+*.foreground:   rgb:e1/e1/e1
+*.background:   rgb:26/26/26
+*.cursorColor:  rgb:b1/95/1d
 ! black
-*.color0:       #121212
-*.color8:       #4e4e4e
-
+*.color0:       rgb:12/12/12
+*.color8:       rgb:4e/4e/4e
 ! red
-*.color1:       #a14e5d
-*.color9:       #cf6679
-
+*.color1:       rgb:a1/4e/5d
+*.color9:       rgb:cf/66/79
 ! green
-*.color2:       #03dac6
-*.color10:      #03dac6
-
+*.color2:       rgb:03/da/c6
+*.color10:      rgb:03/da/c6
 ! yellow
-*.color3:       #1de9b6
-*.color11:      #1de9b6
-
+*.color3:       rgb:1d/e9/b6
+*.color11:      rgb:1d/e9/b6
 ! blue
-*.color4:       #6200ee
-*.color12:      #bb86fc
-
+*.color4:       rgb:62/00/ee
+*.color12:      rgb:bb/86/fc
 ! magenta
-*.color5:       #bb86fc
-*.color13:      #bb86fc
-
+*.color5:       rgb:bb/86/fc
+*.color13:      rgb:bb/86/fc
 ! cyan
-*.color6:       #03dac6
-*.color14:      #03dac6
-
+*.color6:       rgb:03/da/c6
+*.color14:      rgb:03/da/c6
 ! white
-*.color7:       #8a8a8a
-*.color15:      #e4e4e4
+*.color7:       rgb:8a/8a/8a
+*.color15:      rgb:e4/e4/e4
