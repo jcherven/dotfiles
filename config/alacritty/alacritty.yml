@@ -110,7 +110,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Iosevka Term
+    family: Dina
 
     # The `style` can be specified to pick a specific face.
     style: Light

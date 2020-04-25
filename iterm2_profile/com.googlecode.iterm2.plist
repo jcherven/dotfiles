@@ -980,6 +980,8 @@
 	<true/>
 	<key>DimOnlyText</key>
 	<true/>
+	<key>DisableCustomBoxDrawing</key>
+	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
 	<key>DoubleClickPerformsSmartSelection</key>
@@ -1184,7 +1186,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1279 0 1278 1418 -2560 0 2560 1418 </string>
+	<string>-1306 0 1304 1418 -2560 0 2560 1418 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1564,13 +1566,13 @@
 			<key>Has Hotkey</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>1</real>
+			<real>0.88</real>
 			<key>Icon</key>
 			<integer>1</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>tmux -q has-session &amp;&amp; exec tmux attach -d || exec tmux new</string>
 			<key>Initial Use Transparency</key>
 			<false/>
 			<key>Jobs to Ignore</key>
@@ -1960,7 +1962,7 @@
 			<key>Name</key>
 			<string>Jummidark</string>
 			<key>Non Ascii Font</key>
-			<string>TerminessTTFNerdFontCompleteM-Medium 13</string>
+			<string>InconsolataNerdFontCompleteM-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Non-ASCII Ligatures</key>
@@ -2053,7 +2055,7 @@
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
-			<false/>
+			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
@@ -4715,29 +4717,27 @@
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>GB18030 Bitmap</string>
-		<string>Cozette</string>
-		<string>Iosevka Term</string>
-		<string>Iosevka Type</string>
+		<string>Unifont</string>
+		<string>Unifont CSUR</string>
+		<string>Unifont Upper</string>
+		<string>Unifont-JP</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Dina</string>
-		<string>Fixed</string>
+		<string>Inconsolata Nerd Font Mono</string>
 		<string>TerminessTTF Nerd Font Mono</string>
-		<string>GB18030 Bitmap</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{-2560, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{-2307, 752}</string>
+		<string>{-1233, 1114}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DF74BC26-A6D6-4FDF-B164-2273FFE31B8E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>91</integer>
+	<integer>97</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>596305608.18408501</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -5579,6 +5579,8 @@
 	<key>kCPKUseSystemColorPicker</key>
 	<false/>
 	<key>metalMaximizeThroughput</key>
+	<false/>
+	<key>preferIntegratedGPU</key>
 	<false/>
 </dict>
 </plist>

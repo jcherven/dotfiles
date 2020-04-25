@@ -26,12 +26,12 @@ set number
 set noautochdir
 set cursorline
   " Only show the cursorline in the active window {{{
-  augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-  augroup END
-  " }}}
+augroup CursorLineOnlyInActiveWindow
+autocmd!
+autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+augroup END
+" }}}
 set scrolloff=8
 set splitbelow
 set splitright
@@ -67,48 +67,45 @@ call plug#begin('~/.vim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jeffKreeftmeijer/vim-numbertoggle'
   Plug 'tpope/vim-fugitive'
-    if PlugLoaded('vim-fugitive')
-      fun! GitInfo()
-        let git = fugitive#head()
-        if git != ''
-          return ' '.git.''
-        else
-          return ''
-        endif
-      endfunction
+  fun! GitInfo()
+    let git = fugitive#head()
+    if git != ''
+      return ' '.git.''
+    else
+      return ''
     endif
+  endfunction
   Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-commentary'
-  " Plug 'itchyny/lightline.vim'
+  Plug 'tomtom/tcomment_vim'
   Plug 'gcmt/taboo.vim'
-    let g:taboo_tabline=1
-    let g:taboo_modified_tab_flag="[+]"
-    let g:taboo_tab_format="▏%N:%P%m %{GitInfo()}▕"
-    let g:taboo_renamed_tab_format="▏%N:%l%m %{GitInfo()}▕"
+  let g:taboo_tabline=1
+  let g:taboo_modified_tab_flag="[+]"
+  let g:taboo_tab_format="▏%N:%P%m %{GitInfo()}▕"
+  let g:taboo_renamed_tab_format="▏%N:%l%m %{GitInfo()}▕"
   Plug 'sheerun/vim-polyglot'
   Plug 'dense-analysis/ale' "{{{
-    let g:ale_fix_on_save=1
-    let g:ale_linters_explicit=1
-    let g:ale_javascript_prettier_options='--single-quote'
-    let g:ale_linters={
-          \ 'javascript': ['prettier'],
-          \ 'javascriptreact': ['prettier'],
-          \ 'css': ['prettier'],
-          \ 'sass': ['prettier'],
-          \ 'html': ['prettier'],
-          \ 'json': ['prettier'],
-          \ 'markdown': ['prettier']
-    \}
-    let g:ale_fixers={
-          \ 'javascript': ['prettier'],
-          \ 'javascriptreact': ['prettier'],
-          \ 'css': ['prettier'],
-          \ 'sass': ['prettier'],
-          \ 'html': ['prettier'],
-          \ 'json': ['prettier'],
-          \ 'markdown': ['prettier']
-    \}
-    "}}}
+  let g:ale_fix_on_save=1
+  let g:ale_linters_explicit=1
+  let g:ale_javascript_prettier_options='--single-quote'
+  let g:ale_linters={
+    \ 'javascript': ['prettier'],
+    \ 'javascriptreact': ['prettier'],
+    \ 'css': ['prettier'],
+    \ 'sass': ['prettier'],
+    \ 'html': ['prettier'],
+    \ 'json': ['prettier'],
+    \ 'markdown': ['prettier']
+  \}
+  let g:ale_fixers={
+    \ 'javascript': ['prettier'],
+    \ 'javascriptreact': ['prettier'],
+    \ 'css': ['prettier'],
+    \ 'sass': ['prettier'],
+    \ 'html': ['prettier'],
+    \ 'json': ['prettier'],
+    \ 'markdown': ['prettier']
+  \}
+  "}}}
   Plug 'scrooloose/nerdtree' "{{{
     " Function for smart NERDTree toggle behavior.
     " Call on the NERDTree toggle keybinding.
@@ -141,40 +138,28 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'sickill/vim-pasta'
   Plug 'bronson/vim-trailing-whitespace'
-  " Easymotion - <leader><plug><movement>
-  Plug 'easymotion/vim-easymotion'
-    map m <plug>(easymotion-prefix)
   Plug 'psliwka/vim-smoothie'
   Plug 'djoshea/vim-autoread'
   Plug 'alvan/vim-closetag' " {{{
-    " filetypes like xml, html, xhtml, ...
-    " These are the file types where this plugin is enabled.
-    let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact'
-    " integer value [0|1]
-    " This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-    let g:closetag_emptyTags_caseSensitive = 1
-    " dict
-    " Disables auto-close if not in a "valid" region (based on filetype)
-    let g:closetag_regions = {
-      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-      \ 'javascript.jsx': 'jsxRegion',
-      \ }
-    " Shortcut for closing tags, default is '>'
-    let g:closetag_shortcut = '>'
-    " Add > at current position without closing the current tag, default is ''
-    let g:closetag_close_shortcut = '<leader>>' "}}}
+  let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact'
+  let g:closetag_emptyTags_caseSensitive = 1
+  let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+  let g:closetag_shortcut = '>'
+  " Add > at current position without closing the current tag, default is ''
+  let g:closetag_close_shortcut = '<leader>>' "}}}
   Plug 'dbakker/vim-projectroot' "{{{
-    function! <SID>AutoProjectRootCD()
-      try
-        if &ft != 'help'
-          ProjectRootCD
-        endif
-      catch
-      " Silently ignore invalid buffers
-      endtry
-    endfunction
-
-    autocmd BufEnter * call <SID>AutoProjectRootCD()
+  function! <SID>AutoProjectRootCD()
+    try
+      if &ft != 'help'
+        ProjectRootCD
+      endif
+    catch
+    endtry
+  endfunction
+  autocmd BufEnter * call <SID>AutoProjectRootCD()
   "}}}
   Plug 'chrisbra/Colorizer'
   Plug 'jcherven/jummidark.vim'
@@ -186,37 +171,26 @@ call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/tagalong.vim', { 'for': markupFiles }
   Plug 'jiangmiao/auto-pairs', { 'for': markupFiles }
   Plug 'mattn/emmet-vim', { 'for': markupFiles }
-    if PlugLoaded('emmet-vim')
-      let g:user_emmet_leader_key=','
-    endif
+  let g:user_emmet_leader_key=','
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions=[
-          \'coc-json',
-          \'coc-tsserver',
-          \'coc-css',
-          \'coc-html',
-          \'coc-emmet',
-          \'coc-python',
-          \'coc-highlight',
-          \'coc-yaml',
-          \'coc-markdownlint',
-          \'coc-powershell',
-          \'coc-vimlsp'
-          \]
-  " Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
-    let g:markdown_fenced_languages = [
-          \ 'vim',
-          \ 'help'
-          \]
+  let g:coc_global_extensions=[
+    \'coc-json',
+    \'coc-tsserver',
+    \'coc-css',
+    \'coc-html',
+    \'coc-emmet',
+    \'coc-python',
+    \'coc-highlight',
+    \'coc-yaml',
+    \'coc-markdownlint',
+    \'coc-powershell',
+    \'coc-vimlsp'
+    \]
+  let g:markdown_fenced_languages = [
+    \ 'vim',
+    \ 'help'
+    \]
   Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
   " Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
   " }}}
@@ -225,22 +199,24 @@ call plug#end()
 " Statusline (Builtin) Configuration {{{
 " Left alignment for the below customizations
 set statusline=
-  " Current buffer's file path relative to the git project root
-  set statusline+=\ %f
-  " Read Only marker
-  set statusline+=%{&modifiable?'':'\ '}
-  " Modified marker
-  set statusline+=%{&modified?'[+]':''}\ 
-  " CoC statusline integration
-  set statusline+=%{coc#status()}\ 
+" Current buffer's file path relative to the git project root
+set statusline+=\ %f
+" Modifiable marker
+set statusline+=%{!&readonly?'':'\ '}
+" Read-Only marker
+" set statusline+=%{!&readonly?'':'\ '}
+" Modified marker
+set statusline+=%{&modified?'[+]':''}\ 
+" CoC statusline integration
+set statusline+=%{coc#status()}\ 
 " Right alignment for the below customizations
 set statusline+=%=
-  " Current filetype
-  set statusline+=%y
-  " Current line number,column number
-  " set statusline+=%0*\ %l,%2c\ %3p%%\ 
-  " Current percentage through the file
-  set statusline+=%3p%%\ 
+" Current filetype
+set statusline+=%y
+" Current line number,column number
+" set statusline+=%0*\ %l,%2c\ %3p%%\ 
+" Current percentage through the file
+set statusline+=%3p%%\ 
 " End Statusline Config }}}
 
 " CoC settings for vim/nvim {{{
