@@ -54,12 +54,12 @@ set mouse=a
 
 " Use in a conditional statement to check if a plugin is installed
 " if PlugLoaded('plugin-name') do something endif
-function PlugLoaded(name)
-  return (
-    \ has_key(g:plugs, a:name) &&
-    \ isdirectory(g:plugs[a:name].dir) &&
-    \ stridx(&rtp, g:plugs[a:name].dir >= 0))
-endfunction
+" function PlugLoaded(name)
+"   return (
+"     \ has_key(g:plugs, a:name) &&
+"     \ isdirectory(g:plugs[a:name].dir) &&
+"     \ stridx(&rtp, g:plugs[a:name].dir >= 0))
+" endfunction
 
 call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug'
@@ -83,29 +83,29 @@ call plug#begin('~/.vim/plugged')
   let g:taboo_tab_format="▏%N:%P%m %{GitInfo()}▕"
   let g:taboo_renamed_tab_format="▏%N:%l%m %{GitInfo()}▕"
   Plug 'sheerun/vim-polyglot'
-  Plug 'dense-analysis/ale' "{{{
-  let g:ale_fix_on_save=1
-  let g:ale_linters_explicit=1
-  let g:ale_javascript_prettier_options='--single-quote'
-  let g:ale_linters={
-    \ 'javascript': ['prettier'],
-    \ 'javascriptreact': ['prettier'],
-    \ 'css': ['prettier'],
-    \ 'sass': ['prettier'],
-    \ 'html': ['prettier'],
-    \ 'json': ['prettier'],
-    \ 'markdown': ['prettier']
-  \}
-  let g:ale_fixers={
-    \ 'javascript': ['prettier'],
-    \ 'javascriptreact': ['prettier'],
-    \ 'css': ['prettier'],
-    \ 'sass': ['prettier'],
-    \ 'html': ['prettier'],
-    \ 'json': ['prettier'],
-    \ 'markdown': ['prettier']
-  \}
-  "}}}
+  " Plug 'dense-analysis/ale' "{{{
+  " let g:ale_fix_on_save=1
+  " let g:ale_linters_explicit=1
+  " let g:ale_javascript_prettier_options='--single-quote'
+  " let g:ale_linters={
+  "   \ 'javascript': ['prettier'],
+  "   \ 'javascriptreact': ['prettier'],
+  "   \ 'css': ['prettier'],
+  "   \ 'sass': ['prettier'],
+  "   \ 'html': ['prettier'],
+  "   \ 'json': ['prettier'],
+  "   \ 'markdown': ['prettier']
+  " \}
+  " let g:ale_fixers={
+  "   \ 'javascript': ['prettier'],
+  "   \ 'javascriptreact': ['prettier'],
+  "   \ 'css': ['prettier'],
+  "   \ 'sass': ['prettier'],
+  "   \ 'html': ['prettier'],
+  "   \ 'json': ['prettier'],
+  "   \ 'markdown': ['prettier']
+  " \}
+  " "}}}
   Plug 'scrooloose/nerdtree' "{{{
     " Function for smart NERDTree toggle behavior.
     " Call on the NERDTree toggle keybinding.
@@ -163,14 +163,11 @@ call plug#begin('~/.vim/plugged')
   "}}}
   Plug 'chrisbra/Colorizer'
   Plug 'jcherven/jummidark.vim'
-  " Plug '~/Desktop/jummidark.vim'
-  " Conditionally load these on markup files
-  let markupFiles = ['html', 'javascript', 'javascriptreact', 'xml', 'css', 'scss']
-  Plug 'hail2u/vim-css3-syntax', { 'for': markupFiles }
-  Plug 'cakebaker/scss-syntax.vim', { 'for': markupFiles }
-  Plug 'AndrewRadev/tagalong.vim', { 'for': markupFiles }
-  Plug 'jiangmiao/auto-pairs', { 'for': markupFiles }
-  Plug 'mattn/emmet-vim', { 'for': markupFiles }
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'cakebaker/scss-syntax.vim'
+  Plug 'AndrewRadev/tagalong.vim'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -185,14 +182,13 @@ call plug#begin('~/.vim/plugged')
     \'coc-yaml',
     \'coc-markdownlint',
     \'coc-powershell',
+    \'coc-prettier',
     \'coc-vimlsp'
     \]
-  let g:markdown_fenced_languages = [
+  let g:markdown_fenced_languages=[
     \ 'vim',
     \ 'help'
     \]
-  Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
-  " Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
   " }}}
 call plug#end()
 
@@ -201,10 +197,8 @@ call plug#end()
 set statusline=
 " Current buffer's file path relative to the git project root
 set statusline+=\ %f
-" Modifiable marker
+" Read-only marker
 set statusline+=%{!&readonly?'':'\ '}
-" Read-Only marker
-" set statusline+=%{!&readonly?'':'\ '}
 " Modified marker
 set statusline+=%{&modified?'[+]':''}\ 
 " CoC statusline integration
