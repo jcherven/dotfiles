@@ -52,15 +52,7 @@ nnoremap <C-L> <C-w><C-L>
 nnoremap <C-H> <C-w><C-H>
 set mouse=a
 
-" Use in a conditional statement to check if a plugin is installed
-" if PlugLoaded('plugin-name') do something endif
-" function PlugLoaded(name)
-"   return (
-"     \ has_key(g:plugs, a:name) &&
-"     \ isdirectory(g:plugs[a:name].dir) &&
-"     \ stridx(&rtp, g:plugs[a:name].dir >= 0))
-" endfunction
-
+" vim-plug
 call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug'
   Plug 'ctrlpvim/ctrlp.vim'
@@ -107,33 +99,30 @@ call plug#begin('~/.vim/plugged')
   " \}
   " "}}}
   Plug 'scrooloose/nerdtree' "{{{
-    " Function for smart NERDTree toggle behavior.
-    " Call on the NERDTree toggle keybinding.
-    " Performs NERDTreeFind on open, toggles the buffer on close.
-    function! NERDTreeFindToggle()
-      if exists("g:NERDTree") && g:NERDTree.IsOpen()
-	NERDTreeClose
+  " Performs NERDTreeFind on open, toggles the buffer on close.
+  function! NERDTreeFindToggle()
+    if exists("g:NERDTree") && g:NERDTree.IsOpen()
+      NERDTreeClose
       elseif filereadable(expand('%'))
-	NERDTreeFind
+      NERDTreeFind
       else
-	NERDTree
-      endif
-    endfunction
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    map <leader>/ :call NERDTreeFindToggle()<CR>
-    let g:NERDTreeMapJumpParent = "h"
-    let g:NERDTreeMapActivateNode = "l"
-    let NERDTreeMinimalUI=1
-    let g:NERDTreeWinPos = "left"
-    let g:NERDTreeShowLineNumbers=1
-    let g:NERDTreeDirArrows=1
-    let g:NERDTreeAutoDeleteBuffer=1
-    let g:NERDTreeShowHidden=1
-    let g:NERDTreeSortHiddenFirst=1
-    let g:NERDTreeQuitOnOpen=1
-    let g:NERDTreeStatusline="| menu:m | help:? |"
-    Plug 'Xuyuanp/nerdtree-git-plugin'
+      NERDTree
+    endif
+  endfunction
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  map <leader>/ :call NERDTreeFindToggle()<CR>
+  let g:NERDTreeMapJumpParent = "h"
+  let g:NERDTreeMapActivateNode = "l"
+  let NERDTreeMinimalUI=1
+  let g:NERDTreeWinPos = "left"
+  let g:NERDTreeShowLineNumbers=1
+  let g:NERDTreeDirArrows=1
+  let g:NERDTreeAutoDeleteBuffer=1
+  let g:NERDTreeShowHidden=1
+  let g:NERDTreeSortHiddenFirst=1
+  let g:NERDTreeQuitOnOpen=1
+  let g:NERDTreeStatusline="| menu:m | help:? |"
   "}}}
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'sickill/vim-pasta'
@@ -172,9 +161,12 @@ call plug#begin('~/.vim/plugged')
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   let g:coc_global_extensions=[
-    \'coc-json',
+    \'coc-lists',
+    \'coc-git',
     \'coc-tsserver',
+    \'coc-json',
     \'coc-css',
+    \'coc-scssmodules',
     \'coc-html',
     \'coc-emmet',
     \'coc-python',
@@ -183,7 +175,9 @@ call plug#begin('~/.vim/plugged')
     \'coc-markdownlint',
     \'coc-powershell',
     \'coc-prettier',
-    \'coc-vimlsp'
+    \'coc-vimlsp',
+    \'coc-sh',
+    \'coc-marketplace'
     \]
   let g:markdown_fenced_languages=[
     \ 'vim',
