@@ -1,8 +1,8 @@
 set nocompatible
 set directory^=$HOME/.vim/tmp//
-set encoding=utf-8
-set fileformats=unix,dos,mac
-set lazyredraw
+" set encoding=utf-8
+" set fileformats=unix,dos,mac
+" set lazyredraw
 set clipboard=unnamed
 set backspace=indent,eol,start
 set showtabline=2
@@ -25,7 +25,7 @@ set magic
 set number
 set noautochdir
 set cursorline
-  " Only show the cursorline in the active window {{{
+" Only show the cursorline in the active window {{{
 augroup CursorLineOnlyInActiveWindow
 autocmd!
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
@@ -55,9 +55,9 @@ set mouse=a
 " vim-plug
 call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jeffKreeftmeijer/vim-numbertoggle'
+  Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-fugitive'
   fun! GitInfo()
     let git = fugitive#head()
@@ -74,30 +74,6 @@ call plug#begin('~/.vim/plugged')
   let g:taboo_modified_tab_flag="[+]"
   let g:taboo_tab_format="▏%N:%P%m %{GitInfo()}▕"
   let g:taboo_renamed_tab_format="▏%N:%l%m %{GitInfo()}▕"
-  Plug 'sheerun/vim-polyglot'
-  " Plug 'dense-analysis/ale' "{{{
-  " let g:ale_fix_on_save=1
-  " let g:ale_linters_explicit=1
-  " let g:ale_javascript_prettier_options='--single-quote'
-  " let g:ale_linters={
-  "   \ 'javascript': ['prettier'],
-  "   \ 'javascriptreact': ['prettier'],
-  "   \ 'css': ['prettier'],
-  "   \ 'sass': ['prettier'],
-  "   \ 'html': ['prettier'],
-  "   \ 'json': ['prettier'],
-  "   \ 'markdown': ['prettier']
-  " \}
-  " let g:ale_fixers={
-  "   \ 'javascript': ['prettier'],
-  "   \ 'javascriptreact': ['prettier'],
-  "   \ 'css': ['prettier'],
-  "   \ 'sass': ['prettier'],
-  "   \ 'html': ['prettier'],
-  "   \ 'json': ['prettier'],
-  "   \ 'markdown': ['prettier']
-  " \}
-  " "}}}
   Plug 'scrooloose/nerdtree' "{{{
   " Performs NERDTreeFind on open, toggles the buffer on close.
   function! NERDTreeFindToggle()
@@ -150,10 +126,9 @@ call plug#begin('~/.vim/plugged')
   endfunction
   autocmd BufEnter * call <SID>AutoProjectRootCD()
   "}}}
-  Plug 'chrisbra/Colorizer'
   Plug 'jcherven/jummidark.vim'
   Plug 'hail2u/vim-css3-syntax'
-  Plug 'cakebaker/scss-syntax.vim'
+  " Plug 'cakebaker/scss-syntax.vim'
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'mattn/emmet-vim'
@@ -161,8 +136,6 @@ call plug#begin('~/.vim/plugged')
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   let g:coc_global_extensions=[
-    \'coc-lists',
-    \'coc-git',
     \'coc-tsserver',
     \'coc-json',
     \'coc-css',
@@ -177,6 +150,9 @@ call plug#begin('~/.vim/plugged')
     \'coc-prettier',
     \'coc-vimlsp',
     \'coc-sh',
+    \'coc-sql',
+    \'coc-lists',
+    \'coc-git',
     \'coc-marketplace'
     \]
   let g:markdown_fenced_languages=[
@@ -241,9 +217,13 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " GUI vim (macvim, gvim, etc) Settings {{{
 if has('gui')
   set belloff=all
-  set guifont=Iosevka\ Term:h14
+  " Font setting
+  if has("gui_macvim")
+    set guifont=Dina:h16
+  elseif has("gui_win32")
+    set guifont=Terminus:14
+  endif
   set guicursor+=a:blinkon0
-  set linespace=-1
   set lines=45 columns=84
   " Displays the statusline when there is no split
   set laststatus=2
