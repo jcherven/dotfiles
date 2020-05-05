@@ -133,6 +133,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
+  Plug 'chrisbra/colorizer'
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   let g:coc_global_extensions=[
