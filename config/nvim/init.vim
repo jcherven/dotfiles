@@ -101,12 +101,37 @@ call plug#begin('~/.vim/plugged')
   let g:NERDTreeStatusline="| menu:m | help:? |"
   "}}}
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  " Plug 'dense-analysis/ale' "{{{
+  " let g:ale_fix_on_save=1
+  " let g:ale_linters_explicit=1
+  " let g:ale_javascript_prettier_options='--single-quote'
+  " let g:ale_linters={
+  "   \ 'javascript': ['prettier'],
+  "   \ 'javascriptreact': ['prettier'],
+  "   \ 'css': ['prettier'],
+  "   \ 'sass': ['prettier'],
+  "   \ 'html': ['prettier'],
+  "   \ 'json': ['prettier'],
+  "   \ 'markdown': ['prettier'],
+  "   \ 'html.handlebars': ['prettier']
+  " \}
+  " let g:ale_fixers={
+  "   \ 'javascript': ['prettier'],
+  "   \ 'javascriptreact': ['prettier'],
+  "   \ 'css': ['prettier'],
+  "   \ 'sass': ['prettier'],
+  "   \ 'html': ['prettier'],
+  "   \ 'json': ['prettier'],
+  "   \ 'markdown': ['prettier'],
+  "   \ 'html.handlebars': ['prettier']
+  " \}
+  " "}}}
   Plug 'sickill/vim-pasta'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'psliwka/vim-smoothie'
   Plug 'djoshea/vim-autoread'
   Plug 'alvan/vim-closetag' " {{{
-  let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact'
+  let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
   let g:closetag_emptyTags_caseSensitive = 1
   let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
@@ -133,6 +158,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
+  Plug 'valloric/MatchTagAlways'
+  let g:mta_filetypes = {
+    \ 'html.handlebars' : 1,
+    \ 'javascript' : 1,
+    \ 'javascriptreact' : 1,
+  \}
   Plug 'chrisbra/colorizer'
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -148,12 +179,13 @@ call plug#begin('~/.vim/plugged')
     \'coc-yaml',
     \'coc-markdownlint',
     \'coc-powershell',
-    \'coc-prettier',
     \'coc-vimlsp',
     \'coc-sh',
     \'coc-sql',
     \'coc-lists',
     \'coc-git',
+    \'coc-ember',
+    \'coc-prettier',
     \'coc-marketplace'
     \]
   let g:markdown_fenced_languages=[
@@ -195,7 +227,7 @@ set updatetime=300
 set cmdheight=2
 set shortmess+=c
 set signcolumn=no
-highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
+" highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
 " Adds a command :Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Use tab for trigger completion with characters ahead and navigate.
@@ -212,7 +244,7 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 " Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 " }}}
 
 " GUI vim (macvim, gvim, etc) Settings {{{
@@ -222,7 +254,7 @@ if has('gui')
   if has("gui_macvim")
     set guifont=Dina:h16
   elseif has("gui_win32")
-    set guifont=Terminus:14
+    set guifont=Terminus:h14
   endif
   set guicursor+=a:blinkon0
   set lines=45 columns=84
