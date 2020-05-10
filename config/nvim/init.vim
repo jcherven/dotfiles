@@ -254,7 +254,7 @@ if has('gui')
   if has("gui_macvim")
     set guifont=Dina:h16
   elseif has("gui_win32")
-    set guifont=Terminus:h14
+    set guifont=Terminus:h12
   endif
   set guicursor+=a:blinkon0
   set lines=45 columns=84
