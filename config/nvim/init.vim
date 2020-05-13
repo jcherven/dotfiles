@@ -101,31 +101,31 @@ call plug#begin('~/.vim/plugged')
   let g:NERDTreeStatusline="| menu:m | help:? |"
   "}}}
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  " Plug 'dense-analysis/ale' "{{{
-  " let g:ale_fix_on_save=1
-  " let g:ale_linters_explicit=1
-  " let g:ale_javascript_prettier_options='--single-quote'
-  " let g:ale_linters={
-  "   \ 'javascript': ['prettier'],
-  "   \ 'javascriptreact': ['prettier'],
-  "   \ 'css': ['prettier'],
-  "   \ 'sass': ['prettier'],
-  "   \ 'html': ['prettier'],
-  "   \ 'json': ['prettier'],
-  "   \ 'markdown': ['prettier'],
-  "   \ 'html.handlebars': ['prettier']
-  " \}
-  " let g:ale_fixers={
-  "   \ 'javascript': ['prettier'],
-  "   \ 'javascriptreact': ['prettier'],
-  "   \ 'css': ['prettier'],
-  "   \ 'sass': ['prettier'],
-  "   \ 'html': ['prettier'],
-  "   \ 'json': ['prettier'],
-  "   \ 'markdown': ['prettier'],
-  "   \ 'html.handlebars': ['prettier']
-  " \}
-  " "}}}
+  Plug 'dense-analysis/ale' "{{{
+  let g:ale_fix_on_save=1
+  let g:ale_linters_explicit=1
+  let g:ale_javascript_prettier_options='--single-quote'
+  let g:ale_linters={
+    \ 'javascript': ['prettier'],
+    \ 'javascriptreact': ['prettier'],
+    \ 'css': ['prettier'],
+    \ 'sass': ['prettier'],
+    \ 'html': ['prettier'],
+    \ 'json': ['prettier'],
+    \ 'markdown': ['prettier'],
+    \ 'html.handlebars': ['prettier']
+  \}
+  let g:ale_fixers={
+    \ 'javascript': ['prettier'],
+    \ 'javascriptreact': ['prettier'],
+    \ 'css': ['prettier'],
+    \ 'sass': ['prettier'],
+    \ 'html': ['prettier'],
+    \ 'json': ['prettier'],
+    \ 'markdown': ['prettier'],
+    \ 'html.handlebars': ['prettier']
+  \}
+  "}}}
   Plug 'sickill/vim-pasta'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'psliwka/vim-smoothie'
@@ -166,33 +166,30 @@ call plug#begin('~/.vim/plugged')
   \}
   Plug 'chrisbra/colorizer'
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  let g:coc_global_extensions=[
-    \'coc-tsserver',
-    \'coc-json',
-    \'coc-css',
-    \'coc-scssmodules',
-    \'coc-html',
-    \'coc-emmet',
-    \'coc-python',
-    \'coc-highlight',
-    \'coc-yaml',
-    \'coc-markdownlint',
-    \'coc-powershell',
-    \'coc-vimlsp',
-    \'coc-sh',
-    \'coc-sql',
-    \'coc-lists',
-    \'coc-git',
-    \'coc-ember',
-    \'coc-prettier',
-    \'coc-marketplace'
-    \]
-  let g:markdown_fenced_languages=[
-    \ 'vim',
-    \ 'help'
-    \]
-  " }}}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " let g:coc_global_extensions=[
+  "   \'coc-tsserver',
+  "   \'coc-json',
+  "   \'coc-css',
+  "   \'coc-scssmodules',
+  "   \'coc-html',
+  "   \'coc-emmet',
+  "   \'coc-python',
+  "   \'coc-yaml',
+  "   \'coc-powershell',
+  "   \'coc-vimlsp',
+  "   \'coc-sh',
+  "   \'coc-sql',
+  "   \'coc-lists',
+  "   \'coc-git',
+  "   \'coc-ember',
+  "   \'coc-marketplace'
+  "   \]
+  " let g:markdown_fenced_languages=[
+  "   \ 'vim',
+  "   \ 'help'
+  "   \]
+  " " }}}
 call plug#end()
 
 " Statusline (Builtin) Configuration {{{
@@ -205,7 +202,7 @@ set statusline+=%{!&readonly?'':'\ '}
 " Modified marker
 set statusline+=%{&modified?'[+]':''}\ 
 " CoC statusline integration
-set statusline+=%{coc#status()}\ 
+" set statusline+=%{coc#status()}\ 
 " Right alignment for the below customizations
 set statusline+=%=
 " Current filetype
@@ -216,36 +213,36 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " End Statusline Config }}}
 
-" CoC settings for vim/nvim {{{
-" These settings break nvim when placed inside the plug call, keep them
-" separately down here
-set hidden
-set nobackup
-set nowritebackup
-set updatetime=300
-" These are optional
-set cmdheight=2
-set shortmess+=c
-set signcolumn=no
-" highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
-" Adds a command :Prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" }}}
+" " CoC settings for vim/nvim {{{
+" " These settings break nvim when placed inside the plug call, keep them
+" " separately down here
+" set hidden
+" set nobackup
+" set nowritebackup
+" set updatetime=300
+" " These are optional
+" set cmdheight=2
+" set shortmess+=c
+" set signcolumn=no
+" " highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
+" " Adds a command :Prettier
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" " Use tab for trigger completion with characters ahead and navigate.
+" " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" inoremap <silent><expr> <TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ <SID>check_back_space() ? "\<TAB>" :
+" \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+" " Use <c-space> to trigger completion.
+" inoremap <silent><expr> <c-space> coc#refresh()
+" " Highlight symbol under cursor on CursorHold
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+" " }}}
 
 " GUI vim (macvim, gvim, etc) Settings {{{
 if has('gui')
