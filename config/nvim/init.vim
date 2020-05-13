@@ -101,6 +101,7 @@ call plug#begin('~/.vim/plugged')
   let g:NERDTreeStatusline="| menu:m | help:? |"
   "}}}
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  let g:ale_completion_enabled=1
   Plug 'dense-analysis/ale' "{{{
   let g:ale_fix_on_save=1
   let g:ale_linters_explicit=1
