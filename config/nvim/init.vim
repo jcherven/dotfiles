@@ -169,6 +169,7 @@ call plug#begin('~/.vim/plugged')
     \ 'javascriptreact' : 1,
   \}
   "}}}
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'chrisbra/colorizer'
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
