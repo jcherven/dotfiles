@@ -1,12 +1,14 @@
 set nocompatible
 set directory^=$HOME/.vim/tmp//
-" set encoding=utf-8
-" set fileformats=unix,dos,mac
-" set lazyredraw
+set encoding=utf-8
+set fileformats=unix,dos,mac
+set lazyredraw
 set clipboard=unnamed
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
+set cmdheight=2
+" set signcolumn=no
 set autoread
 set showmatch
 set incsearch
@@ -55,10 +57,18 @@ set mouse=a
 " vim-plug
 call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug'
-  Plug 'christoomey/vim-tmux-navigator'
   Plug 'jeffKreeftmeijer/vim-numbertoggle'
+  Plug 'sickill/vim-pasta'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'tpope/vim-surround'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'psliwka/vim-smoothie'
+  Plug 'djoshea/vim-autoread'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-fugitive'
+  Plug 'AndrewRadev/tagalong.vim'
+  Plug 'gcmt/taboo.vim' "{{{
   fun! GitInfo()
     let git = fugitive#head()
     if git != ''
@@ -67,13 +77,11 @@ call plug#begin('~/.vim/plugged')
       return ''
     endif
   endfunction
-  Plug 'tpope/vim-surround'
-  Plug 'tomtom/tcomment_vim'
-  Plug 'gcmt/taboo.vim'
   let g:taboo_tabline=1
   let g:taboo_modified_tab_flag="[+]"
   let g:taboo_tab_format="▏%N:%P%m %{GitInfo()}▕"
   let g:taboo_renamed_tab_format="▏%N:%l%m %{GitInfo()}▕"
+  "}}}
   Plug 'scrooloose/nerdtree' "{{{
   " Performs NERDTreeFind on open, toggles the buffer on close.
   function! NERDTreeFindToggle()
@@ -103,7 +111,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   let g:ale_completion_enabled=1
   Plug 'dense-analysis/ale' "{{{
-  let g:ale_fix_on_save=1
+  let g:ale_fix_on_save=0
   let g:ale_linters_explicit=1
   let g:ale_javascript_prettier_options='--single-quote'
   let g:ale_linters={
@@ -127,10 +135,6 @@ call plug#begin('~/.vim/plugged')
     \ 'html.handlebars': ['prettier']
   \}
   "}}}
-  Plug 'sickill/vim-pasta'
-  Plug 'bronson/vim-trailing-whitespace'
-  Plug 'psliwka/vim-smoothie'
-  Plug 'djoshea/vim-autoread'
   Plug 'alvan/vim-closetag' " {{{
   let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
   let g:closetag_emptyTags_caseSensitive = 1
@@ -154,17 +158,17 @@ call plug#begin('~/.vim/plugged')
   "}}}
   Plug 'jcherven/jummidark.vim'
   Plug 'hail2u/vim-css3-syntax'
-  " Plug 'cakebaker/scss-syntax.vim'
-  Plug 'AndrewRadev/tagalong.vim'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
-  Plug 'valloric/MatchTagAlways'
+  Plug 'valloric/MatchTagAlways' "{{{
   let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xml' : 1,
     \ 'html.handlebars' : 1,
     \ 'javascript' : 1,
     \ 'javascriptreact' : 1,
   \}
+  "}}}
   Plug 'chrisbra/colorizer'
   " Code completion. See github.com/neoclide/coc.nvim/wiki/ for usage help {{{
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -222,9 +226,6 @@ set statusline+=%3p%%\
 " set nowritebackup
 " set updatetime=300
 " " These are optional
-" set cmdheight=2
-" set shortmess+=c
-" set signcolumn=no
 " " highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
 " " Adds a command :Prettier
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
