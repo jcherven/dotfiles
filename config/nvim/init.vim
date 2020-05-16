@@ -30,7 +30,7 @@ set cursorline
 augroup CursorLineOnlyInActiveWindow "{{{
 autocmd!
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+autocmd WinLeave,BufLeave * setlocal nocursorline
 augroup END
 " }}}
 set scrolloff=8
@@ -156,7 +156,7 @@ call plug#begin('~/.vim/plugged')
   endfunction
   autocmd BufEnter * call <SID>AutoProjectRootCD()
   "}}}
-  Plug 'jcherven/jummidark.vim'
+  Plug 'jcherven/jummidark.vim' ", {'branch': 'testing'}
   Plug 'hail2u/vim-css3-syntax'
   Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
@@ -170,7 +170,6 @@ call plug#begin('~/.vim/plugged')
   \}
   "}}}
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'chrisbra/colorizer'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
   let g:coc_global_extensions=[
@@ -188,6 +187,7 @@ call plug#begin('~/.vim/plugged')
     \'coc-sql',
     \'coc-lists',
     \'coc-git',
+    \'coc-highlight',
     \'coc-ember',
     \'coc-explorer',
     \'coc-marketplace'
@@ -199,17 +199,17 @@ call plug#begin('~/.vim/plugged')
   " }}}
 call plug#end()
 
-" CoC settings for vim/nvim {{{
+" CoC Configuration {{{
+" Vim settings required by CoC
 set hidden
 set nobackup
 set nowritebackup
 set updatetime=300
-
-highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
-" Adds a command :Prettier
+" Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" Autocommands
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Keybindings
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
@@ -219,13 +219,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-" Use <C-n> to trigger completion.
 inoremap <silent><expr> <C-n> coc#refresh()
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" Toggle coc-explorer
 nmap <Leader>/ :CocCommand explorer<CR>
-" Format selected code
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>f <Plug>(coc-format-selected)
 
