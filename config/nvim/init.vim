@@ -204,7 +204,7 @@ set hidden
 set nobackup
 set nowritebackup
 set updatetime=300
-" These are optional
+
 highlight CocCodeLens ctermfg=8 guifg=#4e4e4e
 " Adds a command :Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -219,12 +219,15 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" Use <C-n> to trigger completion.
+inoremap <silent><expr> <C-n> coc#refresh()
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " Toggle coc-explorer
 nmap <Leader>/ :CocCommand explorer<CR>
+" Format selected code
+xmap <Leader>f <Plug>(coc-format-selected)
+nmap <Leader>f <Plug>(coc-format-selected)
 
 " }}}
 
@@ -237,10 +240,10 @@ set statusline+=\ %f
 set statusline+=%{!&readonly?'':'\ '}
 " Modified marker
 set statusline+=%{&modified?'[+]':''}\ 
-" CoC statusline integration
-set statusline+=%{coc#status()}\ 
 " Right alignment for the below customizations
 set statusline+=%=
+" CoC statusline integration
+set statusline+=%{coc#status()}\ 
 " Current filetype
 set statusline+=%y
 " Current line number,column number
