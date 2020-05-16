@@ -189,6 +189,7 @@ call plug#begin('~/.vim/plugged')
     \'coc-git',
     \'coc-highlight',
     \'coc-ember',
+    \'coc-prettier',
     \'coc-explorer',
     \'coc-marketplace'
     \]
