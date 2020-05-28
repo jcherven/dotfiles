@@ -1213,7 +1213,7 @@
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
-			<false/>
+			<true/>
 			<key>ASCII Ligatures</key>
 			<false/>
 			<key>AWDS Pane Directory</key>
@@ -1576,7 +1576,7 @@
 			<key>Has Hotkey</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>0.88</real>
+			<real>0.84999999999999998</real>
 			<key>Icon</key>
 			<integer>1</integer>
 			<key>Idle Code</key>
@@ -1978,7 +1978,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>Dinamedium 16</string>
+			<string>Iosevka-Term-Light 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -2057,7 +2057,7 @@
 			<key>Title Components</key>
 			<integer>512</integer>
 			<key>Transparency</key>
-			<real>0.90000000000000002</real>
+			<real>0.0</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
@@ -2075,7 +2075,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Use Underline Color</key>
@@ -3858,23 +3858,26 @@
 		<string>Unifont CSUR</string>
 		<string>Unifont Upper</string>
 		<string>Unifont-JP</string>
+		<string>Iosevka Term</string>
+		<string>Dina</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Iosevka Term</string>
+		<string>Dina</string>
 		<string>Inconsolata Nerd Font Mono</string>
-		<string>TerminessTTF Nerd Font Mono</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{-2560, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{-2373, 1122}</string>
+		<string>{-1386, 1209}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DF74BC26-A6D6-4FDF-B164-2273FFE31B8E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>105</integer>
+	<integer>116</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>596305608.18408501</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>

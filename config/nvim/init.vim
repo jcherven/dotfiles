@@ -156,7 +156,7 @@ call plug#begin('~/.vim/plugged')
   endfunction
   autocmd BufEnter * call <SID>AutoProjectRootCD()
   "}}}
-  Plug 'jcherven/jummidark.vim' ", {'branch': 'testing'}
+  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
   Plug 'hail2u/vim-css3-syntax'
   Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
@@ -171,6 +171,7 @@ call plug#begin('~/.vim/plugged')
   "}}}
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'jlanzarotta/bufexplorer'
+  Plug 'chrisbra/colorizer'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
   let g:coc_global_extensions=[
     \'coc-tsserver',
