@@ -109,32 +109,6 @@ call plug#begin('~/.vim/plugged')
   " let g:NERDTreeStatusline="| menu:m | help:? |"
   " "}}}
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  let g:ale_completion_enabled=1
-  " Plug 'dense-analysis/ale' "{{{
-  " let g:ale_fix_on_save=0
-  " let g:ale_linters_explicit=1
-  " let g:ale_javascript_prettier_options='--single-quote'
-  " let g:ale_linters={
-  "   \ 'javascript': ['eslint', 'prettier'],
-  "   \ 'javascriptreact': ['eslint', 'prettier'],
-  "   \ 'css': ['eslint', 'prettier'],
-  "   \ 'sass': ['eslint', 'prettier'],
-  "   \ 'html': ['eslint', 'prettier'],
-  "   \ 'json': ['eslint', 'prettier'],
-  "   \ 'markdown': ['eslint', 'prettier'],
-  "   \ 'html.handlebars': ['eslint', 'prettier']
-  " \}
-  " let g:ale_fixers={
-  " \ 'javascript': ['eslint', 'prettier'],
-  " \ 'javascriptreact': ['eslint', 'prettier'],
-  " \ 'css': ['eslint', 'prettier'],
-  " \ 'sass': ['eslint', 'prettier'],
-  " \ 'html': ['eslint', 'prettier'],
-  " \ 'json': ['eslint', 'prettier'],
-  " \ 'markdown': ['eslint', 'prettier'],
-  " \ 'html.handlebars': ['eslint', 'prettier']
-  " \}
-  " "}}}
   Plug 'alvan/vim-closetag' " {{{
   let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
   let g:closetag_emptyTags_caseSensitive = 1
