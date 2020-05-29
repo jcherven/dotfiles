@@ -36,7 +36,7 @@ if [ -f  "$GITPROMPT" ]; then
   source "$GITPROMPT"
   export GIT_PS1_SHOWDIRTYSTATE=1
   # NORMALBLACK="\[\033[0;30m\]"
-  # NORMALRED="\[\033[0;31m\]"
+  NORMALRED="\[\033[0;31m\]"
   # NORMALGREEN="\[\033[0;32m\]"
   # NORMALYELLOW="\[\033[0;33m\]"
   NORMALBLUE="\[\033[0;34m\]"
@@ -45,7 +45,7 @@ if [ -f  "$GITPROMPT" ]; then
   # NORMALWHITE="\[\033[0;37m\]"
 
   # BRIGHTBLACK="\[\033[1;30m\]"
-  BRIGHTRED="\[\033[1;31m\]"
+  # BRIGHTRED="\[\033[1;31m\]"
   # BRIGHTGREEN="\[\033[1;32m\]"
   # BRIGHTYELLOW="\[\033[1;33m\]"
   BRIGHTBLUE="\[\033[1;34m\]"
@@ -54,7 +54,7 @@ if [ -f  "$GITPROMPT" ]; then
   # BRIGHTWHITE="\[\033[1;37m\]"
 
   RESETCOLOR="\[\033[0m\]"
-  export PS1="$NORMALBLUE\u $BRIGHTBLUE\W$BRIGHTRED\$(__git_ps1)$RESETCOLOR \$ "
+  export PS1="$NORMALBLUE\u $BRIGHTBLUE\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
 fi #}}}
 
 # end env exports
