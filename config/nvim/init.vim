@@ -82,33 +82,6 @@ call plug#begin('~/.vim/plugged')
   let g:taboo_tab_format="▏%N:%P%m %{GitInfo()}▕"
   let g:taboo_renamed_tab_format="▏%N:%l%m %{GitInfo()}▕"
   "}}}
-  " Plug 'scrooloose/nerdtree' "{{{
-  " " Performs NERDTreeFind on open, toggles the buffer on close.
-  " function! NERDTreeFindToggle()
-  "   if exists("g:NERDTree") && g:NERDTree.IsOpen()
-  "     NERDTreeClose
-  "     elseif filereadable(expand('%'))
-  "     NERDTreeFind
-  "     else
-  "     NERDTree
-  "   endif
-  " endfunction
-  " autocmd StdinReadPre * let s:std_in=1
-  " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  " map <leader>/ :call NERDTreeFindToggle()<CR>
-  " let g:NERDTreeMapJumpParent = "h"
-  " let g:NERDTreeMapActivateNode = "l"
-  " let NERDTreeMinimalUI=1
-  " let g:NERDTreeWinPos = "left"
-  " let g:NERDTreeShowLineNumbers=1
-  " let g:NERDTreeDirArrows=1
-  " let g:NERDTreeAutoDeleteBuffer=1
-  " let g:NERDTreeShowHidden=1
-  " let g:NERDTreeSortHiddenFirst=1
-  " let g:NERDTreeQuitOnOpen=1
-  " let g:NERDTreeStatusline="| menu:m | help:? |"
-  " "}}}
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'alvan/vim-closetag' " {{{
   let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
   let g:closetag_emptyTags_caseSensitive = 1
@@ -219,7 +192,7 @@ set statusline+=%y
 " set statusline+=%0*\ %l,%2c\ %3p%%\ 
 " Current percentage through the file
 set statusline+=%3p%%\ 
-" End Statusline Config }}}
+" }}}
 
 " GUI vim (macvim, gvim, etc) Settings {{{
 if has('gui')
