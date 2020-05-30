@@ -5,12 +5,11 @@
 # MacOS-specific PATH exports
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Include Homebrew installed packages
-    export PATH="/usr/local/bin:$PATH"
-    export PATH="/usr/local/sbin:$PATH"
-    # Tab completion via Homebrew package
-    [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-  # GNU coreutils, if you decide to use them instead of the built in BSD utils
+  export PATH="/usr/local/bin:$PATH"
+  export PATH="/usr/local/sbin:$PATH"
+  # Tab completion via Homebrew package
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+  # GNU coreutils
   export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
 fi
 
@@ -18,7 +17,7 @@ fi
 # https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
 
-# Set nvim/vim as the default editor if either are installed
+# Editor
 if [ -x "$(command -v nvim)" ]; then
   export EDITOR=nvim
 elif [ -x "$(command -v vim)" ]; then
@@ -26,8 +25,6 @@ elif [ -x "$(command -v vim)" ]; then
 else
   export EDITOR=vi
 fi
-
-# end PATH exports
 
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
@@ -43,7 +40,7 @@ if [ -f  "$GITPROMPT" ]; then
   # NORMALMAGENTA="\[\033[0;35m\]"
   # NORMALCYAN="\[\033[0;36m\]"
   # NORMALWHITE="\[\033[0;37m\]"
-
+  #
   # BRIGHTBLACK="\[\033[1;30m\]"
   # BRIGHTRED="\[\033[1;31m\]"
   # BRIGHTGREEN="\[\033[1;32m\]"
@@ -55,9 +52,8 @@ if [ -f  "$GITPROMPT" ]; then
 
   RESETCOLOR="\[\033[0m\]"
   export PS1="$NORMALBLUE\u $BRIGHTBLUE\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
-fi #}}}
-
-# end env exports
+fi
+# }}}
 
 # Aliases
 # MacOS Only: Use the GNU utils installed in the homebrew bootstrap script instead of the BSD stock utils {{{
@@ -77,7 +73,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   if [ -x "$(command -v gdircolors)" ]; then
     alias dircolors='gdircolors'
   fi
-fi #}}}
+fi
+# }}}
 
 # Improved ls functionality {{{
 # https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
@@ -94,10 +91,10 @@ elif [[ "$OSTYPE" == "darwin"*  ]]; then
     # Executes with stock BSD core utils installed
     alias ls='ls -G -F -h'
   fi
-fi #}}}
+fi
+# }}}
 
-# For locally defined aliases that don't need to be included in this config
-# ALIASFILE= "$HOME/.bash_aliases"
+# ALIASFILE= "$HOME/.bash_aliases" {{{
 if [ -f ~/.bash_aliases ]; then
    source ~/.bash_aliases
  else
@@ -105,11 +102,10 @@ if [ -f ~/.bash_aliases ]; then
    echo "A local aliases file has been created at ~/.bash_aliases."
    echo "Define any aliases you only need on this computer in there."
 fi
+# }}}
 
 # Make tmux assume that the outside terminal supports 256-color
 alias tmux="tmux -2"
-
-# end Aliases
 
 # Highlighted man page output in linux and macos {{{
 eval "$(dircolors)"
@@ -123,7 +119,8 @@ man() {
     LESS_TERMCAP_ue=$(printf "\e[0m") \
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
     man $@
-} #}}}
+}
+# }}}
 
 # Git completion for branch names, subcommands, and more
 GITCOMPLETION="$HOME/dotfiles/bash_completion/git-completion.bash"
