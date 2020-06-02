@@ -1196,7 +1196,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1167 0 1166 1418 -2560 0 2560 1418 </string>
+	<string>0 0 1440 878 0 0 1440 878 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1237,13 +1237,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.070588235294117646</real>
+				<real>0.10980392156862745</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.070588235294117646</real>
+				<real>0.10980392156862745</real>
 				<key>Red Component</key>
-				<real>0.070588235294117646</real>
+				<real>0.10980392156862745</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -1536,13 +1536,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.070588235294117646</real>
+				<real>0.10980392156862745</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.070588235294117646</real>
+				<real>0.10980392156862745</real>
 				<key>Red Component</key>
-				<real>0.070588235294117646</real>
+				<real>0.10980392156862745</real>
 			</dict>
 			<key>Custom Command</key>
 			<string>No</string>
@@ -3870,14 +3870,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-2560, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{-2511, 950}</string>
+		<string>{0, 878}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DF74BC26-A6D6-4FDF-B164-2273FFE31B8E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>120</integer>
+	<integer>123</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>596305608.18408501</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
