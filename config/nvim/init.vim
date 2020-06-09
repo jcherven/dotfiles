@@ -166,6 +166,11 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 inoremap <silent><expr> <C-n> coc#refresh()
 nmap <Leader>/ :CocCommand explorer<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
