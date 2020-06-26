@@ -136,3 +136,4 @@ if [ ! -x "$(command -v nvm)" ]; then
 fi
 
 # ex: set foldmethod=marker:
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -100,12 +100,12 @@ window:
 # Font configuration {{{
 font:
   # Iosevka Term
-  normal:
-    family: Iosevka Term
-    style: Regular
-  bold:
-    family: Iosevka Term
-    style: Bold
+  # normal:
+  #   family: Iosevka Term
+  #   style: Regular
+  # bold:
+  #   family: Iosevka Term
+  #   style: Bold
   # italic:
     # family: Iosevka Term
     # style: Light Italic
@@ -115,12 +115,12 @@ font:
     # style: Medium Italic
     
   # Dina (good at 16pt)
-  # normal:
-  #   family: Dina
-  #   style: medium
-  # bold:
-  #   family: Dina
-  #   style: medium
+  normal:
+    family: Dina
+    style: medium
+  bold:
+    family: Dina
+    style: medium
   
   # Cozette (6x13, good at 14pt, has powerline glyphs)
   # normal:
@@ -129,9 +129,9 @@ font:
   # bold:
   #   family: Cozette
   #   style: Medium
-    
+
   # Point size
-  size: 14.0
+  size: 16.0
 
   # Offset
   # Offset is the extra space around each character. `offset.y` can be thought of
