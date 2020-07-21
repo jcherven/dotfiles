@@ -1,5 +1,13 @@
+#!/bin/bash
+
 # vi editing mode at any readline
 set editing-mode vi
+set show-mode-in-prompt on
+# set vi-ins-mode-string \1\e[6 q\2
+# set vi-cmd-mode-string \1\e[2 q\2
+
+set vi-ins-mode-string \1\e[?0c\2
+set vi-cmd-mode-string \1\e[?8c\2
 
 set colored-stats on
 

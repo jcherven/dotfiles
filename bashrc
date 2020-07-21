@@ -81,26 +81,16 @@ fi
 eval "$(dircolors)"
 # For linux
 if [[ "$OSTYPE" == "linux-gnu"  ]]; then
-  alias ls='ls -F -h --color=always -v'
+  alias ls='ls -F -h --color=always --group-directories-first -v'
 # For MacOS
 elif [[ "$OSTYPE" == "darwin"*  ]]; then
   if [ -x "$(command -v gls)" ]; then
     # Executes if GNU coreutils is installed
-    alias ls='gls -F -h --color=always -v'
+    alias ls='gls -F -h --color=always --group-directories-first -v'
   else
     # Executes with stock BSD core utils installed
     alias ls='ls -G -F -h'
   fi
-fi
-# }}}
-
-# ALIASFILE= "$HOME/.bash_aliases" {{{
-if [ -f ~/.bash_aliases ]; then
-   source ~/.bash_aliases
- else
-   echo "# Local aliases that dont belong in the dotfiles can be defined here" > ~/.bash_aliases
-   echo "A local aliases file has been created at ~/.bash_aliases."
-   echo "Define any aliases you only need on this computer in there."
 fi
 # }}}
 
