@@ -1,6 +1,6 @@
 [user]
 	name = jcherven
-	email = cherven.james@gmail.com
+	email = jamiecherven@gmail.com
 [core]
 	excludesfile = $HOME/.config/git/ignore
 	editor = nvim
@@ -10,3 +10,7 @@
 	conflictStyle = diff3
 [commit]
         verbose = true
+[github]
+	user = jcherven
+[credential]
+	helper = cache
