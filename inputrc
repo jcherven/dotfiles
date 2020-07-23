@@ -1,26 +1,39 @@
-#!/bin/bash
+# This file controls the behaviour of line input editing for
+# programs that use the GNU Readline library.  Existing
+# programs include FTP, Bash, and GDB.
+#
+# You can re-read the inputrc file with C-x C-r.
+# Lines beginning with '#' are comments.
+#
+# First, include any system-wide bindings and variable
+# assignments from /etc/Inputrc
+$include /etc/inputrc
 
 # vi editing mode at any readline
-set editing-mode vi
-set show-mode-in-prompt on
+# set editing-mode vi
+# set show-mode-in-prompt On
+# $if term=linux
+# set vi-ins-mode-string \1\e[?0c\2
+# set vi-cmd-mode-string \1\e[?8c\2
+# $else
 # set vi-ins-mode-string \1\e[6 q\2
 # set vi-cmd-mode-string \1\e[2 q\2
+# $endif
 
-set vi-ins-mode-string \1\e[?0c\2
-set vi-cmd-mode-string \1\e[?8c\2
+set colored-stats On
 
-set colored-stats on
-
-set completion-ignore-case on
+set completion-ignore-case On
 
 # sets every completion which is a symlink to a directory to have a trailing slash
-set mark-symlinked-directories on
+set mark-symlinked-directories On
 
 # disable the bell on tab completion if there are more than one available completions
-set show-all-if-ambiguous on
+set show-all-if-ambiguous On
 
 # disable the bell on tab completion if there is more than one possible completion but no partial completion can be made
-set show-all-if-unmodified on
+set show-all-if-unmodified On
+
+set visible-stats On
 
 # Incremental searching with Up and Down; Type ssh <up> to get the last 'ssh' command you used
 "\e[A": history-search-backward
@@ -31,12 +44,12 @@ set show-all-if-unmodified on
 # the cursor is on the "z", pressing Tab will not autocomplete it to "cd
 # ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
 # Readline used by Bash 4.)
-set skip-completed-text on
+set skip-completed-text On
 
 # Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
-set input-meta on
-set output-meta on
-set convert-meta off
+set input-meta On
+set output-meta On
+set convert-meta Off
 
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
