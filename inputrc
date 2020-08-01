@@ -2,7 +2,6 @@
 # programs that use the GNU Readline library.  Existing
 # programs include FTP, Bash, and GDB.
 #
-# You can re-read the inputrc file with C-x C-r.
 # Lines beginning with '#' are comments.
 #
 # First, include any system-wide bindings and variable
@@ -10,15 +9,17 @@
 $include /etc/inputrc
 
 # vi editing mode at any readline
-# set editing-mode vi
-# set show-mode-in-prompt On
-# $if term=linux
+set editing-mode vi
+set show-mode-in-prompt On
+# term is 'linux'
 # set vi-ins-mode-string \1\e[?0c\2
 # set vi-cmd-mode-string \1\e[?8c\2
-# $else
+# running on MacOS
+set vi-ins-mode-string \033[4 q
+set vi-cmd-mode-string \033[1 q
+# otherwise
 # set vi-ins-mode-string \1\e[6 q\2
 # set vi-cmd-mode-string \1\e[2 q\2
-# $endif
 
 set colored-stats On
 

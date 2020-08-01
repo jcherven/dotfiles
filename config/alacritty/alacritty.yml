@@ -3,14 +3,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-# env:
+env:
   # TERM variable {{{
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used. }}}
-  # TERM: xterm-256color
+  TERM: tmux-256color
 
 window:
   # Window dimensions (changes require restart) {{{
@@ -243,7 +243,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -263,7 +263,7 @@ background_opacity: 1.0
 # }}}
 
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: false
+window.dynamic_title: false
 
 # Cursor {{{
 cursor:

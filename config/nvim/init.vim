@@ -225,4 +225,5 @@ if has('gui')
 endif
 " }}}
 
+set termguicolors
 silent! colorscheme jummidark
