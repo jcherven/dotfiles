@@ -12,8 +12,6 @@ TAPS=(
 FORMULAE=(
   # These are GNU alternatives for the BSD utilities that come with MacOS, which are more up to date and sometimes have more convenient command line options. Homebrew handles the PATH exports for these on its own.
   "perl"
-  "python"
-  "bash"
   "screen"
   "binutils"
   "diffutils"
@@ -21,6 +19,7 @@ FORMULAE=(
   "gnutls"
   "gzip"
   "watch"
+  "curl"
   "wget"
   "emacs"
   "gpatch"
@@ -59,22 +58,22 @@ FORMULAE=(
 
 # Listing of Brew Cask Fonts
 CASKFONTS=(
-  "font-charter"
-  "font-cooper-hewitt"
-  "font-fira-sans"
-  "font-ibm-plex"
   "font-iosevka"
-  "font-iosevka-slab"
-  "font-source-code-pro"
-  "font-source-sans-pro"
-  "font-source-serif-pro"
   "font-terminus"
 )
 
 # Listing of Cask GUI Software
 CASKSOFTWARE=(
-  "iterm2"
   "keepassxc"
+  "alacritty"
+  "amethyst"
+  "disk-inventory-x"
+  "gimp"
+  "vlc"
+  "signal"
+  "smcfancontrol"
+  "xld"
+  "powershell"
   "macvim"
   "vscodium"
   "firefox"
@@ -88,7 +87,7 @@ FETCHEDCASKS=(
 )
 
 function homebrew_bootstrap {
-  echo "Bootstrapping jcherven's basic MacOS terminal environment via Homebrew"
+  echo "Bootstrapping my basic MacOS terminal environment via Homebrew"
 
   # install brew if it is absent {{{
   if [ ! -x "$(command -v brew)" ]; then
