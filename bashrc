@@ -22,13 +22,13 @@ if [ -x "$(command -v nvim)" ]; then
   export EDITOR=nvim
 elif [ -x "$(command -v vim)" ]; then
   export EDITOR=vim
-else
+elif [ -x "$(command -v vi)" ]; then
   export EDITOR=vi
 fi
 
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
-GITPROMPT="$HOME/dotfiles/bash_completion/git-prompt.sh"
+GITPROMPT="$HOME/dotfiles/bash_scripts/git-prompt.sh"
 if [ -f  "$GITPROMPT" ]; then
   source "$GITPROMPT"
   export GIT_PS1_SHOWDIRTYSTATE=1
@@ -95,7 +95,7 @@ fi
 # }}}
 
 # Make tmux assume that the outside terminal supports 256-color
-alias tmux="tmux -2"
+# alias tmux="tmux -2"
 
 # Highlighted man page output in linux and macos {{{
 eval "$(dircolors)"
@@ -113,7 +113,7 @@ man() {
 # }}}
 
 # Git completion for branch names, subcommands, and more
-GITCOMPLETION="$HOME/dotfiles/bash_completion/git-completion.bash"
+GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
 if [ -f "$GITCOMPLETION" ]; then
   source "$GITCOMPLETION"
 fi
@@ -125,5 +125,7 @@ if [ ! -x "$(command -v nvm)" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
-# ex: set foldmethod=marker:
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# ex: set foldmethod=marker:
