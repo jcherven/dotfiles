@@ -11,6 +11,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
   # GNU coreutils
   export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
+  # access to the dotfiles bash_scripts directory
+  export PATH="$HOME/dotfiles/bash_scripts:$PATH"
 fi
 
 # Improved less functionality
