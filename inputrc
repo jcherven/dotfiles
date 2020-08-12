@@ -11,15 +11,15 @@
 # $include /etc/inputrc
 
 # vi editing mode at any readline
-set editing-mode vi
-set show-mode-in-prompt On
-# running on MacOS
-set vi-ins-mode-string \033[6 q
-set vi-cmd-mode-string \033[2 q
+# set editing-mode vi
+# set show-mode-in-prompt On
+# This works in iTerm on MacOS
+# set vi-ins-mode-string \033[6 q
+# set vi-cmd-mode-string \033[2 q
 # Some terminals need it this way
 # set vi-ins-mode-string \1\e[?0c\2
 # set vi-cmd-mode-string \1\e[?8c\2
-# Yet other terminals need it this way
+# The virtual console needs it this way though
 # set vi-ins-mode-string \1\e[6 q\2
 # set vi-cmd-mode-string \1\e[2 q\2
 
@@ -31,7 +31,7 @@ set completion-ignore-case On
 set mark-symlinked-directories On
 
 # disable the bell on tab completion if there are more than one available completions
-set show-all-if-ambiguous On
+# set show-all-if-ambiguous On
 
 # disable the bell on tab completion if there is more than one possible completion but no partial completion can be made
 set show-all-if-unmodified On
