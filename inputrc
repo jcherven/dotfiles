@@ -8,18 +8,18 @@
 #
 # First, include any system-wide bindings and variable
 # assignments from /etc/Inputrc
-$include /etc/inputrc
+# $include /etc/inputrc
 
 # vi editing mode at any readline
 set editing-mode vi
 set show-mode-in-prompt On
-# term is 'linux'
+# running on MacOS
+set vi-ins-mode-string \033[6 q
+set vi-cmd-mode-string \033[2 q
+# Some terminals need it this way
 # set vi-ins-mode-string \1\e[?0c\2
 # set vi-cmd-mode-string \1\e[?8c\2
-# running on MacOS
-set vi-ins-mode-string \033[4 q
-set vi-cmd-mode-string \033[1 q
-# otherwise
+# Yet other terminals need it this way
 # set vi-ins-mode-string \1\e[6 q\2
 # set vi-cmd-mode-string \1\e[2 q\2
 
