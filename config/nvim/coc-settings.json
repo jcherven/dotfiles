@@ -1,0 +1,15 @@
+{
+  "codeLens.enable": true,
+  "highlight.disableLanguages": ["vim", "xml", "html", "html.handlebars"],
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "markdownlint.config": {
+    "line_length": false
+  },
+  "javascript.referencesCodeLens.enable": true,
+  "python.jediEnabled": false,
+  "explorer.quitOnOpen": true,
+  "explorer.width": 30,
+  "explorer.keyMappings": {
+    "v": "open:vsplit"
+  }
+}
