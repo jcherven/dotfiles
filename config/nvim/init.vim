@@ -103,7 +103,8 @@ call plug#begin('~/.vim/plugged')
   endfunction
   autocmd BufEnter * call <SID>AutoProjectRootCD()
   "}}}
-  Plug 'jcherven/jummidark.vim'
+  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  " Plug '/Users/choro/Desktop/jummidark.vim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
@@ -204,7 +205,7 @@ if has('gui')
   set belloff=all
   " Font setting
   if has("gui_macvim")
-    set guifont=Dina:h16
+    set guifont=Sarasa\ Fixed\ J\ Light:h14
   elseif has("gui_win32")
     set guifont=Terminus:h12
   endif
@@ -226,4 +227,5 @@ endif
 " }}}
 
 set termguicolors
-silent! colorscheme jummidark
+silent! colorscheme jummilight
+" silent! colorscheme jummidark

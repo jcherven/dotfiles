@@ -99,20 +99,33 @@ window:
 
 # Font configuration {{{
 font:
+  # Sarasa Fixed J
+  # normal:
+  #   family: Sarasa Fixed J
+  #   style: Extralight
+  # bold:
+  #   family: Sarasa Fixed J
+  #   style: Regular
+  # italic:
+  #   family: Sarasa Fixed J
+  #   style: Light Italic
+  # bold_italic:
+  #   family: Sarasa Fixed J
+  #   style: Italic
+    
   # Iosevka Term
   # normal:
   #   family: Iosevka Term
-  #   style: Regular
+  #   style: Light
   # bold:
   #   family: Iosevka Term
-  #   style: Bold
+  #   style: Regular
   # italic:
     # family: Iosevka Term
     # style: Light Italic
   # bold_italic:
     # family: Iosevka Term
-    # family: Dina
-    # style: Medium Italic
+    # style: Regular Italic
     
   # Dina (good at 16pt)
   normal:

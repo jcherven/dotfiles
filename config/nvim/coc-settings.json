@@ -1,6 +1,6 @@
 {
   "codeLens.enable": true,
-  "highlight.disableLanguages": ["vim", "xml", "html", "html.handlebars"],
+  "highlight.disableLanguages": ["xml", "html", "html.handlebars"],
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
   "markdownlint.config": {
     "line_length": false
