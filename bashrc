@@ -1,4 +1,4 @@
-# ~/dotfiles-mac/bashrc
+# ~/dotfiles/bashrc
 
 # Environment variable exports
 # MacOS-specific PATH exports

@@ -79,8 +79,8 @@ call plug#begin('~/.vim/plugged')
       return ''
     endif
   endfunction
-  let g:taboo_tab_format="▏%N %P%m (git:%{GitInfo()})▕"
-  let g:taboo_renamed_tab_format="▏%N %l%m (git:%{GitInfo()})▕"
+  let g:taboo_tab_format="║%N %P%m (git:%{GitInfo()})║"
+  let g:taboo_renamed_tab_format="║%N %l%m (git:%{GitInfo()})║"
   "}}}
   Plug 'alvan/vim-closetag' " {{{
   let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
