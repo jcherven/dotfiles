@@ -981,9 +981,9 @@
 	<key>Default Arrangement Name</key>
 	<string>NeoVim (1 80w Buffer)</string>
 	<key>Default Bookmark Guid</key>
-	<string>C6F799CB-0B52-4904-8E23-77C9D0252CDA</string>
+	<string>5DC4D024-9397-41B4-9591-94F37516F1DE</string>
 	<key>DimBackgroundWindows</key>
-	<false/>
+	<true/>
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DimOnlyText</key>
@@ -1151,7 +1151,7 @@
 	<key>MetalSlowFrameRate</key>
 	<real>45</real>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm2_profile</string>
+	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -1174,7 +1174,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAc7Gdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -1196,7 +1196,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2704 417 1536 1417 1680 417 2560 1417 </string>
+	<string>1680 417 1152 1417 1680 417 2560 1417 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1459,6 +1459,8 @@
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
+			<key>Background Image Mode</key>
+			<integer>1</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1475,7 +1477,7 @@
 			<key>Badge Text</key>
 			<string></string>
 			<key>Blend</key>
-			<real>0.27291791866987175</real>
+			<real>0.13672881765463918</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -1514,13 +1516,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.87450980392156863</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.52941176470588236</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.68627450980392157</real>
+				<real>0.84313725490196079</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1540,13 +1542,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.10980392156862745</real>
+				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.10980392156862745</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.10980392156862745</real>
+				<real>1</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>1</integer>
@@ -1978,7 +1980,7 @@
 			<key>Name</key>
 			<string>Jummilight</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>JCsmPC 16</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Non-ASCII Ligatures</key>
@@ -2059,7 +2061,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>3</integer>
+			<integer>4</integer>
 			<key>Title Components</key>
 			<integer>512</integer>
 			<key>Transparency</key>
@@ -2081,7 +2083,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Use Underline Color</key>
@@ -3860,29 +3862,38 @@
 	<array>
 		<string>3.3.12</string>
 	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>PCMyungjo</string>
+		<string>Dina</string>
+		<string>Sarasa Fixed J</string>
+	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Sarasa Mono TC</string>
+		<string>Sarasa Fixed J</string>
 		<string>Dina</string>
-		<string>Menlo</string>
+		<string>GB18030 Bitmap</string>
+		<string>PCMyungjo</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1680, 417}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{2008, 1545}</string>
+		<string>{235, 811}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>D8907FCB-4A3C-4E80-8984-607ABE0067A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>12</integer>
+	<integer>23</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>619295032.14673698</real>
+	<real>619388438.23622406</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -4673,7 +4684,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.38660356570512833</real>
+	<real>0.35200139371931272</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>SwitchPaneModifier</key>
