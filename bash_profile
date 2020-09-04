@@ -4,6 +4,10 @@ if [ -f $HOME/dotfiles/bashrc ] && [ ! -f $HOME/.bashrc ]; then
   source "$HOME/dotfiles/bashrc"
 fi
 
+if [ -f $HOME/.bash_aliases ]; then
+  source "$HOME/.bash_aliases"
+fi
+
 if [ -f $HOME/dotfiles/bash_aliases ] && [ ! -f $HOME/.bash_aliases ]; then
   source "$HOME/dotfiles/bash_aliases"
 fi
@@ -34,7 +38,5 @@ fi
 # fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-# if [ -e /Users/jums/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jums/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # eval "$(pyenv init -)"

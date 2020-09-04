@@ -153,6 +153,7 @@ set hidden
 set nobackup
 set nowritebackup
 set updatetime=300
+set signcolumn=yes
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Autocommands
