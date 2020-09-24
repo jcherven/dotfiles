@@ -206,9 +206,9 @@ if has('gui')
   set belloff=all
   " Font setting
   if has("gui_macvim")
-    set guifont=Sarasa\ Fixed\ J\ Light:h14
+    set guifont=Dina:h16,Sarasa\ Fixed\ J\ Light:h14,Iosevka\ Term\ Light:14
   elseif has("gui_win32")
-    set guifont=Terminus:h12
+    set guifont=Terminus:h12,Iosevka\ Term\ Light:h14
   endif
   set guicursor+=a:blinkon0
   set lines=45 columns=84
