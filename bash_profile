@@ -21,9 +21,9 @@ if [ -f $HOME/dotfiles/inputrc ] && [ ! -f $HOME/.inputrc ]; then
 fi
 
 # MacOS settings
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#
-# fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+fi
 
 # GNU/Linux settings
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -36,7 +36,5 @@ fi
 # if [ ! -f $HOME/.vimrc ]; then
 #   ln -s "$HOME/dotfiles/config/nvim/init.vim" "$HOME/.vimrc"
 # fi
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # eval "$(pyenv init -)"

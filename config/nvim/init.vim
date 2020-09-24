@@ -227,6 +227,8 @@ if has('gui')
 endif
 " }}}
 
+" Built-in term settings
+
 set termguicolors
 " silent! colorscheme jummilight
 silent! colorscheme jummidark
