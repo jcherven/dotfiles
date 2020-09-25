@@ -1,6 +1,11 @@
 # ~/dotfiles/bashrc
 
 # Environment variable exports
+# Use the Homebrew version of bash (latest) if available
+if [[ "$OSTYPE" == "darwin"* ]] && [ -e "/usr/local/bin/bash" ]; then
+  export SHELL="/usr/local/bin/bash"
+fi
+
 # MacOS-specific PATH exports
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Include Homebrew installed packages
