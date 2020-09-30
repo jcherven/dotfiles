@@ -1,12 +1,12 @@
 {
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "highlight.disableLanguages": ["xml", "html", "html.handlebars"],
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
   "markdownlint.config": {
     "line_length": false
   },
-  "javascript.referencesCodeLens.enable": true,
+  "javascript.referencesCodeLens.enable": false,
   "python.jediEnabled": false,
   "explorer.quitOnOpen": true,
   "explorer.width": 30,
