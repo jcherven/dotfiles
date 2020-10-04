@@ -146,6 +146,9 @@ call plug#begin('~/.vim/plugged')
     \ 'help'
     \]
   " }}}
+  Plug 'vimwiki/vimwiki' "{{{
+  let g:vimwiki_list = [{'path': '~/Desktop/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+  "}}}
 call plug#end()
 
 " CoC Configuration {{{
