@@ -149,7 +149,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'vimwiki/vimwiki' "{{{
   let g:vimwiki_list = [{'path': '~/Desktop/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
-call plug#end()
+  Plug 'mattn/calendar-vim'
+  call plug#end()
 
 " CoC Configuration {{{
 " Vim settings required by CoC
