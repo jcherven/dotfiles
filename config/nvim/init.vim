@@ -40,6 +40,18 @@ set eadirection=both
 set equalalways
 set foldmethod=marker
 set relativenumber
+" MacOS conditional settings
+" sets the default shell to homebrew's bash if installed
+if has('macunix')
+  set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
+endif
+" Windows conditional settings
+" if has('win32') || has('win64')
+" endif
+" Linux/other unix conditional settings
+" if has('unix')
+" endif
+
 
 " Filetype specific settings
 autocmd FileType help setlocal colorcolumn=80
