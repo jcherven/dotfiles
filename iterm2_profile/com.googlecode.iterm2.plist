@@ -1196,7 +1196,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2996 1139 1240 695 1680 417 2560 1417 </string>
+	<string>1680 417 1056 1417 1680 417 2560 1417 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -3880,14 +3880,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{1680, 417}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{235, 811}</string>
+		<string>{2034, 1331}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>D8907FCB-4A3C-4E80-8984-607ABE0067A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>44</integer>
+	<integer>70</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>619388438.23622406</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
