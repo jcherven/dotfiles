@@ -71,7 +71,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'chrisbra/colorizer'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'cosminadrianpopescu/vim-sql-workbench'
   Plug 'djoshea/vim-autoread'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'hail2u/vim-css3-syntax'
@@ -162,6 +161,9 @@ call plug#begin('~/.vim/plugged')
   " }}}
   Plug 'vimwiki/vimwiki' "{{{
   let g:vimwiki_list = [{'path': '~/Desktop/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+  "}}}
+  Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
+  let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   "}}}
   call plug#end()
 
