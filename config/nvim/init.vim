@@ -68,18 +68,24 @@ set mouse=a
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
-  Plug 'junegunn/vim-plug'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'sickill/vim-pasta'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'tpope/vim-surround'
-  Plug 'tomtom/tcomment_vim'
-  Plug 'psliwka/vim-smoothie'
-  Plug 'djoshea/vim-autoread'
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'tpope/vim-fugitive'
   Plug 'AndrewRadev/tagalong.vim'
+  Plug 'chrisbra/colorizer'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'djoshea/vim-autoread'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/vim-plug'
+  Plug 'mattn/calendar-vim'
+  Plug 'mattn/emmet-vim'
+    let g:user_emmet_leader_key=','
+  Plug 'psliwka/vim-smoothie'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'sickill/vim-pasta'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
   Plug 'gcmt/taboo.vim' "{{{
   let g:taboo_tabline=1
   let g:taboo_modified_tab_flag="[+]"
@@ -115,11 +121,6 @@ call plug#begin('~/.vim/plugged')
   endfunction
   autocmd BufEnter * call <SID>AutoProjectRootCD()
   "}}}
-  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
-  " Plug '/Users/choro/Desktop/jummidark.vim'
-  Plug 'hail2u/vim-css3-syntax'
-  Plug 'mattn/emmet-vim'
-  let g:user_emmet_leader_key=','
   Plug 'valloric/MatchTagAlways' "{{{
   let g:mta_filetypes = {
     \ 'html' : 1,
@@ -129,7 +130,6 @@ call plug#begin('~/.vim/plugged')
     \ 'javascriptreact' : 1,
   \}
   "}}}
-  Plug 'chrisbra/colorizer'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
   let g:coc_global_extensions=[
     \'coc-css',
@@ -142,7 +142,7 @@ call plug#begin('~/.vim/plugged')
     \'coc-json',
     \'coc-lists',
     \'coc-markdownlint',
-    \'coc-marketplace'
+    \'coc-marketplace',
     \'coc-powershell',
     \'coc-prettier',
     \'coc-python',
@@ -161,7 +161,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'vimwiki/vimwiki' "{{{
   let g:vimwiki_list = [{'path': '~/Desktop/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
-  Plug 'mattn/calendar-vim'
   call plug#end()
 
 " CoC Configuration {{{

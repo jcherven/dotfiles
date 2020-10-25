@@ -13,6 +13,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/usr/local/sbin:$PATH"
   # Tab completion via Homebrew package
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+  # openjdk installed via brew
+  export PATH="/usr/local/opt/java/bin:$PATH"
+  export JAVA_HOME=`/usr/libexec/java_home`
   # GNU coreutils
   export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
 fi
