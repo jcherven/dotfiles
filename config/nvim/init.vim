@@ -78,14 +78,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/vim-plug'
   Plug 'mattn/calendar-vim'
-  Plug 'mattn/emmet-vim'
-    let g:user_emmet_leader_key=','
   Plug 'psliwka/vim-smoothie'
   Plug 'sheerun/vim-polyglot'
   Plug 'sickill/vim-pasta'
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
+  Plug 'mattn/emmet-vim' "{{{
+    let g:user_emmet_leader_key=','
+  " }}}
   Plug 'gcmt/taboo.vim' "{{{
   let g:taboo_tabline=1
   let g:taboo_modified_tab_flag="[+]"
