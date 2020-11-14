@@ -1196,7 +1196,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>191 124 752 860 0 0 1680 1027 </string>
+	<string>1680 417 2560 1417 1680 417 2560 1417 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1986,7 +1986,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>Greybeard-Regular 16</string>
+			<string>Dinamedium 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -2866,7 +2866,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>Greybeard-Regular 16</string>
+			<string>Dinamedium 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -3867,6 +3867,7 @@
 		<string>PCMyungjo</string>
 		<string>Dina</string>
 		<string>Sarasa Fixed J</string>
+		<string>Greybeard</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -3880,14 +3881,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{1680, 417}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{322, 786}</string>
+		<string>{1955, 1275}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>D8907FCB-4A3C-4E80-8984-607ABE0067A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>92</integer>
+	<integer>94</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>619388438.23622406</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
