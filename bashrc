@@ -16,6 +16,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # openjdk installed via brew
   export PATH="/usr/local/opt/java/bin:$PATH"
   export JAVA_HOME=`/usr/libexec/java_home`
+  # wildfly-as installed via brew
+  export JBOSS_HOME=/usr/local/opt/wildfly-as/libexec
+  export PATH=${PATH}:${JBOSS_HOME}/bin
   # GNU coreutils
   export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
 fi
