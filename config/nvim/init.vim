@@ -78,7 +78,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/vim-plug'
   Plug 'mattn/calendar-vim'
-  Plug 'psliwka/vim-smoothie'
+  " Plug 'psliwka/vim-smoothie'
   Plug 'sheerun/vim-polyglot'
   Plug 'sickill/vim-pasta'
   Plug 'tomtom/tcomment_vim'
