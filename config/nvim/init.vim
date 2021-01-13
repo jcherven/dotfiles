@@ -153,6 +153,7 @@ call plug#begin('~/.vim/plugged')
     \'coc-tsserver',
     \'coc-vimlsp',
     \'coc-yaml',
+    \'coc-eslint',
     \]
   let g:markdown_fenced_languages=[
     \ 'vim',
