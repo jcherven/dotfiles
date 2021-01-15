@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+# a shell-independent ibeam cursor in urxvt
+# taken from https://master--okitavera.netlify.app/article/use-i-beam-cursor-in-rxvt-unicode/
+
+use strict;
+use warnings;
+
+sub on_start
+{
+	my ($self) = @_;
+	# this is for the blinking line cursor
+	my $cmd = "\033[5 q\r";
+	$self->cmd_parse ($cmd);
+}

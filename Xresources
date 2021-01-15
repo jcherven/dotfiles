@@ -41,7 +41,7 @@ URxvt.intensityStyles: true
 Urxvt.internalBorder: 3
 
 ! URxvt perl extensions located in ~/.urxvt/ext
-URxvt.perl-ext-common: ibeamcursor
+! URxvt.perl-ext-common: ibeamcursor
 
 ! Jummidark color scheme
 Urxvt.depth: 24
