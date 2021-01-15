@@ -10,7 +10,7 @@
   "python.jediEnabled": false,
   "explorer.quitOnOpen": true,
   "explorer.width": 30,
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "v": "open:vsplit"
   },
   "sql.database": "postgresql"

@@ -15,28 +15,36 @@
 !XTerm.vt100.background: black
 
 ! Disable bold font faces, use color instead
-!*.colorBDMode: true
-!*.colorBD: blue
+! *.colorBDMode: true
+! *.colorBD: blue
 
 !xterm*rightScrollBar:   true
 !xterm*ScrollBar:    true
 
 ! All typography
-*.font: 7x14
+!*.font: 7x14
 
 !! X Resources used by URXvt
 ! Appearance
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.borderLess: false
-URxvt.internalBorder: 9
+URxvt.internalBorder: 3
 !URxvt.fading: 25
 !URxvt.fadeColor: #262626
 ! Typography
+URxvt.font: xft:Cozette:style=Medium:size:10:antialias=false
 URxvt.letterSpace: 0
+URxvt.linespace: 0
 URxvt.intensityStyles: true
 
+Urxvt.internalBorder: 3
+
+! URxvt perl extensions located in ~/.urxvt/ext
+URxvt.perl-ext-common: ibeamcursor
+
 ! Jummidark color scheme
+Urxvt.depth: 24
 ! special
 *.foreground:   rgb:e1/e1/e1
 *.background:   rgb:26/26/26

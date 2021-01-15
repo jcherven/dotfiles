@@ -3,7 +3,7 @@ set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
 set fileformats=unix,dos,mac
 set lazyredraw
-set clipboard=unnamed
+set clipboard=unnamedplus
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
@@ -17,7 +17,7 @@ set ignorecase
 set smartcase
 set tabstop=2
 set shiftwidth=2
-set expandtab
+" set expandtab
 set softtabstop=2
 set autoindent
 set smartindent
@@ -162,10 +162,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'vimwiki/vimwiki' "{{{
   let g:vimwiki_list = [{'path': '~/Desktop/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
-  Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
-  let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
-  "}}}
-  call plug#end()
+  " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
+  " let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
+  " "}}}
+call plug#end()
 
 " CoC Configuration {{{
 " Vim settings required by CoC
@@ -247,6 +247,6 @@ if has('gui')
 endif
 " }}}
 
-set termguicolors
+" set termguicolors
 " silent! colorscheme jummilight
 silent! colorscheme jummidark
