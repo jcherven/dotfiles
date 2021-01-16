@@ -22,6 +22,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
 fi
 
+# linux specific exports
+# if [[ "$OSTYPE" == "linux-gnu" ]]; then
+# fi
+
 # access to the dotfiles bash_scripts directory
 export PATH="$HOME/dotfiles/bash_scripts:$PATH"
 
