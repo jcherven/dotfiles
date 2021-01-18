@@ -983,7 +983,7 @@
 	<key>Default Bookmark Guid</key>
 	<string>5DC4D024-9397-41B4-9591-94F37516F1DE</string>
 	<key>DimBackgroundWindows</key>
-	<true/>
+	<false/>
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DimOnlyText</key>
@@ -1196,7 +1196,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 0 1332 1417 1680 0 2560 1417 </string>
+	<string>0 0 836 1027 0 0 1680 1027 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -4770,7 +4770,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D8907FCB-4A3C-4E80-8984-607ABE0067A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>155</integer>
+	<integer>156</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>619388438.23622406</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
