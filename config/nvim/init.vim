@@ -160,7 +160,7 @@ call plug#begin('~/.vim/plugged')
     \]
   " }}}
   Plug 'vimwiki/vimwiki' "{{{
-  let g:vimwiki_list = [{'path': '~/Desktop/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+  let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki', 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
   " let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
