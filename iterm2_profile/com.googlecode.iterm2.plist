@@ -1196,7 +1196,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 836 1027 0 0 1680 1027 </string>
+	<string>2980 0 1260 1417 1680 0 2560 1417 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -4744,33 +4744,31 @@
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>PCMyungjo</string>
 		<string>Dina</string>
 		<string>Sarasa Fixed J</string>
-		<string>Greybeard</string>
 		<string>Sarasa Mono HC</string>
 		<string>Cozette</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Cozette</string>
+		<string>Dina</string>
 		<string>Menlo</string>
 		<string>Unifont-JP</string>
-		<string>Unifont Sample</string>
-		<string>Unifont CSUR</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1680, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{2703, 1283}</string>
+		<string>{301, 865}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>D8907FCB-4A3C-4E80-8984-607ABE0067A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>156</integer>
+	<integer>159</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>619388438.23622406</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
