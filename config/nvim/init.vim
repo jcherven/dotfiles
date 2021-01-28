@@ -162,9 +162,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vimwiki/vimwiki' "{{{
   let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
-  Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
-  let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
-  "}}}
+  " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
+  " let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
+  " "}}}
   call plug#end()
 
 " CoC Configuration {{{
