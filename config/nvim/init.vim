@@ -45,13 +45,6 @@ set relativenumber
 if has('macunix')
   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
 endif
-" Windows conditional settings
-" if has('win32') || has('win64')
-" endif
-" Linux/other unix conditional settings
-" if has('unix')
-" endif
-
 
 " Filetype specific settings
 autocmd FileType help setlocal colorcolumn=80
@@ -87,83 +80,84 @@ call plug#begin('~/.vim/plugged')
     let g:user_emmet_leader_key=','
   " }}}
   Plug 'gcmt/taboo.vim' "{{{
-  let g:taboo_tabline=1
-  let g:taboo_modified_tab_flag="[+]"
-  fun! GitInfo()
+    let g:taboo_tabline=1
+    let g:taboo_modified_tab_flag="[+]"
+    fun! GitInfo()
     let git = fugitive#head()
     if git != ''
       return ''.git.''
     else
       return ''
     endif
-  endfunction
-  let g:taboo_tab_format="║%N %P%m (git:%{GitInfo()})║"
-  let g:taboo_renamed_tab_format="║%N %l%m (git:%{GitInfo()})║"
+    endfunction
+    let g:taboo_tab_format="║%N %P%m (git:%{GitInfo()})║"
+    let g:taboo_renamed_tab_format="║%N %l%m (git:%{GitInfo()})║"
   "}}}
   Plug 'alvan/vim-closetag' " {{{
-  let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
-  let g:closetag_emptyTags_caseSensitive = 1
-  let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
-  let g:closetag_shortcut = '>'
-  " Add > at current position without closing the current tag, default is ''
-  let g:closetag_close_shortcut = '<leader>>' "}}}
+    let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
+    let g:closetag_emptyTags_caseSensitive = 1
+    let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ }
+    let g:closetag_shortcut = '>'
+    " Add > at current position without closing the current tag, default is ''
+    let g:closetag_close_shortcut = '<leader>>'
+  "}}}
   Plug 'dbakker/vim-projectroot' "{{{
-  function! <SID>AutoProjectRootCD()
-    try
-      if &ft != 'help'
-        ProjectRootCD
-      endif
-    catch
-    endtry
-  endfunction
-  autocmd BufEnter * call <SID>AutoProjectRootCD()
-  "}}}
+    function! <SID>AutoProjectRootCD()
+      try
+        if &ft != 'help'
+          ProjectRootCD
+        endif
+      catch
+      endtry
+    endfunction
+    autocmd BufEnter * call <SID>AutoProjectRootCD()
+    "}}}
   Plug 'valloric/MatchTagAlways' "{{{
-  let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xml' : 1,
-    \ 'html.handlebars' : 1,
-    \ 'javascript' : 1,
-    \ 'javascriptreact' : 1,
-  \}
-  "}}}
+    let g:mta_filetypes = {
+      \ 'html' : 1,
+      \ 'xml' : 1,
+      \ 'html.handlebars' : 1,
+      \ 'javascript' : 1,
+      \ 'javascriptreact' : 1,
+    \}
+    "}}}
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
-  let g:coc_global_extensions=[
-    \'coc-css',
-    \'coc-ember',
-    \'coc-emmet',
-    \'coc-explorer',
-    \'coc-git',
-    \'coc-highlight',
-    \'coc-html',
-    \'coc-json',
-    \'coc-lists',
-    \'coc-markdownlint',
-    \'coc-marketplace',
-    \'coc-powershell',
-    \'coc-prettier',
-    \'coc-python',
-    \'coc-scssmodules',
-    \'coc-sh',
-    \'coc-sql',
-    \'coc-tsserver',
-    \'coc-vimlsp',
-    \'coc-yaml',
-    \'coc-eslint',
-    \]
-  let g:markdown_fenced_languages=[
-    \ 'vim',
-    \ 'help'
-    \]
-  " }}}
+    let g:coc_global_extensions=[
+      \'coc-css',
+      \'coc-ember',
+      \'coc-emmet',
+      \'coc-explorer',
+      \'coc-git',
+      \'coc-highlight',
+      \'coc-html',
+      \'coc-json',
+      \'coc-lists',
+      \'coc-markdownlint',
+      \'coc-marketplace',
+      \'coc-powershell',
+      \'coc-prettier',
+      \'coc-python',
+      \'coc-scssmodules',
+      \'coc-sh',
+      \'coc-sql',
+      \'coc-tsserver',
+      \'coc-vimlsp',
+      \'coc-yaml',
+      \'coc-eslint',
+      \]
+    let g:markdown_fenced_languages=[
+      \ 'vim',
+      \ 'help'
+      \]
+    " }}}
   Plug 'vimwiki/vimwiki' "{{{
-  let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
+    let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
-  " let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
+  "   let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
   call plug#end()
 
