@@ -1,6 +1,6 @@
-!XTerm.termName: xterm-256color
+XTerm.termName: xterm-256color
 !! utf8 support
-!XTerm*utf8: 1
+XTerm*utf8: 1
 !XTerm.vt100.locale: true
 !XTerm.vt100.loginShell: true
 !XTerm.vt100.metaSendsEscape: true
@@ -22,7 +22,7 @@
 !xterm*ScrollBar:    true
 
 ! All typography
-!*.font: 7x14
+*.font: xft:Cozette:style=Medium:size:10:antialias=false
 
 !! X Resources used by URXvt
 ! Appearance
