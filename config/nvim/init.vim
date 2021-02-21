@@ -76,6 +76,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
+  Plug 'vim-scripts/camelcasemotion'
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
   " }}}
