@@ -39,7 +39,7 @@ set splitright
 set eadirection=both
 set equalalways
 set foldmethod=marker
-set relativenumber
+" set relativenumber
 " MacOS conditional settings
 " sets the default shell to homebrew's bash if installed
 if has('macunix')
