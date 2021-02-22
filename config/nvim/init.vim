@@ -67,7 +67,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'djoshea/vim-autoread'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'hail2u/vim-css3-syntax'
-  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  Plug 'jcherven/jummidark.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/vim-plug'
   Plug 'mattn/calendar-vim'
