@@ -70,7 +70,7 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'chrisbra/colorizer'
-  Plug 'christoomey/vim-tmux-navigator'
+  " Plug 'christoomey/vim-tmux-navigator'
   Plug 'djoshea/vim-autoread'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'hail2u/vim-css3-syntax'
