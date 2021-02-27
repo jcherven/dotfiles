@@ -1,11 +1,20 @@
-XTerm.termName: screen-256color
+*termName: screen-256color
 !! utf8 support
-XTerm*utf8: 1
+*utf8: 1
 !XTerm.vt100.locale: true
-XTerm*loginShell: true
-XTerm*metaSendsEscape: true
-XTerm*backarrowKey : false
-XTerm*ttyModes: erase ^?
+*loginShell: true
+*metaSendsEscape: true
+*backarrowKey : false
+*ttyModes: erase ^?
+
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+
+*faceName: Cozette:size=10:antialias=false
+
 
 !XTerm.vt100.saveLines: 10000
 
@@ -18,11 +27,18 @@ XTerm*ttyModes: erase ^?
 ! *.colorBDMode: true
 ! *.colorBD: blue
 
-!xterm*rightScrollBar:   true
-!xterm*ScrollBar:    true
+XTerm*rightScrollBar:   false
+XTerm*ScrollBar:    true
+XTerm*scrollbar.width: 8
 
 ! All typography
 ! *.font: xft:Cozette:style=Medium:size:10:antialias=false
+
+! Colors
+XTerm*foreground: snow
+! XTerm*background: rgb:0/0/143
+XTerm*background: #00008f
+XTerm*cursorColor: green
 
 !! X Resources used by URXvt
 ! Appearance
