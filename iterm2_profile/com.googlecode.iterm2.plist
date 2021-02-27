@@ -1213,7 +1213,7 @@
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
-			<true/>
+			<false/>
 			<key>ASCII Ligatures</key>
 			<true/>
 			<key>AWDS Pane Directory</key>
@@ -1443,7 +1443,7 @@
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
@@ -5600,7 +5600,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D8907FCB-4A3C-4E80-8984-607ABE0067A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>189</integer>
+	<integer>191</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>619388438.23622406</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
