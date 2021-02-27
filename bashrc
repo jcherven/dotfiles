@@ -23,8 +23,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # linux specific exports
-# if [[ "$OSTYPE" == "linux-gnu" ]]; then
-# fi
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  export TERM="xterm-256color"
+fi
 
 # access to the dotfiles bash_scripts directory
 export PATH="$HOME/dotfiles/bash_scripts:$PATH"
@@ -132,6 +133,18 @@ man() {
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
 if [ -f "$GITCOMPLETION" ]; then
   source "$GITCOMPLETION"
+fi
+
+if [ -f $HOME/.bash_aliases ]; then
+  source "$HOME/.bash_aliases"
+fi
+
+if [ -f $HOME/dotfiles/bash_aliases ] && [ ! -f $HOME/.bash_aliases ]; then
+  source "$HOME/dotfiles/bash_aliases"
+fi
+
+if [ -f $HOME/dotfiles/inputrc ] && [ ! -f $HOME/.inputrc ]; then
+  ln -s "$HOME/dotfiles/inputrc" "$HOME/.inputrc"
 fi
 
 # Required for NVM

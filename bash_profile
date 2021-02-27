@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 if [ -f $HOME/dotfiles/bashrc ] && [ ! -f $HOME/.bashrc ]; then
-  source "$HOME/dotfiles/bashrc"
+  ln -s "$HOME/dotfiles/bashrc" "$HOME/.bashrc"
 fi
 
 if [ -f $HOME/.bash_aliases ]; then
