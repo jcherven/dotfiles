@@ -1,11 +1,20 @@
-!XTerm.termName: xterm-256color
+*termName: screen-256color
 !! utf8 support
-!XTerm*utf8: 1
+*utf8: 1
 !XTerm.vt100.locale: true
-!XTerm.vt100.loginShell: true
-!XTerm.vt100.metaSendsEscape: true
-!XTerm.vt100.backarrowKey : false
-!XTerm.ttyModes: erase ^?
+*loginShell: true
+*metaSendsEscape: true
+*backarrowKey : false
+*ttyModes: erase ^?
+
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+
+*faceName: Cozette:size=10:antialias=false
+
 
 !XTerm.vt100.saveLines: 10000
 
@@ -15,53 +24,68 @@
 !XTerm.vt100.background: black
 
 ! Disable bold font faces, use color instead
-!*.colorBDMode: true
-!*.colorBD: blue
+! *.colorBDMode: true
+! *.colorBD: blue
 
-!xterm*rightScrollBar:   true
-!xterm*ScrollBar:    true
+XTerm*rightScrollBar:   false
+XTerm*ScrollBar:    true
+XTerm*scrollbar.width: 8
 
 ! All typography
-*.font: 7x14
+! *.font: xft:Cozette:style=Medium:size:10:antialias=false
+
+! Colors
+XTerm*foreground: snow
+! XTerm*background: rgb:0/0/143
+XTerm*background: #00008f
+XTerm*cursorColor: green
 
 !! X Resources used by URXvt
 ! Appearance
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.borderLess: false
-URxvt.internalBorder: 9
+URxvt.internalBorder: 3
 !URxvt.fading: 25
 !URxvt.fadeColor: #262626
 ! Typography
-URxvt.letterSpace: 0
-URxvt.intensityStyles: true
+! URxvt.font: xft:Cozette:style=Medium:size:10:antialias=false
+! URxvt.letterSpace: 0
+! URxvt.linespace: 0
+! URxvt.intensityStyles: true
+
+! Urxvt.internalBorder: 3
+
+! URxvt perl extensions located in ~/.urxvt/ext
+! URxvt.perl-ext-common: ibeamcursor
 
 ! Jummidark color scheme
+! Urxvt.depth: 24
 ! special
-*.foreground:   rgb:e1/e1/e1
-*.background:   rgb:26/26/26
-*.cursorColor:  rgb:af/87/00
-! black
-*.color0:       rgb:1c/1c/1c
-*.color8:       rgb:4e/4e/4e
-! red
-*.color1:       rgb:d7/00/5f
-*.color9:       rgb:d7/5f/87
-! green
-*.color2:       rgb:00/d7/d7
-*.color10:      rgb:00/d7/d7
-! yellow
-*.color3:       rgb:00/ff/af
-*.color11:      rgb:00/ff/af
-! blue
-*.color4:       rgb:af/5f/ff
-*.color12:      rgb:af/af/ff
-! magenta
-*.color5:       rgb:af/af/ff
-*.color13:      rgb:af/af/ff
-! cyan
-*.color6:       rgb:00/d7/d7
-*.color14:      rgb:00/d7/d7
-! white
-*.color7:       rgb:8a/8a/8a
-*.color15:      rgb:e4/e4/e4
+! *.foreground:   rgb:e1/e1/e1
+! *.background:   rgb:26/26/26
+! *.cursorColor:  rgb:af/87/00
+! ! black
+! *.color0:       rgb:1c/1c/1c
+! *.color8:       rgb:4e/4e/4e
+! ! red
+! *.color1:       rgb:d7/00/5f
+! *.color9:       rgb:d7/5f/87
+! ! green
+! *.color2:       rgb:00/d7/d7
+! *.color10:      rgb:00/d7/d7
+! ! yellow
+! *.color3:       rgb:00/ff/af
+! *.color11:      rgb:00/ff/af
+! ! blue
+! *.color4:       rgb:af/5f/ff
+! *.color12:      rgb:af/af/ff
+! ! magenta
+! *.color5:       rgb:af/af/ff
+! *.color13:      rgb:af/af/ff
+! ! cyan
+! *.color6:       rgb:00/d7/d7
+! *.color14:      rgb:00/d7/d7
+! ! white
+! *.color7:       rgb:8a/8a/8a
+! *.color15:      rgb:e4/e4/e4

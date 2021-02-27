@@ -57,13 +57,13 @@ if [ -f  "$GITPROMPT" ]; then
   # BRIGHTRED="\[\033[1;31m\]"
   # BRIGHTGREEN="\[\033[1;32m\]"
   # BRIGHTYELLOW="\[\033[1;33m\]"
-  # BRIGHTBLUE="\[\033[1;34m\]"
+  BRIGHTBLUE="\[\033[1;34m\]"
   # BRIGHTMAGENTA="\[\033[1;35m\]"
   # BRIGHTCYAN="\[\033[1;36m\]"
   # BRIGHTWHITE="\[\033[1;37m\]"
 
   RESETCOLOR="\[\033[0m\]"
-  export PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
+  export PS1="$BRIGHTBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
 fi
 # }}}
 
