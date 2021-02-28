@@ -13,7 +13,7 @@ Xft.hinting: true
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 
-*faceName: Cozette:size=10:antialias=false
+! *faceName: Cozette:size=10:antialias=false
 
 
 !XTerm.vt100.saveLines: 10000
@@ -37,7 +37,7 @@ XTerm*scrollbar.width: 8
 ! Colors
 XTerm*foreground: snow
 ! XTerm*background: rgb:0/0/143
-XTerm*background: #00008f
+XTerm*background: #00003f
 XTerm*cursorColor: green
 
 !! X Resources used by URXvt
