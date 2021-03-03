@@ -1,3 +1,4 @@
+" nvim basic settings {{{
 set nocompatible
 set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
@@ -39,8 +40,10 @@ set splitright
 set eadirection=both
 set equalalways
 set foldmethod=marker
-" set relativenumber
-" MacOS conditional settings
+set relativenumber
+" }}}
+
+" System conditional settings {{{
 " sets the default shell to homebrew's bash if installed
 if has('macunix')
   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
@@ -48,8 +51,10 @@ endif
 
 " Filetype specific settings
 autocmd FileType help setlocal colorcolumn=80
+" }}}
 
-" Keybindings
+" Keybindings {{{
+" additional keybindings are defined in the CoC settings
 nnoremap <space> :
 map ; <Leader>
 let mapleader = ";"
@@ -58,8 +63,9 @@ nnoremap <C-K> <C-w><C-K>
 nnoremap <C-L> <C-w><C-L>
 nnoremap <C-H> <C-w><C-H>
 set mouse=a
+" }}}
 
-" vim-plug
+" vim-plug {{{
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'chrisbra/colorizer'
@@ -91,8 +97,8 @@ call plug#begin('~/.vim/plugged')
       return ''
     endif
     endfunction
-    let g:taboo_tab_format="║%N %P%m (git:%{GitInfo()})║"
-    let g:taboo_renamed_tab_format="║%N %l%m (git:%{GitInfo()})║"
+    let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()})|"
+    let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()})|"
   "}}}
   Plug 'alvan/vim-closetag' " {{{
     let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
@@ -161,6 +167,7 @@ call plug#begin('~/.vim/plugged')
   "   let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
   call plug#end()
+" }}}
 
 " CoC Configuration {{{
 " Vim settings required by CoC
@@ -169,10 +176,13 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " Autocommands
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Keybindings
 " binding tab and S-tab can interfere with the whitespace input :(
 " inoremap <silent><expr> <TAB>
@@ -184,16 +194,17 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "   let col = col('.') - 1
 "   return !col || getline('.')[col - 1]  =~# '\s'
 " endfunction
+
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
 inoremap <silent><expr> <C-n> coc#refresh()
 nmap <Leader>/ :CocCommand explorer<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>f <Plug>(coc-format-selected)
-
 " }}}
 
 " Statusline (Builtin) Configuration {{{
