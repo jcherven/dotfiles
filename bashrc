@@ -1,26 +1,6 @@
 # ~/dotfiles/bashrc
 
 # Environment variable exports
-# Use the Homebrew version of bash (latest) if available
-if [[ "$OSTYPE" == "darwin"* ]] && [ -e "/usr/local/bin/bash" ]; then
-  export SHELL="/usr/local/bin/bash"
-fi
-
-# MacOS-specific PATH exports
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # Include Homebrew installed packages
-  export PATH="/usr/local/bin:$PATH"
-  export PATH="/usr/local/sbin:$PATH"
-  # Tab completion via Homebrew package
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-  # openjdk installed via brew
-  export PATH="/usr/local/opt/java/bin:$PATH"
-  export JAVA_HOME=`/usr/libexec/java_home`
-  # postgresql@10 installed via brew
-  export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-  # GNU coreutils
-  export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
-fi
 
 # linux specific exports
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -33,6 +13,9 @@ export PATH="$HOME/dotfiles/bash_scripts:$PATH"
 # Improved less functionality
 # https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
+
+# pip package path
+export PATH="$PATH:$HOME/.local/bin"
 
 # Editor
 if [ -x "$(command -v nvim)" ]; then
