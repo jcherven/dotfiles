@@ -1,3 +1,4 @@
+" nvim basic settings {{{
 set nocompatible
 set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
@@ -40,23 +41,18 @@ set eadirection=both
 set equalalways
 set foldmethod=marker
 set relativenumber
-" MacOS conditional settings
-" sets the default shell to homebrew's bash if installed
-if has('macunix')
-  set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
-endif
-" Windows conditional settings
-" if has('win32') || has('win64')
-" endif
-" Linux/other unix conditional settings
-" if has('unix')
-" endif
+" }}}
 
+" Debian specific settings {{{
+" may need to specify a login shell profile like this here
+" set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
+" }}}
 
 " Filetype specific settings
 autocmd FileType help setlocal colorcolumn=80
 
-" Keybindings
+" Keybindings {{{
+" some other keybinds are defined below in the CoC settings
 nnoremap <space> :
 map ; <Leader>
 let mapleader = ";"
@@ -65,8 +61,9 @@ nnoremap <C-K> <C-w><C-K>
 nnoremap <C-L> <C-w><C-L>
 nnoremap <C-H> <C-w><C-H>
 set mouse=a
+" }}}
 
-" vim-plug
+" vim-plug {{{
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'chrisbra/colorizer'
@@ -166,6 +163,7 @@ call plug#begin('~/.vim/plugged')
   " let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
 call plug#end()
+" }}}
 
 " CoC Configuration {{{
 " Vim settings required by CoC
