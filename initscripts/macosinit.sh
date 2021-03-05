@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 function set_macos_settings {
   # MacOS 10.13 specific config settings {{{
@@ -21,11 +21,11 @@ function set_macos_settings {
   # defaults write com.apple.CrashReporter DialogType -string "none"
 
   # Disable typing assistance features
-  defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-  defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-  defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-  defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-  defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+  # defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+  # defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+  # defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+  # defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+  # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
   # Trackpad: enable tap to click for this user and for the login screen
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -34,23 +34,23 @@ function set_macos_settings {
 
   # Tune the keyboard repeat rate
   # Normal default is 6; Normal minimum is 2 (30ms)
-  defaults write NSGlobalDomain KeyRepeat -int 2
+  # defaults write NSGlobalDomain KeyRepeat -int 2
   # Normal default is 68; Normal minimum is 15 (225ms)
-  defaults write NSGlobalDomain InitialKeyRepeat -int 15
+  # defaults write NSGlobalDomain InitialKeyRepeat -int 15
   # Disable the Appple Press And Hold for alternate chars on long presses (interferes with some apps)
-  defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+  # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
   # Set language and text formats
-  defaults write NSGlobalDomain AppleLanguages -array "en" "ja" "ko"
+  # defaults write NSGlobalDomain AppleLanguages -array "en" "ja" "ko"
 
   # Show language menu in the top right corner of the boot screen
-  sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+  # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
   # Highlight Color to "Purple" (finder and UI windows)
   # The formula for custom colors is the color's RGB numeric value / 255 (six figures behind decimal); 255 is 1.000000
   # defaults write NSGlobalDomain AppleHighlightColor -string "0.968627 0.831373 1.000000"
   # Highlight Color to the custom Miku green
-  defaults write NSGlobalDomain AppleHighlightColor -string "0.000000 1.000000 0.600000"
+  # defaults write NSGlobalDomain AppleHighlightColor -string "0.000000 1.000000 0.600000"
 
   # Finder: show hidden files by default
   defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -71,7 +71,7 @@ function set_macos_settings {
   defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
   # Show item info to the right of the icons on the desktop
-  /usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
+  # /usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
 
   # Use list view in all Finder windows by default
   # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
@@ -93,7 +93,7 @@ function set_macos_settings {
 
   # Terminal: Enable Secure Keyboard Entry in Terminal.app
   # See: https://security.stackexchange.com/a/47786/8918
-  defaults write com.apple.terminal SecureKeyboardEntry -bool true
+  # defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 #}}}
 }
