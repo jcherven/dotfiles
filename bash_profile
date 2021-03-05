@@ -1,40 +1,38 @@
 #! /usr/bin/env bash
+# .bash_profile is for non-interactive shells. Only configs for shells launched by other programs should go in here.
+# .bashrc will be invoked here.
 
-# if [ -f $HOME/dotfiles/bashrc ] && [ ! -f $HOME/.bashrc ]; then
-#   source "$HOME/dotfiles/bashrc"
-# fi
-source "$HOME/.bashrc"
+# adds necessary environment variables for nix
+# . /Users/choro/.nix-profile/etc/profile.d/nix.sh
 
-if [ -f $HOME/.bash_aliases ]; then
-  source "$HOME/.bash_aliases"
+# MacPorts Installer addition on 2021-03-05_at_11:59:15: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# Add the dotfiles bash_scripts directory to $PATH
+export PATH="$PATH:$HOME/dotfiles/bash_scripts"
+
+# Editor preference
+if [ -x "$(command -v nvim)" ]; then
+	export EDITOR=nvim
+elif [ -x "$(command -v vim)" ]; then
+	export EDITOR=vim
+elif [ -x "$(command -v vi)" ]; then
+	export EDITOR=vi
+# otherwise use whatever is set by the system
 fi
 
-# if [ -f $HOME/dotfiles/bash_aliases ] && [ ! -f $HOME/.bash_aliases ]; then
-#   source "$HOME/dotfiles/bash_aliases"
-# fi
-
-if [ -f $HOME/dotfiles/tmux.conf ] && [ ! -f $HOME/.tmux.conf ]; then
-  ln -s "$HOME/dotfiles/tmux.conf" "$HOME/.tmux.conf"
-fi
-
-if [ -f $HOME/dotfiles/inputrc ] && [ ! -f $HOME/.inputrc ]; then
-  ln -s "$HOME/dotfiles/inputrc" "$HOME/.inputrc"
-fi
-
-# MacOS settings
+# Use the homebrew installed jdk. needs to be updated for the macports version
 # if [[ "$OSTYPE" == "darwin"* ]]; then
-#   test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# 	export PATH="/usr/local/opt/java/bin:$PATH"
+# 	export JAVA_HOME=`/usr/libexec/java_home`
 # fi
 
-# GNU/Linux settings
-# if [[ "$OSTYPE" == "linux-gnu" ]]; then
-#   if [ -x "$(command -v Xorg)" ] && [ ! -f $HOME/.Xresources ]; then
-#     ln -s "$HOME/dotfiles/Xresources" "$HOME/.Xresources"
-#   fi
-# fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# if [ ! -f $HOME/.vimrc ]; then
-#   ln -s "$HOME/dotfiles/config/nvim/init.vim" "$HOME/.vimrc"
-# fi
+if [ -f "$HOME/dotfiles/bashrc" ]; then
+	source "$HOME/dotfiles/bashrc"
+fi
 
-# eval "$(pyenv init -)"
+# ex: set foldmethod=marker:
