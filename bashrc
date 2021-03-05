@@ -1,42 +1,5 @@
-# ~/dotfiles/bashrc
-
-# Environment variable exports
-# Use the Homebrew version of bash (latest) if available
-if [[ "$OSTYPE" == "darwin"* ]] && [ -e "/usr/local/bin/bash" ]; then
-  export SHELL="/usr/local/bin/bash"
-fi
-
-# MacOS-specific PATH exports
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # Include Homebrew installed packages
-  export PATH="/usr/local/bin:$PATH"
-  export PATH="/usr/local/sbin:$PATH"
-  # Tab completion via Homebrew package
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-  # openjdk installed via brew
-  export PATH="/usr/local/opt/java/bin:$PATH"
-  export JAVA_HOME=`/usr/libexec/java_home`
-  # postgresql@10 installed via brew
-  export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-  # GNU coreutils
-  export PATH="$(brew --prefix coreutils)/libexev/gnubin:$PATH"
-fi
-
-# access to the dotfiles bash_scripts directory
-export PATH="$HOME/dotfiles/bash_scripts:$PATH"
-
-# Improved less functionality
-# https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
-
-# Editor
-if [ -x "$(command -v nvim)" ]; then
-  export EDITOR=nvim
-elif [ -x "$(command -v vim)" ]; then
-  export EDITOR=vim
-elif [ -x "$(command -v vi)" ]; then
-  export EDITOR=vi
-fi
+#! /usr/bin/env bash
+# .bashrc is for interactive shells. Only configs for commands you will type should go in here.
 
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
@@ -67,50 +30,10 @@ if [ -f  "$GITPROMPT" ]; then
 fi
 # }}}
 
-# Aliases
-# MacOS Only: Use the GNU utils installed in the homebrew bootstrap script instead of the BSD stock utils {{{
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -x "$(command -v gfind)" ]; then
-    alias find='gfind'
-  fi
-  if [ -x "$(command -v ggrep)" ]; then
-    alias grep='ggrep'
-  fi
-  if [ -x "$(command -v gtar)" ]; then
-    alias tar='gtar'
-  fi
-  # if [ -x "$(command -v gwhich)" ]; then
-  #   alias which='gwhich'
-  # fi
-  if [ -x "$(command -v gdircolors)" ]; then
-    alias dircolors='gdircolors'
-  fi
-fi
-# }}}
-
-# Improved ls functionality {{{
-# https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
-eval "$(dircolors)"
-# For linux
-if [[ "$OSTYPE" == "linux-gnu"  ]]; then
-  alias ls='ls -F -h --color=always --group-directories-first -v'
-# For MacOS
-elif [[ "$OSTYPE" == "darwin"*  ]]; then
-  if [ -x "$(command -v gls)" ]; then
-    # Executes if GNU coreutils is installed
-    alias ls='gls -F -h --color=always --group-directories-first -v'
-  else
-    # Executes with stock BSD core utils installed
-    alias ls='ls -G -F -h'
-  fi
-fi
-# }}}
-
-# Make tmux assume that the outside terminal supports 256-color
-# alias tmux="tmux -2"
+# Needed to make FreeBSD ls and less look nice; closest equivalent to eval "($dircolors)" in gnu
+export CLICOLOR=YES
 
 # Highlighted man page output in linux and macos {{{
-eval "$(dircolors)"
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -124,20 +47,39 @@ man() {
 }
 # }}}
 
+# Make less and manpages work the way I like it to. works with gnu and FreeBSD less.
+# https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
+
+# for bash_completion installed by port
+if [ -f "/opt/local/etc/profile.d/bash_completion.sh" ]; then
+  source "/opt/local/etc/profile.d/bash_completion.sh"
+fi
+
+# bash_completion for nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 # Git completion for branch names, subcommands, and more
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
 if [ -f "$GITCOMPLETION" ]; then
   source "$GITCOMPLETION"
 fi
 
-# Required for NVM
-# https://github.com/nvm-sh/nvm#manual-install
-if [ ! -x "$(command -v nvm)" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-fi
+# ALIASES
+# makes FreeBSD ls work the way i want it to
+# https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
+# attempting to emulate this command with the best ls
+# in the world, gnu ls:
+# ls -F -h --color=always --group-directories-first -v
+alias ls='ls -G -F -h'
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ts to print the current time
+alias ts="date +%H:%M"
 
+# ds to print the current date
+alias ds="date +%Y-%m-%d"
+
+# Make tmux assume that the outside terminal supports 256-color
+# alias tmux="tmux -2"
 
 # ex: set foldmethod=marker:

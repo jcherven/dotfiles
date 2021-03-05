@@ -151,6 +151,13 @@ font:
     family: Dina
     style: medium
   
+  # normal:
+  #   family: Andale Mono
+  #   style: Regular
+  # bold:
+  #   family: Andale Mono
+  #   style: Regular
+
   # Cozette (6x13, good at 14pt, has powerline glyphs)
   # normal:
   #   family: Cozette
@@ -190,7 +197,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: false
+  # use_thin_strokes: false
 
   # If `true`, bold text is drawn using the bright color variants.
   draw_bold_text_with_bright_colors: true
@@ -199,87 +206,40 @@ font:
 # Colors {{{
   
 # SGI Color Theme {{{
-# colors:
-#   primary:
-#     foreground: '#ffffff'
-#     background: '#00003f'
-#     dim_foreground: '#cfcfcf'
-#     bright_foreground: '#ffffff'
-#
-#   cursor:
-#     text: '#1c1c1c'
-#     cursor: '#00ff00'
-#
-#   vi_mode_cursor:
-#     text: '#1c1c1c'
-#     cursor: '#00ff00'
-#
-#   normal:
-#     black:   '#000000'
-#     red:     '#ff0000'
-#     green:   '#00ff00'
-#     yellow:  '#ffff00'
-#     blue:    '#0000ff'
-#     magenta: '#ff00ff'
-#     cyan:    '#00ffff'
-#     white:   '#ffffff'
-#
-#   bright:
-#     black:   '#8f8f8f'
-#     red:     '#8f0000'
-#     green:   '#008f00'
-#     yellow:  '#8f8f00'
-#     blue:    '#00008f'
-#     magenta: '#8f008f'
-#     cyan:    '#008f8f'
-#     white:   '#cfcfcf'
-#
-#   dim:
-#     black:   '#3f3f3f'
-#     red:     '#3f0000'
-#     green:   '#003f00'
-#     yellow:  '#3f3f00'
-#     blue:    '#00003f'
-#     magenta: '#3f003f'
-#     cyan:    '#003f3f'
-#     white:   '#afafaf'
-# }}}
-
-# Jummidark Color Theme {{{
 colors:
   primary:
-    foreground: '#e4e4e4'
-    background: '#262626'
-    dim_foreground: '#8a8a8a'
-    bright_foreground: '#e4e4e4'
+    foreground: '#ffffff'
+    background: '#00003f'
+    dim_foreground: '#cfcfcf'
+    bright_foreground: '#ffffff'
 
   cursor:
     text: '#1c1c1c'
-    cursor: '#af8700'
+    cursor: '#00ff00'
 
   vi_mode_cursor:
     text: '#1c1c1c'
-    cursor: '#af8700'
+    cursor: '#00ff00'
 
   normal:
-    black:   '#1c1c1c'
-    red:     '#d7005f'
-    green:   '#00d7d7'
-    yellow:  '#00ffaf'
-    blue:    '#af5fff'
-    magenta: '#afafff'
-    cyan:    '#00d7d7'
-    white:   '#e4e4e4'
+    black:   '#000000'
+    red:     '#ff0000'
+    green:   '#00ff00'
+    yellow:  '#ffff00'
+    blue:    '#0000ff'
+    magenta: '#ff00ff'
+    cyan:    '#00ffff'
+    white:   '#ffffff'
 
   bright:
-    black:   '#8a8a8a'
-    red:     '#d75f87'
-    green:   '#00d7d7'
-    yellow:  '#00ffaf'
-    blue:    '#afafff'
-    magenta: '#afafff'
-    cyan:    '#00d7d7'
-    white:   '#ffffff'
+    black:   '#8f8f8f'
+    red:     '#8f0000'
+    green:   '#008f00'
+    yellow:  '#8f8f00'
+    blue:    '#00008f'
+    magenta: '#8f008f'
+    cyan:    '#008f8f'
+    white:   '#cfcfcf'
 
   dim:
     black:   '#3f3f3f'
@@ -289,7 +249,54 @@ colors:
     blue:    '#00003f'
     magenta: '#3f003f'
     cyan:    '#003f3f'
-    white:   '#b2b2b2'
+    white:   '#afafaf'
+# }}}
+
+# Jummidark Color Theme {{{
+# colors:
+#   primary:
+#     foreground: '#e4e4e4'
+#     background: '#262626'
+#     dim_foreground: '#8a8a8a'
+#     bright_foreground: '#e4e4e4'
+#
+#   cursor:
+#     text: '#1c1c1c'
+#     cursor: '#af8700'
+#
+#   vi_mode_cursor:
+#     text: '#1c1c1c'
+#     cursor: '#af8700'
+#
+#   normal:
+#     black:   '#1c1c1c'
+#     red:     '#d7005f'
+#     green:   '#00d7d7'
+#     yellow:  '#00ffaf'
+#     blue:    '#af5fff'
+#     magenta: '#afafff'
+#     cyan:    '#00d7d7'
+#     white:   '#e4e4e4'
+#
+#   bright:
+#     black:   '#8a8a8a'
+#     red:     '#d75f87'
+#     green:   '#00d7d7'
+#     yellow:  '#00ffaf'
+#     blue:    '#afafff'
+#     magenta: '#afafff'
+#     cyan:    '#00d7d7'
+#     white:   '#ffffff'
+#
+#   dim:
+#     black:   '#3f3f3f'
+#     red:     '#3f0000'
+#     green:   '#003f00'
+#     yellow:  '#3f3f00'
+#     blue:    '#00003f'
+#     magenta: '#3f003f'
+#     cyan:    '#003f3f'
+#     white:   '#b2b2b2'
 # }}}
 
   # Indexed Colors
@@ -356,7 +363,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Beam
+    shape: Block
 
     # Cursor blinking state
     #
@@ -373,7 +380,7 @@ cursor:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  vi_mode_style: Block
+  vi_mode_style: Beam
 
   # Cursor blinking interval in milliseconds.
   blink_interval: 480
@@ -397,12 +404,12 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 
-shell:
-  program: /usr/local/bin/bash
-  args:
-    - -l
-    - -c
-    - "tmux -2 -q has-session && exec tmux attach -d || exec tmux new"
+# shell:
+#   program: /usr/local/bin/bash
+#   args:
+#     - -l
+#     - -c
+#     - "tmux -2 -q has-session && exec tmux attach -d || exec tmux new"
 
 # Startup directory
 #

@@ -45,9 +45,9 @@ set relativenumber
 
 " System conditional settings {{{
 " sets the default shell to homebrew's bash if installed
-if has('macunix')
-  set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
-endif
+" if has('macunix')
+"   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
+" endif
 
 " Filetype specific settings
 autocmd FileType help setlocal colorcolumn=80
@@ -228,6 +228,6 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
-set termguicolors
+" set termguicolors
 " silent! colorscheme jummilight
 silent! colorscheme jummidark
