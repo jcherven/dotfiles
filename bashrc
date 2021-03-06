@@ -1,30 +1,6 @@
-# ~/dotfiles/bashrc
-
-# Environment variable exports
-
-# linux specific exports
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  export TERM="xterm-256color"
-fi
-
-# access to the dotfiles bash_scripts directory
-export PATH="$HOME/dotfiles/bash_scripts:$PATH"
-
-# Improved less functionality
-# https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
-
-# pip package path
-export PATH="$PATH:$HOME/.local/bin"
-
-# Editor
-if [ -x "$(command -v nvim)" ]; then
-  export EDITOR=nvim
-elif [ -x "$(command -v vim)" ]; then
-  export EDITOR=vim
-elif [ -x "$(command -v vi)" ]; then
-  export EDITOR=vi
-fi
+#! /usr/bin/env bash
+# .bashrc is for interactive shells. Only configs for commands you will type yourself should go in here.
+# The configuration here has been written as if this file will be sourced by .bash_profile.
 
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
@@ -45,60 +21,22 @@ if [ -f  "$GITPROMPT" ]; then
   # BRIGHTRED="\[\033[1;31m\]"
   # BRIGHTGREEN="\[\033[1;32m\]"
   # BRIGHTYELLOW="\[\033[1;33m\]"
-  BRIGHTBLUE="\[\033[1;34m\]"
+  # BRIGHTBLUE="\[\033[1;34m\]"
   # BRIGHTMAGENTA="\[\033[1;35m\]"
   # BRIGHTCYAN="\[\033[1;36m\]"
   # BRIGHTWHITE="\[\033[1;37m\]"
 
   RESETCOLOR="\[\033[0m\]"
-  export PS1="$BRIGHTBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
+  export PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
 fi
 # }}}
 
-# Aliases
-# MacOS Only: Use the GNU utils installed in the homebrew bootstrap script instead of the BSD stock utils {{{
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -x "$(command -v gfind)" ]; then
-    alias find='gfind'
-  fi
-  if [ -x "$(command -v ggrep)" ]; then
-    alias grep='ggrep'
-  fi
-  if [ -x "$(command -v gtar)" ]; then
-    alias tar='gtar'
-  fi
-  # if [ -x "$(command -v gwhich)" ]; then
-  #   alias which='gwhich'
-  # fi
-  if [ -x "$(command -v gdircolors)" ]; then
-    alias dircolors='gdircolors'
-  fi
-fi
-# }}}
-
-# Improved ls functionality {{{
-# https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
+# Needed to make FreeBSD ls and less look nice
+# closest equivalent to eval "($dircolors)" in GNU
+# export CLICOLOR=YES
 eval "$(dircolors)"
-# For linux
-if [[ "$OSTYPE" == "linux-gnu"  ]]; then
-  alias ls='ls -F -h --color=always --group-directories-first -v'
-# For MacOS
-elif [[ "$OSTYPE" == "darwin"*  ]]; then
-  if [ -x "$(command -v gls)" ]; then
-    # Executes if GNU coreutils is installed
-    alias ls='gls -F -h --color=always --group-directories-first -v'
-  else
-    # Executes with stock BSD core utils installed
-    alias ls='ls -G -F -h'
-  fi
-fi
-# }}}
-
-# Make tmux assume that the outside terminal supports 256-color
-# alias tmux="tmux -2"
 
 # Highlighted man page output in linux and macos {{{
-eval "$(dircolors)"
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -112,32 +50,36 @@ man() {
 }
 # }}}
 
+# Custom less. All options work and are GNU and FreeBSD less compatible.
+# https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
+
+# for bash_completion installed by macports
+# [[ -f "/opt/local/etc/profile.d/bash_completion.sh" ]] && source "/opt/local/etc/profile.d/bash_completion.sh"
+
+# bash_completion for nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 # Git completion for branch names, subcommands, and more
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
-if [ -f "$GITCOMPLETION" ]; then
-  source "$GITCOMPLETION"
-fi
+[[ -f "$GITCOMPLETION" ]] && source "$GITCOMPLETION"
 
-if [ -f $HOME/.bash_aliases ]; then
-  source "$HOME/.bash_aliases"
-fi
+# ALIASES {{{
+# makes FreeBSD ls work the way i want it to
+# https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
+alias ls="ls -F -h --color=always --group-directories-first -v"
 
-if [ -f $HOME/dotfiles/bash_aliases ] && [ ! -f $HOME/.bash_aliases ]; then
-  source "$HOME/dotfiles/bash_aliases"
-fi
+# ts to print the current time
+alias ts="date +%H:%M"
 
-if [ -f $HOME/dotfiles/inputrc ] && [ ! -f $HOME/.inputrc ]; then
-  ln -s "$HOME/dotfiles/inputrc" "$HOME/.inputrc"
-fi
+# ds to print the current date
+alias ds="date +%Y-%m-%d"
 
-# Required for NVM
-# https://github.com/nvm-sh/nvm#manual-install
-if [ ! -x "$(command -v nvm)" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-fi
+# source the local aliases file
+source "$HOME/.bash_aliases"
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# Make tmux assume that the outside terminal supports 256-color
+# alias tmux="tmux -2"
+# }}}
 
 # ex: set foldmethod=marker:
