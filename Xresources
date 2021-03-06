@@ -13,6 +13,8 @@ Xft.hinting: true
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 
+*.cursorBlink: true
+
 *faceName: Cozette:size=10:antialias=false
 
 
