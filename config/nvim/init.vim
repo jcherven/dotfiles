@@ -72,7 +72,7 @@ call plug#begin('~/.vim/plugged')
   " Plug 'christoomey/vim-tmux-navigator'
   Plug 'djoshea/vim-autoread'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'hail2u/vim-css3-syntax'
+  " Plug 'hail2u/vim-css3-syntax'
   Plug 'jcherven/jummidark.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/vim-plug'
@@ -82,7 +82,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
-  Plug 'vim-scripts/camelcasemotion'
+  " Plug 'vim-scripts/camelcasemotion'
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
   " }}}
@@ -134,6 +134,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
     let g:coc_global_extensions=[
       \'coc-css',
+			\'coc-cssmodules',
       \'coc-ember',
       \'coc-emmet',
       \'coc-explorer',
@@ -143,13 +144,11 @@ call plug#begin('~/.vim/plugged')
       \'coc-json',
       \'coc-lists',
       \'coc-markdownlint',
-      \'coc-marketplace',
-      \'coc-powershell',
       \'coc-prettier',
       \'coc-python',
-      \'coc-scssmodules',
       \'coc-sh',
       \'coc-sql',
+			\'coc-tailwindcss',
       \'coc-tsserver',
       \'coc-vimlsp',
       \'coc-yaml',
