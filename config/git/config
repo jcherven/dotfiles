@@ -11,5 +11,4 @@
 	verbose = true
 [github]
 	user = jcherven
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+
