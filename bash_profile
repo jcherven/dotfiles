@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 # .bash_profile is for non-interactive shells. Only configs for shells launched by other programs should go in here.
-# .bashrc will be invoked here.
+# .bashrc, which is for interactive shells, will be invoked here.
 
 # adds necessary environment variables for nix
 # . /Users/choro/.nix-profile/etc/profile.d/nix.sh
@@ -12,7 +12,13 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Add the dotfiles bash_scripts directory to $PATH
 export PATH="$PATH:$HOME/dotfiles/bash_scripts"
 
-# Editor preference
+# Use the homebrew installed jdk. needs to be updated for the macports version
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+# 	export PATH="/usr/local/opt/java/bin:$PATH"
+# 	export JAVA_HOME=`/usr/libexec/java_home`
+# fi
+
+# Editor preference is for vi-likes
 if [ -x "$(command -v nvim)" ]; then
 	export EDITOR=nvim
 elif [ -x "$(command -v vim)" ]; then
@@ -22,17 +28,9 @@ elif [ -x "$(command -v vi)" ]; then
 # otherwise use whatever is set by the system
 fi
 
-# Use the homebrew installed jdk. needs to be updated for the macports version
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-# 	export PATH="/usr/local/opt/java/bin:$PATH"
-# 	export JAVA_HOME=`/usr/libexec/java_home`
-# fi
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-if [ -f "$HOME/dotfiles/bashrc" ]; then
-	source "$HOME/dotfiles/bashrc"
-fi
+[[ -f "$HOME/dotfiles/bashrc" ]] && source "$HOME/dotfiles/bashrc"
 
 # ex: set foldmethod=marker:

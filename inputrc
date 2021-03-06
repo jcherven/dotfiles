@@ -27,7 +27,7 @@ set colored-stats On
 
 set completion-ignore-case On
 
-# sets every completion which is a symlink to a directory to have a trailing slash
+# shows a trailing slash for symlinked directories
 set mark-symlinked-directories On
 
 # disable the bell on tab completion if there are more than one available completions

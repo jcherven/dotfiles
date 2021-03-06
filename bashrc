@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
-# .bashrc is for interactive shells. Only configs for commands you will type should go in here.
+# .bashrc is for interactive shells. Only configs for commands you will type yourself should go in here.
+# The configuration here has been written as if this file will be sourced by .bash_profile.
 
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
@@ -20,7 +21,7 @@ if [ -f  "$GITPROMPT" ]; then
   # BRIGHTRED="\[\033[1;31m\]"
   # BRIGHTGREEN="\[\033[1;32m\]"
   # BRIGHTYELLOW="\[\033[1;33m\]"
-  BRIGHTBLUE="\[\033[1;34m\]"
+  # BRIGHTBLUE="\[\033[1;34m\]"
   # BRIGHTMAGENTA="\[\033[1;35m\]"
   # BRIGHTCYAN="\[\033[1;36m\]"
   # BRIGHTWHITE="\[\033[1;37m\]"
@@ -30,7 +31,8 @@ if [ -f  "$GITPROMPT" ]; then
 fi
 # }}}
 
-# Needed to make FreeBSD ls and less look nice; closest equivalent to eval "($dircolors)" in gnu
+# Needed to make FreeBSD ls and less look nice
+# closest equivalent to eval "($dircolors)" in GNU
 export CLICOLOR=YES
 
 # Highlighted man page output in linux and macos {{{
@@ -47,29 +49,24 @@ man() {
 }
 # }}}
 
-# Make less and manpages work the way I like it to. works with gnu and FreeBSD less.
+# Custom less. All options work and are GNU and FreeBSD less compatible.
 # https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --no-init --window=-8'
 
-# for bash_completion installed by port
-if [ -f "/opt/local/etc/profile.d/bash_completion.sh" ]; then
-  source "/opt/local/etc/profile.d/bash_completion.sh"
-fi
+# for bash_completion installed by macports
+[[ -f "/opt/local/etc/profile.d/bash_completion.sh" ]] && source "/opt/local/etc/profile.d/bash_completion.sh"
 
 # bash_completion for nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Git completion for branch names, subcommands, and more
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
-if [ -f "$GITCOMPLETION" ]; then
-  source "$GITCOMPLETION"
-fi
+[[ -f "$GITCOMPLETION" ]] && source "$GITCOMPLETION"
 
-# ALIASES
+# ALIASES {{{
 # makes FreeBSD ls work the way i want it to
 # https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
-# attempting to emulate this command with the best ls
-# in the world, gnu ls:
+# GNU ls closest equivalent is:
 # ls -F -h --color=always --group-directories-first -v
 alias ls='ls -G -F -h'
 
@@ -81,5 +78,6 @@ alias ds="date +%Y-%m-%d"
 
 # Make tmux assume that the outside terminal supports 256-color
 # alias tmux="tmux -2"
+# }}}
 
 # ex: set foldmethod=marker:
