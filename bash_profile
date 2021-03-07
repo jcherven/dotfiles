@@ -28,9 +28,12 @@ elif [ -x "$(command -v vi)" ]; then
 # otherwise use whatever is set by the system
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 [[ -f "$HOME/dotfiles/bashrc" ]] && source "$HOME/dotfiles/bashrc"
+
+# for the macports-provided nvm
+source /opt/local/share/nvm/init-nvm.sh
+
+# export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # ex: set foldmethod=marker:
