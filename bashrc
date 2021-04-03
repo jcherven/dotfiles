@@ -9,45 +9,46 @@ if [ -f  "$GITPROMPT" ]; then
   source "$GITPROMPT"
   export GIT_PS1_SHOWDIRTYSTATE=1
   # NORMALBLACK="\[\033[0;30m\]"
-  NORMALRED="\[\033[0;31m\]"
+  # NORMALRED="\[\033[0;31m\]"
   # NORMALGREEN="\[\033[0;32m\]"
   # NORMALYELLOW="\[\033[0;33m\]"
-  NORMALBLUE="\[\033[0;34m\]"
-  NORMALMAGENTA="\[\033[0;35m\]"
+  # NORMALBLUE="\[\033[0;34m\]"
+  # NORMALMAGENTA="\[\033[0;35m\]"
   # NORMALCYAN="\[\033[0;36m\]"
   # NORMALWHITE="\[\033[0;37m\]"
   #
   # BRIGHTBLACK="\[\033[1;30m\]"
   # BRIGHTRED="\[\033[1;31m\]"
-  # BRIGHTGREEN="\[\033[1;32m\]"
+  BRIGHTGREEN="\[\033[1;32m\]"
   # BRIGHTYELLOW="\[\033[1;33m\]"
-  # BRIGHTBLUE="\[\033[1;34m\]"
-  # BRIGHTMAGENTA="\[\033[1;35m\]"
+  BRIGHTBLUE="\[\033[1;34m\]"
+  BRIGHTMAGENTA="\[\033[1;35m\]"
   # BRIGHTCYAN="\[\033[1;36m\]"
   # BRIGHTWHITE="\[\033[1;37m\]"
 
   RESETCOLOR="\[\033[0m\]"
-  export PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
+  # export PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
+  PROMPT_COMMAND='__git_ps1 "$BRIGHTGREEN\u $BRIGHTBLUE\w$BRIGHTMAGENTA" "$RESETCOLOR\\\$ "'
 fi
 # }}}
 
 # Needed to make FreeBSD ls and less look nice
 # closest equivalent to eval "($dircolors)" in GNU
 # export CLICOLOR=YES
-eval "$(dircolors)"
+# eval "$(dircolors)"
 
 # Highlighted man page output in linux and macos {{{
-man() {
-  env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
-    man $@
-}
+# man() {
+#   env \
+#     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+#     LESS_TERMCAP_md=$(printf "\e[1;31m") \
+#     LESS_TERMCAP_me=$(printf "\e[0m") \
+#     LESS_TERMCAP_se=$(printf "\e[0m") \
+#     LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+#     LESS_TERMCAP_ue=$(printf "\e[0m") \
+#     LESS_TERMCAP_us=$(printf "\e[1;32m") \
+#     man $@
+# }
 # }}}
 
 # Custom less. All options work and are GNU and FreeBSD less compatible.
