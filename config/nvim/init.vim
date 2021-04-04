@@ -247,4 +247,5 @@ endif
 
 " set termguicolors
 " silent! colorscheme jummilight
-silent! colorscheme pablo
+" silent! colorscheme jummilight
+colorscheme pablo
