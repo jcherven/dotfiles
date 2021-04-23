@@ -2,6 +2,10 @@
 # .bashrc is for interactive shells. Only configs for commands you will type yourself should go in here.
 # The configuration here has been written as if this file will be sourced by .bash_profile.
 
+# disables the annoying zsh notification in Catalina
+# if you put this in /etc/profile then this can be commented out.
+# export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
 GITPROMPT="$HOME/dotfiles/bash_scripts/git-prompt.sh"
