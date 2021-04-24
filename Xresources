@@ -1,21 +1,21 @@
-*termName: screen-256color
+!*termName: screen-256color
 !! utf8 support
-*utf8: 1
+!*utf8: 1
 !XTerm.vt100.locale: true
-*loginShell: true
-*metaSendsEscape: true
-*backarrowKey : false
-*ttyModes: erase ^?
+!*loginShell: true
+!*metaSendsEscape: true
+!*backarrowKey : false
+!*ttyModes: erase ^?
 
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
+!Xft.antialias: true
+!Xft.rgba: rgb
+!Xft.hinting: true
+!Xft.lcdfilter: lcddefault
+!Xft.hintstyle: hintslight
 
-*.cursorBlink: true
+!*.cursorBlink: true
 
-*faceName: Cozette:size=10:antialias=false
+!*faceName: Cozette:size=10:antialias=false
 
 
 !XTerm.vt100.saveLines: 10000
@@ -29,25 +29,48 @@ Xft.hintstyle: hintslight
 ! *.colorBDMode: true
 ! *.colorBD: blue
 
-XTerm*rightScrollBar:   false
-XTerm*ScrollBar:    true
-XTerm*scrollbar.width: 16
+!XTerm*rightScrollBar:   false
+!XTerm*ScrollBar:    true
+!XTerm*scrollbar.width: 16
 
 ! All typography
 ! *.font: xft:Cozette:style=Medium:size:10:antialias=false
 
 ! Colors
-XTerm*foreground: snow
-! XTerm*background: rgb:0/0/143
-XTerm*background: #00003f
-XTerm*cursorColor: green
+*.foreground:   rgb:ff/ff/ff
+*.background:   rgb:00/00/00
+*.cursorColor:  rgb:00/aa/00
+! black
+*.color0:       rgb:00/00/00
+*.color8:       rgb:55/55/55
+! red
+*.color1:       rgb:aa/00/00
+*.color9:       rgb:ff/55/55
+! green
+*.color2:       rgb:00/aa/00
+*.color10:      rgb:55/ff/55
+! yellow
+*.color3:       rgb:aa/55/00
+*.color11:      rgb:ff/ff/55
+! blue
+*.color4:       rgb:00/00/aa
+*.color12:      rgb:55/55/ff
+! magenta
+*.color5:       rgb:aa/00/aa
+*.color13:      rgb:ff/55/ff
+! cyan
+*.color6:       rgb:00/aa/aa
+*.color14:      rgb:55/ff/ff
+! white
+*.color7:       rgb:aa/aa/aa
+*.color15:      rgb:ff/ff/ff
 
 !! X Resources used by URXvt
 ! Appearance
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.borderLess: false
-URxvt.internalBorder: 3
+!URxvt.scrollBar: false
+!URxvt.scrollBar_right: false
+!URxvt.borderLess: false
+!URxvt.internalBorder: 3
 !URxvt.fading: 25
 !URxvt.fadeColor: #262626
 ! Typography
@@ -64,9 +87,9 @@ URxvt.internalBorder: 3
 ! Jummidark color scheme
 ! Urxvt.depth: 24
 ! special
-! *.foreground:   rgb:e1/e1/e1
-! *.background:   rgb:26/26/26
-! *.cursorColor:  rgb:af/87/00
+! *.foreground:   rgb:ff/ff/ff
+! *.background:   rgb:00/00/00
+! *.cursorColor:  rgb:00/aa/00
 ! ! black
 ! *.color0:       rgb:1c/1c/1c
 ! *.color8:       rgb:4e/4e/4e

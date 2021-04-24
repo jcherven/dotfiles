@@ -9,7 +9,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(unless (package-installed-p 'spacemacs-theme)
+e4/e4/e4(unless (package-installed-p 'spacemacs-theme)
   (package-refresh-contents)
   (package-install 'spacemacs-theme))
 
@@ -41,6 +41,7 @@
 ;; Enables ligatures for special symbols like lambda
 ;;(when window-system (global-prettify-symbols-mode t))
 
+;; package which displays a helpful menu for emacs keybindings
 (use-package which-key
   :ensure t
   :init
@@ -57,6 +58,7 @@
 (menu-bar-mode -1)
 (scroll-bar-mode 1)
 
+;; show or don't show the startup screen
 (setq inhibit-startup-message nil)
 
 (custom-set-variables
@@ -87,7 +89,8 @@
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
- '(package-selected-packages '(beacon spacemacs-theme which-key use-package))
+ '(package-selected-packages
+   '(xresources-theme beacon spacemacs-theme which-key use-package))
  '(pdf-view-midnight-colors '("#655370" . "#fbf8ef")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
