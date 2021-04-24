@@ -67,25 +67,37 @@ set mouse=a
 
 " vim-plug {{{
 call plug#begin('~/.vim/plugged')
+  " automatically renames closing html/xml tags
   Plug 'AndrewRadev/tagalong.vim'
+  " preview colors in vim
   Plug 'chrisbra/colorizer'
-  " Plug 'christoomey/vim-tmux-navigator'
+  " automatically reload changed files
   Plug 'djoshea/vim-autoread'
-  Plug 'editorconfig/editorconfig-vim'
-  " Plug 'hail2u/vim-css3-syntax'
+  " will be removed if i can't remember why this is here
+  " Plug 'editorconfig/editorconfig-vim'
   Plug 'jcherven/jummidark.vim'
+  " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
+  " update and install plugins within vim
   Plug 'junegunn/vim-plug'
+  " calendar view and nav in vimwiki
   Plug 'mattn/calendar-vim'
+  " automatic loading of syntax highlighting schemes
   Plug 'sheerun/vim-polyglot'
+  " paste text with indentation adjusted to the surrounding context
   Plug 'sickill/vim-pasta'
+  " comment/uncomment lines with gc
   Plug 'tomtom/tcomment_vim'
+  " git wrapper for vim
   Plug 'tpope/vim-fugitive'
+  " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
   " Plug 'vim-scripts/camelcasemotion'
+  " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
   " }}}
+  " customizes tab labels with useful information
   Plug 'gcmt/taboo.vim' "{{{
     let g:taboo_tabline=1
     let g:taboo_modified_tab_flag="[+]"
@@ -100,6 +112,7 @@ call plug#begin('~/.vim/plugged')
     let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()})|"
     let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()})|"
   "}}}
+  " automatically closes html/xml/jsx/hbs tags
   Plug 'alvan/vim-closetag' " {{{
     let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
     let g:closetag_emptyTags_caseSensitive = 1
@@ -111,6 +124,7 @@ call plug#begin('~/.vim/plugged')
     " Add > at current position without closing the current tag, default is ''
     let g:closetag_close_shortcut = '<leader>>'
   "}}}
+  " helps vim-fugitive identify the pwd's git project root
   Plug 'dbakker/vim-projectroot' "{{{
     function! <SID>AutoProjectRootCD()
       try
@@ -122,6 +136,7 @@ call plug#begin('~/.vim/plugged')
     endfunction
     autocmd BufEnter * call <SID>AutoProjectRootCD()
     "}}}
+  " highlights matching html/xml/jsx/hbs tags
   Plug 'valloric/MatchTagAlways' "{{{
     let g:mta_filetypes = {
       \ 'html' : 1,
@@ -131,6 +146,7 @@ call plug#begin('~/.vim/plugged')
       \ 'javascriptreact' : 1,
     \}
     "}}}
+  " coc is to vim as evil mode is to emacs
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
     let g:coc_global_extensions=[
       \'coc-css',
@@ -159,9 +175,11 @@ call plug#begin('~/.vim/plugged')
       \ 'help'
       \]
     " }}}
+  " for taking/publishing notes
   Plug 'vimwiki/vimwiki' "{{{
     let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
+  " clunky way of using sqlworkbench in vim
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
   "   let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
