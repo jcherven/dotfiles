@@ -261,88 +261,88 @@ font:
 # }}}
 
 # Jummidark Color Theme {{{
-# colors:
-#   primary:
-#     foreground: '#e4e4e4'
-#     background: '#262626'
-#     dim_foreground: '#8a8a8a'
-#     bright_foreground: '#e4e4e4'
-#
-#   cursor:
-#     text: '#1c1c1c'
-#     cursor: '#af8700'
-#
-#   vi_mode_cursor:
-#     text: '#1c1c1c'
-#     cursor: '#af8700'
-#
-#   normal:
-#     black:   '#1c1c1c'
-#     red:     '#d7005f'
-#     green:   '#00d7d7'
-#     yellow:  '#00ffaf'
-#     blue:    '#af5fff'
-#     magenta: '#afafff'
-#     cyan:    '#00d7d7'
-#     white:   '#e4e4e4'
-#
-#   bright:
-#     black:   '#8a8a8a'
-#     red:     '#d75f87'
-#     green:   '#00d7d7'
-#     yellow:  '#00ffaf'
-#     blue:    '#afafff'
-#     magenta: '#afafff'
-#     cyan:    '#00d7d7'
-#     white:   '#ffffff'
-#
-#   dim:
-#     black:   '#3f3f3f'
-#     red:     '#3f0000'
-#     green:   '#003f00'
-#     yellow:  '#3f3f00'
-#     blue:    '#00003f'
-#     magenta: '#3f003f'
-#     cyan:    '#003f3f'
-#     white:   '#b2b2b2'
+colors:
+  primary:
+    foreground: '#e4e4e4'
+    background: '#262626'
+    dim_foreground: '#8a8a8a'
+    bright_foreground: '#e4e4e4'
+
+  cursor:
+    text: '#1c1c1c'
+    cursor: '#af8700'
+
+  vi_mode_cursor:
+    text: '#1c1c1c'
+    cursor: '#af8700'
+
+  normal:
+    black:   '#1c1c1c'
+    red:     '#d7005f'
+    green:   '#00d7d7'
+    yellow:  '#00ffaf'
+    blue:    '#af5fff'
+    magenta: '#afafff'
+    cyan:    '#00d7d7'
+    white:   '#e4e4e4'
+
+  bright:
+    black:   '#8a8a8a'
+    red:     '#d75f87'
+    green:   '#00d7d7'
+    yellow:  '#00ffaf'
+    blue:    '#afafff'
+    magenta: '#afafff'
+    cyan:    '#00d7d7'
+    white:   '#ffffff'
+
+  dim:
+    black:   '#3f3f3f'
+    red:     '#3f0000'
+    green:   '#003f00'
+    yellow:  '#3f3f00'
+    blue:    '#00003f'
+    magenta: '#3f003f'
+    cyan:    '#003f3f'
+    white:   '#b2b2b2'
 # }}}
 
 # XTerm's default colors {{{
-colors:
-   cursor:
-     text: '#1c1c1c'
-     cursor: '#00ff00'
-
-   vi_mode_cursor:
-     text: '#1c1c1c'
-     cursor: '#00ff00'
-
-   # Default colors
-   primary:
-     background: '#000000'
-     foreground: '#ffffff'
-   # Normal colors
-   normal:
-     black:   '#000000'
-
-     red:     '#cd0000'
-     green:   '#00cd00'
-     yellow:  '#cdcd00'
-     blue:    '#0000ee'
-     magenta: '#cd00cd'
-     cyan:    '#00cdcd'
-     white:   '#e5e5e5'
-
-   # Bright colors
-   bright:
-     black:   '#7f7f7f'
-     red:     '#ff0000'
-     green:   '#00ff00'
-     yellow:  '#ffff00'
-     blue:    '#5c5cff'
-     magenta: '#ff00ff'
-     cyan:    '#00ffff'
-     white:   '#ffffff'
+# colors:
+#    cursor:
+#      text: '#1c1c1c'
+#      cursor: '#00ff00'
+#
+#    vi_mode_cursor:
+#      text: '#1c1c1c'
+#      cursor: '#00ff00'
+#
+#    # Default colors
+#    primary:
+#      background: '#000000'
+#      foreground: '#ffffff'
+#    # Normal colors
+#    normal:
+#      black:   '#000000'
+#
+#      red:     '#cd0000'
+#      green:   '#00cd00'
+#      yellow:  '#cdcd00'
+#      blue:    '#0000ee'
+#      magenta: '#cd00cd'
+#      cyan:    '#00cdcd'
+#      white:   '#e5e5e5'
+#
+#    # Bright colors
+#    bright:
+#      black:   '#7f7f7f'
+#      red:     '#ff0000'
+#      green:   '#00ff00'
+#      yellow:  '#ffff00'
+#      blue:    '#5c5cff'
+#      magenta: '#ff00ff'
+#      cyan:    '#00ffff'
+#      white:   '#ffffff'
 # }}}
 
   # Indexed Colors
@@ -387,7 +387,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-# background_opacity: 1.0
+background_opacity: 0.95
 # }}}
 
 # Selection {{{
