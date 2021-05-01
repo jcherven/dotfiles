@@ -75,7 +75,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'djoshea/vim-autoread'
   " will be removed if i can't remember why this is here
   " Plug 'editorconfig/editorconfig-vim'
-  Plug 'jcherven/jummidark.vim'
+  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
   " update and install plugins within vim
@@ -247,4 +247,4 @@ set statusline+=%3p%%\
 
 " set termguicolors
 " silent! colorscheme jummilight
-silent! colorscheme jummidark
+silent! colorscheme jummidark-nobg
