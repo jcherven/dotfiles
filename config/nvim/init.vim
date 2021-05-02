@@ -75,6 +75,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'djoshea/vim-autoread'
   " will be removed if i can't remember why this is here
   " Plug 'editorconfig/editorconfig-vim'
+  " A color theme
   Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
@@ -84,6 +85,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/calendar-vim'
   " automatic loading of syntax highlighting schemes
   Plug 'sheerun/vim-polyglot'
+  " smooth line scrolling on page jumps
+  Plug 'psliwka/vim-smoothie'
   " paste text with indentation adjusted to the surrounding context
   Plug 'sickill/vim-pasta'
   " comment/uncomment lines with gc
