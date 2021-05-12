@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 # Update periodically from https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 # bash/zsh git prompt support
 #
