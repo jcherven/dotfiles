@@ -67,6 +67,11 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
 [[ -f "$GITCOMPLETION" ]] && source "$GITCOMPLETION"
 
+# In a tmux environment, attach to a session or start tmux in a new one
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach -t default || tmux new -s default
+fi
+
 # ALIASES {{{
 # makes FreeBSD ls work the way i want it to
 # https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
