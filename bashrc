@@ -69,7 +69,7 @@ GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
 
 # In a tmux environment, attach to a session or start tmux in a new one
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
+  tmux attach -t 0 || tmux new -s 0
 fi
 
 # ALIASES {{{
