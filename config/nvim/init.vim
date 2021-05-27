@@ -91,6 +91,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'sickill/vim-pasta'
   " comment/uncomment lines with gc
   Plug 'tomtom/tcomment_vim'
+  " unix readline bindings in insert and command modes
+  Plug 'tpope/vim-rsi'
   " git wrapper for vim
   Plug 'tpope/vim-fugitive'
   " shortcuts for enclosing brackets/text
