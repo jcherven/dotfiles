@@ -73,8 +73,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'chrisbra/colorizer'
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
-  " will be removed if i can't remember why this is here
-  " Plug 'editorconfig/editorconfig-vim'
   " A color theme
   Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
   " insert or delete brackets in matching pairs
