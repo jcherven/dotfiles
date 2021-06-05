@@ -1,6 +1,6 @@
 [user]
 	name = jcherven
-	email = cherven.james@icloud.com
+	email = jcherven@mail.usf.edu
 [core]
 	editor = nvim
 	excludesfile = ./.gitignore
