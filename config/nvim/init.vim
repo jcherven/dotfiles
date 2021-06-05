@@ -55,9 +55,15 @@ autocmd FileType help setlocal colorcolumn=80
 
 " Keybindings {{{
 " additional keybindings are defined in the CoC settings
+
 nnoremap <space> :
+
+" Leader keybindings
 map ; <Leader>
 let mapleader = ";"
+nnoremap <Leader>b :ls<CR>:buffer<Space>
+
+" Ctrl keybindings
 nnoremap <C-J> <C-w><C-J>
 nnoremap <C-K> <C-w><C-K>
 nnoremap <C-L> <C-w><C-L>
@@ -202,10 +208,11 @@ set complete-=t
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Autocommands
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" Custom bindings
+nmap <Leader>/ :CocCommand explorer<CR>
+nmap <Leader>l :CocList<CR>
 
-" Keybindings
+" COC KEYBINDS {{{
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -231,7 +238,10 @@ inoremap <silent><expr> <C-n> coc#refresh()
 nmap <Leader>/ :CocCommand explorer<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>f <Plug>(coc-format-selected)
-" }}}
+
+" end of COC KEYBINDS }}}
+
+" end of CoC Configuration }}}
 
 " Statusline (Builtin) Configuration {{{
 " Left alignment for the below customizations
