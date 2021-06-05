@@ -5,4 +5,4 @@ Thumbs.db
 node_modules/
 result
 result-*
-tags/
+tags
