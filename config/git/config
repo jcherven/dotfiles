@@ -12,3 +12,5 @@
 [github]
 	user = jcherven
 
+[init]
+	defaultBranch = main
