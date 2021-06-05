@@ -153,7 +153,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
     let g:coc_global_extensions=[
       \'coc-css',
-			\'coc-cssmodules',
+      \'coc-cssmodules',
       \'coc-ember',
       \'coc-emmet',
       \'coc-explorer',
@@ -167,7 +167,8 @@ call plug#begin('~/.vim/plugged')
       \'coc-python',
       \'coc-sh',
       \'coc-sql',
-			\'coc-tailwindcss',
+      \'coc-tag',
+      \'coc-tailwindcss',
       \'coc-tsserver',
       \'coc-vimlsp',
       \'coc-yaml',
@@ -196,6 +197,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+set complete-=t
 
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
