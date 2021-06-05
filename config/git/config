@@ -1,8 +1,9 @@
 [user]
 	name = jcherven
-	email = jamiecherven@gmail.com
+	email = cherven.james@icloud.com
 [core]
 	editor = nvim
+	excludesfile = ./.gitignore
 [push]
 	default = upstream
 [merge]
@@ -11,6 +12,5 @@
 	verbose = true
 [github]
 	user = jcherven
-
 [init]
 	defaultBranch = main
