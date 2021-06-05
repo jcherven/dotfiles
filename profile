@@ -4,7 +4,7 @@
 # . /Users/choro/.nix-profile/etc/profile.d/nix.sh
 
 # MacPorts Installer addition on 2021-03-05_at_11:59:15: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="`brew --prefix`/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # for the macports-provided nvm
