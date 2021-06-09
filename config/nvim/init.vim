@@ -4,7 +4,7 @@ set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
 set fileformats=unix,dos,mac
 set lazyredraw
-set clipboard=unnamedplus
+set clipboard=unnamed
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
@@ -43,19 +43,27 @@ set foldmethod=marker
 set relativenumber
 " }}}
 
-" Debian specific settings {{{
-" may need to specify a login shell profile like this here
-" set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
-" }}}
+" System conditional settings {{{
+" sets the default shell to homebrew's bash if installed
+" if has('macunix')
+"   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
+" endif
 
 " Filetype specific settings
 autocmd FileType help setlocal colorcolumn=80
+" }}}
 
 " Keybindings {{{
-" some other keybinds are defined below in the CoC settings
+" additional keybindings are defined in the CoC settings
+
 nnoremap <space> :
+
+" Leader keybindings
 map ; <Leader>
 let mapleader = ";"
+nnoremap <Leader>b :ls<CR>:buffer<Space>
+
+" Ctrl keybindings
 nnoremap <C-J> <C-w><C-J>
 nnoremap <C-K> <C-w><C-K>
 nnoremap <C-L> <C-w><C-L>
@@ -65,104 +73,127 @@ set mouse=a
 
 " vim-plug {{{
 call plug#begin('~/.vim/plugged')
+  " automatically renames closing html/xml tags
   Plug 'AndrewRadev/tagalong.vim'
+  " preview colors in vim
   Plug 'chrisbra/colorizer'
-  " Plug 'christoomey/vim-tmux-navigator'
+  " automatically reload changed files
   Plug 'djoshea/vim-autoread'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'hail2u/vim-css3-syntax'
+  " A color theme
   Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
+  " update and install plugins within vim
   Plug 'junegunn/vim-plug'
+  " calendar view and nav in vimwiki
   Plug 'mattn/calendar-vim'
-  Plug 'psliwka/vim-smoothie'
+  " automatic loading of syntax highlighting schemes
   Plug 'sheerun/vim-polyglot'
+  " smooth line scrolling on page jumps
+  Plug 'psliwka/vim-smoothie'
+  " paste text with indentation adjusted to the surrounding context
   Plug 'sickill/vim-pasta'
+  " comment/uncomment lines with gc
   Plug 'tomtom/tcomment_vim'
+  " unix readline bindings in insert and command modes
+  Plug 'tpope/vim-rsi'
+  " git wrapper for vim
   Plug 'tpope/vim-fugitive'
+  " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
+  " Plug 'vim-scripts/camelcasemotion'
+  " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
   " }}}
+  " customizes tab labels with useful information
   Plug 'gcmt/taboo.vim' "{{{
-  let g:taboo_tabline=1
-  let g:taboo_modified_tab_flag="[+]"
-  fun! GitInfo()
+    let g:taboo_tabline=1
+    let g:taboo_modified_tab_flag="[+]"
+    fun! GitInfo()
     let git = fugitive#head()
     if git != ''
       return ''.git.''
     else
       return ''
     endif
-  endfunction
-  let g:taboo_tab_format="║%N %P%m (git:%{GitInfo()})║"
-  let g:taboo_renamed_tab_format="║%N %l%m (git:%{GitInfo()})║"
+    endfunction
+    let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()})|"
+    let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()})|"
   "}}}
+  " automatically closes html/xml/jsx/hbs tags
   Plug 'alvan/vim-closetag' " {{{
-  let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
-  let g:closetag_emptyTags_caseSensitive = 1
-  let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
-  let g:closetag_shortcut = '>'
-  " Add > at current position without closing the current tag, default is ''
-  let g:closetag_close_shortcut = '<leader>>' "}}}
+    let g:closetag_filetypes = 'html,xhtml,phtml,javascript,javascriptreact,html.handlebars'
+    let g:closetag_emptyTags_caseSensitive = 1
+    let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ }
+    let g:closetag_shortcut = '>'
+    " Add > at current position without closing the current tag, default is ''
+    let g:closetag_close_shortcut = '<leader>>'
+  "}}}
+  " helps vim-fugitive identify the pwd's git project root
   Plug 'dbakker/vim-projectroot' "{{{
-  function! <SID>AutoProjectRootCD()
-    try
-      if &ft != 'help'
-        ProjectRootCD
-      endif
-    catch
-    endtry
-  endfunction
-  autocmd BufEnter * call <SID>AutoProjectRootCD()
-  "}}}
+    function! <SID>AutoProjectRootCD()
+      try
+        if &ft != 'help'
+          ProjectRootCD
+        endif
+      catch
+      endtry
+    endfunction
+    autocmd BufEnter * call <SID>AutoProjectRootCD()
+    "}}}
+  " highlights matching html/xml/jsx/hbs tags
   Plug 'valloric/MatchTagAlways' "{{{
-  let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xml' : 1,
-    \ 'html.handlebars' : 1,
-    \ 'javascript' : 1,
-    \ 'javascriptreact' : 1,
-  \}
-  "}}}
+    let g:mta_filetypes = {
+      \ 'html' : 1,
+      \ 'xml' : 1,
+      \ 'html.handlebars' : 1,
+      \ 'javascript' : 1,
+      \ 'javascriptreact' : 1,
+    \}
+    "}}}
+  " coc is to vim as evil mode is to emacs
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
-  let g:coc_global_extensions=[
-    \'coc-css',
-    \'coc-ember',
-    \'coc-emmet',
-    \'coc-explorer',
-    \'coc-git',
-    \'coc-highlight',
-    \'coc-html',
-    \'coc-json',
-    \'coc-lists',
-    \'coc-markdownlint',
-    \'coc-marketplace',
-    \'coc-powershell',
-    \'coc-prettier',
-    \'coc-python',
-    \'coc-scssmodules',
-    \'coc-sh',
-    \'coc-sql',
-    \'coc-tsserver',
-    \'coc-vimlsp',
-    \'coc-yaml',
-    \]
-  let g:markdown_fenced_languages=[
-    \ 'vim',
-    \ 'help'
-    \]
-  " }}}
+    let g:coc_global_extensions=[
+      \'coc-css',
+      \'coc-cssmodules',
+      \'coc-ember',
+      \'coc-emmet',
+      \'coc-explorer',
+      \'coc-git',
+      \'coc-highlight',
+      \'coc-html',
+      \'coc-json',
+      \'coc-lists',
+      \'coc-markdownlint',
+      \'coc-prettier',
+      \'coc-python',
+      \'coc-sh',
+      \'coc-sql',
+      \'coc-tag',
+      \'coc-tailwindcss',
+      \'coc-tsserver',
+      \'coc-vimlsp',
+      \'coc-yaml',
+      \'coc-eslint',
+      \]
+    let g:markdown_fenced_languages=[
+      \ 'vim',
+      \ 'help'
+      \]
+    " }}}
+  " for taking/publishing notes
   Plug 'vimwiki/vimwiki' "{{{
-  let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+    let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
+  " clunky way of using sqlworkbench in vim
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
-  " let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
+  "   let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
-call plug#end()
+  call plug#end()
 " }}}
 
 " CoC Configuration {{{
@@ -172,31 +203,45 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+set complete-=t
+
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" Autocommands
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" Keybindings
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+
+" Custom bindings
+nmap <Leader>/ :CocCommand explorer<CR>
+nmap <Leader>l :CocList<CR>
+
+" COC KEYBINDS {{{
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" binding tab and S-tab can interfere with the whitespace input :(
+" inoremap <silent><expr> <TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ <SID>check_back_space() ? "\<TAB>" :
+" \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
 inoremap <silent><expr> <C-n> coc#refresh()
 nmap <Leader>/ :CocCommand explorer<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>f <Plug>(coc-format-selected)
 
-" }}}
+" end of COC KEYBINDS }}}
+
+" end of CoC Configuration }}}
 
 " Statusline (Builtin) Configuration {{{
 " Left alignment for the below customizations
@@ -219,27 +264,6 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
-" GUI vim (macvim, gvim, etc) Settings {{{
-if has('gui')
-  set belloff=all
-  set guicursor+=a:blinkon0
-  set lines=45 columns=84
-  " Displays the statusline when there is no split
-  set laststatus=2
-  " Start without menubar or toolbar
-  " a - auto select for system copy/paste
-  " c - Use console dialogs instead of system popups
-  set guioptions="ac"
-  " Enable the visual completion menu for the command line
-  source $VIMRUNTIME/menu.vim
-  set wildmenu
-  set cpo-=<
-  set wcm=<C-Z>
-  map <F4> :emenu <C-Z>
-endif
-" }}}
-
 " set termguicolors
 " silent! colorscheme jummilight
 silent! colorscheme jummidark-nobg
-" colorscheme pablo
