@@ -9,10 +9,12 @@
   },
   "javascript.referencesCodeLens.enable": false,
   "python.jediEnabled": false,
+
   "explorer.quitOnOpen": true,
   "explorer.width": 30,
   "explorer.keyMappings.global": {
     "v": "open:vsplit"
   },
+
   "sql.database": "postgresql"
 }

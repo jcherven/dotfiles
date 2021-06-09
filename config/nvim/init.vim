@@ -61,7 +61,6 @@ nnoremap <space> :
 " Leader keybindings
 map ; <Leader>
 let mapleader = ";"
-nnoremap <Leader>b :ls<CR>:buffer<Space>
 
 " Ctrl keybindings
 nnoremap <C-J> <C-w><C-J>
@@ -208,36 +207,27 @@ set complete-=t
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Custom bindings
-nmap <Leader>/ :CocCommand explorer<CR>
-nmap <Leader>l :CocList<CR>
-
 " COC KEYBINDS {{{
+" initiates autocomplete menu
+inoremap <silent><expr> <C-n> coc#refresh()
+" provides a file browser tree
+nmap <Leader>/ :CocCommand explorer --sources=file+<CR>
+" provides a buffer list browser
+nmap <Leader>b :CocCommand explorer --sources=buffer+<CR>
+nmap <Leader>l :CocList<CR>
+xmap <Leader>f <Plug>(coc-format-selected)
+nmap <Leader>f <Plug>(coc-format-selected)
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" binding tab and S-tab can interfere with the whitespace input :(
-" inoremap <silent><expr> <TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ <SID>check_back_space() ? "\<TAB>" :
-" \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
 
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-inoremap <silent><expr> <C-n> coc#refresh()
-nmap <Leader>/ :CocCommand explorer<CR>
-xmap <Leader>f <Plug>(coc-format-selected)
-nmap <Leader>f <Plug>(coc-format-selected)
 
 " end of COC KEYBINDS }}}
 
