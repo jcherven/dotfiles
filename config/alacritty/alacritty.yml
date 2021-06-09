@@ -128,45 +128,7 @@ font:
   # bold_italic:
   #   family: Sarasa Fixed J
   #   style: Italic
-    
-  # Iosevka Term
-  # normal:
-  #   family: Iosevka Term
-  #   style: Light
-  # bold:
-  #   family: Iosevka Term
-  #   style: Regular
-  # italic:
-    # family: Iosevka Term
-    # style: Light Italic
-  # bold_italic:
-    # family: Iosevka Term
-    # style: Regular Italic
-    
-  # Dina (good at 16pt)
-  # normal:
-  #   family: Dina
-  #   style: medium
-  # bold:
-  #   family: Dina
-  #   style: medium
-  
-  # normal:
-  #   family: Andale Mono
-  #   style: Regular
-  # bold:
-  #   family: Andale Mono
-  #   style: Regular
 
-  # Cozette (6x13, good at 14pt, has powerline glyphs)
-  # normal:
-  #   family: Cozette
-  #   style: Medium
-  # bold:
-  #   family: Cozette
-  #   style: Medium
-
-  # Dina (good at 16pt)
   normal:
     family: SGI Screen
     style: medium
@@ -175,7 +137,7 @@ font:
     style: bold
   
   # Point size
-  size: 11.0
+  size: 9.0
 
   # Offset
   # Offset is the extra space around each character. `offset.y` can be thought of
