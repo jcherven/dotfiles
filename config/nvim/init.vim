@@ -35,8 +35,8 @@ autocmd WinLeave,BufLeave * setlocal nocursorline
 augroup END
 " }}}
 set scrolloff=8
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 set eadirection=both
 set equalalways
 set foldmethod=marker
@@ -74,6 +74,8 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
   " automatically renames closing html/xml tags
   Plug 'AndrewRadev/tagalong.vim'
+  " provide sass/scss syntax
+  Plug 'cakebaker/scss-syntax.vim'
   " preview colors in vim
   Plug 'chrisbra/colorizer'
   " automatically reload changed files
