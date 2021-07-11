@@ -1,6 +1,6 @@
 [user]
 	name = jcherven
-	email = jamiecherven@gmail.com
+	email = jamiecherven@icloud.com
 [core]
 	excludesfile = $HOME/.config/git/ignore
 	editor = nvim
