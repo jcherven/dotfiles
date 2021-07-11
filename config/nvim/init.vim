@@ -35,8 +35,8 @@ autocmd WinLeave,BufLeave * setlocal nocursorline
 augroup END
 " }}}
 set scrolloff=8
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 set eadirection=both
 set equalalways
 set foldmethod=marker
@@ -100,7 +100,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
-  " Plug 'vim-scripts/camelcasemotion'
   " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
