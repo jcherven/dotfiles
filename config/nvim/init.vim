@@ -159,6 +159,8 @@ call plug#begin('~/.vim/plugged')
   " coc is to vim as evil mode is to emacs
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
     let g:coc_global_extensions=[
+      \'coc-clangd',
+      \'coc-cmake',
       \'coc-css',
       \'coc-cssmodules',
       \'coc-ember',
@@ -175,7 +177,6 @@ call plug#begin('~/.vim/plugged')
       \'coc-sh',
       \'coc-sql',
       \'coc-tag',
-      \'coc-tailwindcss',
       \'coc-tsserver',
       \'coc-vimlsp',
       \'coc-yaml',
@@ -258,4 +259,4 @@ set statusline+=%3p%%\
 
 " set termguicolors
 " silent! colorscheme jummilight
-silent! colorscheme jummidark-nobg
+silent! colorscheme jummidark
