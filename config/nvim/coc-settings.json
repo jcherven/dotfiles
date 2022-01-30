@@ -1,4 +1,5 @@
 {
+  "coc.preferences.extensionUpdateCheck": "daily",
   "codeLens.enable": false,
   "javascript.suggestionActions.enabled": false,
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
