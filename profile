@@ -28,6 +28,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# include Windows utilities if on WSL
+if [ -d "/mnt/c/WINDOWS" ] ; then
+  PATH="$PATH:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32"
+fi
+
 export QT_QPA_PLATFORMTHEME=gtk2
 
 # MacPorts Installer addition on 2021-03-05_at_11:59:15: adding an appropriate PATH variable for use with MacPorts.

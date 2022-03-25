@@ -77,7 +77,7 @@ alias ts="date +%H:%M"
 alias ds="date +%Y-%m-%d"
 
 # source the local aliases file
-source "$HOME/.bash_aliases"
+#source "$HOME/.bash_aliases"
 
 # Make tmux assume that the outside terminal supports 256-color
 # alias tmux="tmux -2"

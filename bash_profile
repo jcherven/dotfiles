@@ -12,7 +12,7 @@
 # Add the dotfiles bash_scripts directory to $PATH
 # export PATH="$PATH:$HOME/dotfiles/bash_scripts"
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32"
 
 # Use the homebrew installed jdk. needs to be updated for the macports version
 # if [[ "$OSTYPE" == "darwin"* ]]; then
