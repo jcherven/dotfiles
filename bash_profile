@@ -10,7 +10,7 @@
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # Add the dotfiles bash_scripts directory to $PATH
-export PATH="$PATH:$HOME/dotfiles/bash_scripts"
+# export PATH="$PATH:$HOME/dotfiles/bash_scripts"
 
 export PATH="$PATH:$HOME/.local/bin"
 
