@@ -30,7 +30,9 @@ fi
 
 # include Windows utilities if on WSL
 if [ -d "/mnt/c/WINDOWS" ] ; then
-  PATH="$PATH:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32"
+  PATH="$PATH:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32" ;
+elif [ -d "/windir/c/Windows" ] ; then
+  PATH="$PATH:/windir/c/Windows:/windir/c/Windows/System32" ;
 fi
 
 export QT_QPA_PLATFORMTHEME=gtk2
