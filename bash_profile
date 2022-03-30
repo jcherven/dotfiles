@@ -30,9 +30,9 @@ elif [ -x "$(command -v vi)" ]; then
 # otherwise use whatever is set by the system
 fi
 
-# enable keychain for ssh
-keychain ~/.ssh/id_github_choro-artichoke-wsl
-. ~/.keychain/${HOSTNAME}-sh
+# enable keychain for ssh on machines with it installed
+# keychain ~/.ssh/id_github_choro-artichoke-wsl
+# . ~/.keychain/${HOSTNAME}-sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
