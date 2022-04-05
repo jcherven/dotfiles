@@ -1,4 +1,6 @@
-set guifont=Dina:h16
+GuiFont! DinaRemaster:h12
+GuiPopupmenu 0
+GuiTabline 1
 GuiPopupmenu 0
 set guioptions+="ac"
 set laststatus=2
