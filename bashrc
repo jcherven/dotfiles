@@ -46,6 +46,7 @@ PS1='\[\033[01;32m\]\u \[\033[01;34m\]\W\[\033[00m\]\$ '
 
 # Gentoo has a built in version of this script that is easier to update
 GITPROMPT="/usr/share/git/git-prompt.sh"
+# GITPROMPT="$HOME/dotfiles/bash_scripts/git-prompt.sh"
 if [[ -r  "$GITPROMPT" ]]; then
    source "$GITPROMPT"
 
