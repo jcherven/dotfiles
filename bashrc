@@ -4,32 +4,62 @@
 
 # Prompt configuration {{{
 # Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
-GITPROMPT="$HOME/dotfiles/bash_scripts/git-prompt.sh"
-if [ -f  "$GITPROMPT" ]; then
-  source "$GITPROMPT"
-  export GIT_PS1_SHOWDIRTYSTATE=1
-  # NORMALBLACK="\[\033[0;30m\]"
-  # NORMALRED="\[\033[0;31m\]"
-  # NORMALGREEN="\[\033[0;32m\]"
-  # NORMALYELLOW="\[\033[0;33m\]"
-  # NORMALBLUE="\[\033[0;34m\]"
-  # NORMALMAGENTA="\[\033[0;35m\]"
-  # NORMALCYAN="\[\033[0;36m\]"
-  # NORMALWHITE="\[\033[0;37m\]"
-  #
-  # BRIGHTBLACK="\[\033[1;30m\]"
-  # BRIGHTRED="\[\033[1;31m\]"
-  BRIGHTGREEN="\[\033[1;32m\]"
-  # BRIGHTYELLOW="\[\033[1;33m\]"
-  BRIGHTBLUE="\[\033[1;34m\]"
-  BRIGHTMAGENTA="\[\033[1;35m\]"
-  # BRIGHTCYAN="\[\033[1;36m\]"
-  # BRIGHTWHITE="\[\033[1;37m\]"
+# Make the prompt work with Python venvs
+# on Gentoo it's included in /usr/share/somewhere, that probably gets updated with git or something
+__git_ps1_venv() {
+   local pre="$1"
+   local post="$2"
 
-  RESETCOLOR="\[\033[0m\]"
-  # export PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
-  PROMPT_COMMAND='__git_ps1 "$BRIGHTGREEN\u $BRIGHTBLUE\w$BRIGHTMAGENTA" "$RESETCOLOR\\\$ "'
+   if [ -n "${VIRTUAL_ENV}" ] && [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ]; then
+      if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then
+         # special case for Aspen magic directories
+         # see http://www.zetadev.com/software/aspen/
+         pre="[`basename \`dirname \"$VIRTUAL_ENV\"\``] ${pre}"
+      else
+         pre="(`basename \"$VIRTUAL_ENV\"`) ${pre}"
+      fi
+   fi
+
+   __git_ps1 "${pre}" "${post}"
+}
+
+# NORMALBLACK="\[\033[0;30m\]"
+# NORMALRED="\[\033[0;31m\]"
+# NORMALGREEN="\[\033[0;32m\]"
+# NORMALYELLOW="\[\033[0;33m\]"
+# NORMALBLUE="\[\033[0;34m\]"
+# NORMALMAGENTA="\[\033[0;35m\]"
+# NORMALCYAN="\[\033[0;36m\]"
+# NORMALWHITE="\[\033[0;37m\]"
+#
+# BRIGHTBLACK="\[\033[1;30m\]"
+# BRIGHTRED="\[\033[1;31m\]"
+# BRIGHTGREEN="\[\033[1;32m\]"
+# BRIGHTYELLOW="\[\033[1;33m\]"
+# BRIGHTBLUE="\[\033[1;34m\]"
+# BRIGHTMAGENTA="\[\033[1;35m\]"
+# BRIGHTCYAN="\[\033[1;36m\]"
+# BRIGHTWHITE="\[\033[1;37m\]"
+
+# RESETCOLOR="\[\033[0m\]"
+
+# PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
+PS1='\[\033[01;32m\]\u \[\033[01;34m\]\W\[\033[00m\]\$ '
+
+GITPROMPT="$HOME/dotfiles/bash_scripts/git-prompt.sh"
+if [[ -r  "$GITPROMPT" ]]; then
+   source "$GITPROMPT"
+
+   GIT_PS1_SHOWCOLORHINTS=1
+   GIT_PS1_SHOWDIRTYSTATE=1
+   GIT_PS1_SHOWSTASHSTATE=1
+   GIT_PS1_SHOWUNTRACKEDFILES=1
+   GIT_PS1_SHOWUPSTREAM="verbose name"
+
+   # PROMPT_COMMAND='__git_ps1 "$BRIGHTGREEN\u $BRIGHTBLUE\w$BRIGHTMAGENTA" "$RESETCOLOR\\\$ "'
+   PROMPT_COMMAND='__git_ps1_venv "'"${PS1%\\\$ }"'" "\\\$ "'
 fi
+
 # }}}
 
 # Needed to make FreeBSD ls and less look nice
