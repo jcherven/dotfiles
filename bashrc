@@ -3,9 +3,7 @@
 # The configuration here has been written as if this file will be sourced by .bash_profile.
 
 # Prompt configuration {{{
-# Git prompt script needs to be manually updated every so often from https://github.com/git/git/tree/contrib/completion
-# Make the prompt work with Python venvs
-# on Gentoo it's included in /usr/share/somewhere, that probably gets updated with git or something
+# Make the prompt work with Python venvs as well as with PROMPT_COMMAND
 __git_ps1_venv() {
    local pre="$1"
    local post="$2"
@@ -46,7 +44,8 @@ __git_ps1_venv() {
 # PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
 PS1='\[\033[01;32m\]\u \[\033[01;34m\]\W\[\033[00m\]\$ '
 
-GITPROMPT="$HOME/dotfiles/bash_scripts/git-prompt.sh"
+# Gentoo has a built in version of this script that is easier to update
+GITPROMPT="/usr/share/git/git-prompt.sh"
 if [[ -r  "$GITPROMPT" ]]; then
    source "$GITPROMPT"
 
