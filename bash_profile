@@ -12,7 +12,7 @@
 # Add the dotfiles bash_scripts directory to $PATH
 # export PATH="$PATH:$HOME/dotfiles/bash_scripts"
 
-export PATH="$PATH:$HOME/.local/bin:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32"
+export PATH="$PATH:$HOME/.local/bin:/windir/c/WINDOWS:/windir/c/Windows/System32/"
 
 # Use the homebrew installed jdk. needs to be updated for the macports version
 # if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -36,6 +36,7 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ -f "$HOME/dotfiles/bashrc" ]] && source "$HOME/dotfiles/bashrc"
 
