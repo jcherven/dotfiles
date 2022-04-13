@@ -168,7 +168,7 @@ call plug#begin('~/.vim/plugged')
       \'coc-lists',
       \'coc-markdownlint',
       \'coc-prettier',
-      \'coc-python',
+      \'coc-pyright',
       \'coc-sh',
       \'coc-sql',
       \'coc-tag',
@@ -254,5 +254,5 @@ set statusline+=%3p%%\
 " }}}
 
 " set termguicolors
-" silent! colorscheme jummilight
-silent! colorscheme jummidark-nobg
+silent! colorscheme jummidark
+" silent! colorscheme jummidark-nobg
