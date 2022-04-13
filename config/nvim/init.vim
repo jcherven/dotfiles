@@ -185,7 +185,7 @@ call plug#begin('~/.vim/plugged')
     " }}}
   " for taking/publishing notes
   Plug 'vimwiki/vimwiki' "{{{
-    let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
+    let g:vimwiki_list = [{'path': '$HOME/vimwiki/wiki/', 'path_html': '$HOME/Projects/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
   " clunky way of using sqlworkbench in vim
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
