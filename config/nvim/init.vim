@@ -44,6 +44,8 @@ set relativenumber
 " }}}
 
 " System conditional settings {{{
+" On WSL Gentoo nvim wants to see this set according to :checkhealth
+let g:python3_host_prog="/usr/bin/python"
 " sets the default shell to homebrew's bash if installed
 " if has('macunix')
 "   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
