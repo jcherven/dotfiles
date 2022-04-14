@@ -4,7 +4,7 @@ set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
 set fileformats=unix,dos,mac
 set lazyredraw
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
@@ -61,6 +61,7 @@ nnoremap <space> :
 " Leader keybindings
 map ; <Leader>
 let mapleader = ";"
+nmap <Leader>ts i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><esc>
 
 " Ctrl keybindings
 nnoremap <C-J> <C-w><C-J>

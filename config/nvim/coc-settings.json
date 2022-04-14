@@ -13,5 +13,7 @@
   "explorer.keyMappings.global": {
     "v": "open:vsplit"
   },
-  "sql.database": "postgresql"
+  "sql.lintOnOpen": true,
+  "sql.lintOnChange": true,
+  "sql.lintOnSave": true
 }
