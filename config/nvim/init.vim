@@ -99,6 +99,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomtom/tcomment_vim'
   " unix readline bindings in insert and command modes
   Plug 'tpope/vim-rsi'
+  " Provides Jinja filetype detection for use by syntax/highlight/snippets plugins
+  Plug 'glench/vim-jinja2-syntax'
   " git wrapper for vim
   Plug 'tpope/vim-fugitive'
   " shortcuts for enclosing brackets/text
