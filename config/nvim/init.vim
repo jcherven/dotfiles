@@ -105,6 +105,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
+  " required for nvim-orgmode
+  Plug 'nvim-treesitter/nvim-treesitter'
+  " orgmode implementation for neovim
+  Plug 'nvim-orgmode/orgmode'
   " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
@@ -281,6 +285,39 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
+" nvim-orgmode{{{
+lua << EOF
+
+-- Load custom treesitter grammar for org filetype
+require('orgmode').setup_ts_grammar()
+
+-- treesitter configuration
+require'nvim-treesitter.configs'.setup {
+  -- if ts highlights are not enabled at all, or disabled bta `disable` prop, highlighting will fall back to the default vim syntax highlighting
+  highlight = {
+    enable = true,
+    disable = {'org'}, -- remove this to use ts highlighter for some of the highlights (experiemental)
+    additional_vim_regex_highlighting = {'org'}, --required since ts highlighter doesn't support all syntax features like conceal
+    },
+ensure_installed = {'org'},
+  }
+
+require('orgmode').setup({
+org_agenda_files = {'~/Documents/org/*'},
+org_default_notes_file = '~/Documents/org/nvimorg.org'
+})
+EOF
+" }}}
+
 " set termguicolors
 silent! colorscheme jummidark
 " silent! colorscheme jummidark-nobg
+hi! InactiveWindow ctermfg=245 ctermbg=237 cterm=NONE guifg=#8a8a8a guibg=#3a3a3a gui=NONE
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+function! Handle_Win_Enter()
+  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+endfunction
