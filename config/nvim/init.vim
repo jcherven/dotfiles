@@ -173,6 +173,7 @@ call plug#begin('~/.vim/plugged')
       \'coc-prettier',
       \'coc-pyright',
       \'coc-sh',
+      \'coc-snippets',
       \'coc-sql',
       \'coc-tag',
       \'coc-tailwindcss',
@@ -206,24 +207,46 @@ set updatetime=300
 set signcolumn=yes
 set complete-=t
 
+" Let's see if this fixes coc-pyright
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
+
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " COC KEYBINDS {{{
 " initiates autocomplete menu
 inoremap <silent><expr> <C-n> coc#refresh()
+
 " provides a file browser tree
 nmap <Leader>/ :CocCommand explorer --sources=file+<CR>
+
 " provides a buffer list browser
 nmap <Leader>b :CocCommand explorer --sources=buffer+<CR>
 nmap <Leader>l :CocList<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>f <Plug>(coc-format-selected)
 
+" goto things{{{
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" }}}
+
+" coc-snippets bindings{{{
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+"
+" let g:coc_snippet_next = '<tab>'
+"}}}
 
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"

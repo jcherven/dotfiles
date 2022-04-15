@@ -1,5 +1,5 @@
 {
-  "codeLens.enable": false,
+  "codeLens.enable": true,
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "highlight.disableLanguages": ["xml", "html", "html.handlebars"],
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
