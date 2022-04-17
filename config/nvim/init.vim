@@ -81,7 +81,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'chrisbra/colorizer'
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
-  " A color theme
+  " " A color theme
   Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
@@ -89,6 +89,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug'
   " calendar view and nav in vimwiki
   Plug 'mattn/calendar-vim'
+  " color highlighter for nvim in lua
+  Plug 'norcalli/nvim-colorizer.lua'
   " automatic loading of syntax highlighting schemes
   Plug 'sheerun/vim-polyglot'
   " smooth line scrolling on page jumps
@@ -310,14 +312,14 @@ EOF
 " }}}
 
 " set termguicolors
-silent! colorscheme jummidark
-" silent! colorscheme jummidark-nobg
-hi! InactiveWindow ctermfg=245 ctermbg=237 cterm=NONE guifg=#8a8a8a guibg=#3a3a3a gui=NONE
-augroup WindowManagement
-  autocmd!
-  autocmd WinEnter * call Handle_Win_Enter()
-augroup END
+colorscheme jummidark
 
-function! Handle_Win_Enter()
-  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-endfunction
+" hi! InactiveWindow ctermfg=245 ctermbg=237 cterm=NONE guifg=#8a8a8a guibg=#3a3a3a gui=NONE
+" augroup WindowManagement
+"   autocmd!
+"   autocmd WinEnter * call Handle_Win_Enter()
+" augroup END
+"
+" function! Handle_Win_Enter()
+"   setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+" endfunction
