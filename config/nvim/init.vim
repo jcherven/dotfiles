@@ -313,13 +313,3 @@ EOF
 
 " set termguicolors
 colorscheme jummidark
-
-" hi! InactiveWindow ctermfg=245 ctermbg=237 cterm=NONE guifg=#8a8a8a guibg=#3a3a3a gui=NONE
-" augroup WindowManagement
-"   autocmd!
-"   autocmd WinEnter * call Handle_Win_Enter()
-" augroup END
-"
-" function! Handle_Win_Enter()
-"   setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-" endfunction
