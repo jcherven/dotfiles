@@ -117,6 +117,8 @@ call plug#begin('~/.vim/plugged')
   " }}}
   " customizes tab labels with useful information
   Plug 'gcmt/taboo.vim' "{{{
+    " enables taboo in gui tabs
+    set guioptions-=e
     let g:taboo_tabline=1
     let g:taboo_modified_tab_flag="[+]"
     fun! GitInfo()
@@ -127,8 +129,11 @@ call plug#begin('~/.vim/plugged')
       return ''
     endif
     endfunction
-    let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()})|"
-    let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()})|"
+    " let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()}) "
+    " let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()}) "
+    let g:taboo_tab_format="|%N %f%m (git:%{GitInfo()}) "
+    let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()}) "
+    let g:taboo_unnamed_tab_label="unnamed file"
   "}}}
   " automatically closes html/xml/jsx/hbs tags
   Plug 'alvan/vim-closetag' " {{{
@@ -269,6 +274,8 @@ endif
 " Statusline (Builtin) Configuration {{{
 " Left alignment for the below customizations
 set statusline=
+" Current file's git status via Fugitive
+set statusline+=\ %{FugitiveStatusline()}
 " Current buffer's file path relative to the git project root
 set statusline+=\ %f
 " Read-only marker
