@@ -82,7 +82,7 @@ call plug#begin('~/.vim/plugged')
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
   " " A color theme
-  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  Plug 'jcherven/jummidark.vim', {'branch': 'main'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
   " update and install plugins within vim
