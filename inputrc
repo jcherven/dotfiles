@@ -31,10 +31,13 @@ set completion-ignore-case On
 set mark-symlinked-directories On
 
 # disable the bell on tab completion if there are more than one available completions
-# set show-all-if-ambiguous On
+set show-all-if-ambiguous On
 
 # disable the bell on tab completion if there is more than one possible completion but no partial completion can be made
 set show-all-if-unmodified On
+
+# disable flashing text in some terminals
+set bell-style none
 
 set visible-stats On
 
