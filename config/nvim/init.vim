@@ -110,7 +110,7 @@ call plug#begin('~/.vim/plugged')
   " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
   " required for nvim-orgmode
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " orgmode implementation for neovim
   Plug 'nvim-orgmode/orgmode'
   " it's emmet
@@ -212,7 +212,7 @@ call plug#begin('~/.vim/plugged')
   " "}}}
   " much faster code folding than the builtin folding
   Plug 'Konfekt/FastFold' "{{{
-  nmap zuz <Plug>(FastFoldUpdate)
+  " nmap zuz <Plug>(FastFoldUpdate)
   " }}}
   " less gregarious indent-style code folding for python files
   Plug 'tmhedberg/SimpylFold' "{{{
