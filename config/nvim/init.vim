@@ -6,7 +6,7 @@ set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
 set fileformats=unix,dos,mac
 set lazyredraw
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
