@@ -41,7 +41,7 @@ set scrolloff=8
 " set splitright
 set eadirection=both
 set equalalways
-set foldmethod=manual
+set foldmethod=syntax
 set relativenumber
 " }}}
 
