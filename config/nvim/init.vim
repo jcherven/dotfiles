@@ -1,3 +1,5 @@
+" ex: foldmethod=marker
+
 " nvim basic settings {{{
 set nocompatible
 set directory^=$HOME/.vim/tmp//
@@ -39,7 +41,7 @@ set scrolloff=8
 " set splitright
 set eadirection=both
 set equalalways
-set foldmethod=marker
+set foldmethod=manual
 set relativenumber
 " }}}
 
@@ -208,6 +210,13 @@ call plug#begin('~/.vim/plugged')
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
   "   let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
+  " much faster code folding than the builtin folding
+  Plug 'Konfekt/FastFold' "{{{
+  nmap zuz <Plug>(FastFoldUpdate)
+  " }}}
+  " less gregarious indent-style code folding for python files
+  Plug 'tmhedberg/SimpylFold' "{{{
+  " }}}
   call plug#end()
 " }}}
 
