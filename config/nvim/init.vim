@@ -54,7 +54,7 @@ let g:python3_host_prog="/usr/bin/python"
 " endif
 
 " Filetype specific settings
-autocmd FileType help setlocal colorcolumn=80
+" autocmd FileType help setlocal colorcolumn=80
 " }}}
 
 " Keybindings {{{
