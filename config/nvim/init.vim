@@ -87,6 +87,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jcherven/jummidark.vim', {'branch': 'main'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
+  " let g:AutoPairs['{%']='%}'
   " update and install plugins within vim
   Plug 'junegunn/vim-plug'
   " calendar view and nav in vimwiki
@@ -144,6 +145,8 @@ call plug#begin('~/.vim/plugged')
     let g:closetag_regions = {
       \ 'typescript.tsx': 'jsxRegion,tsxRegion',
       \ 'javascript.jsx': 'jsxRegion',
+      \ 'typescriptreact': 'jsxRegion,tsxRegion',
+      \ 'javascriptreact': 'jsxRegion',
       \ }
     let g:closetag_shortcut = '>'
     " Add > at current position without closing the current tag, default is ''
@@ -169,6 +172,7 @@ call plug#begin('~/.vim/plugged')
       \ 'html.handlebars' : 1,
       \ 'javascript' : 1,
       \ 'javascriptreact' : 1,
+      \ 'jinja' : 1,
     \}
     "}}}
   " coc is to vim as evil mode is to emacs
@@ -305,7 +309,7 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
-source "./prototype-init.lua"
+" source "./prototype-init.lua"
 
 " set termguicolors
 colorscheme jummidark
