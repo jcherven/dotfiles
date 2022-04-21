@@ -305,7 +305,7 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
-source "./sidecar-lua.lua"
+source "./prototype-init.lua"
 
 " set termguicolors
 colorscheme jummidark
