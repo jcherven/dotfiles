@@ -231,6 +231,8 @@ set complete-=t
 
 " Let's see if this fixes coc-pyright
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
+autocmd FileType python set nowrap
+
 
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
