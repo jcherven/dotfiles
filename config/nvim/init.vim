@@ -85,6 +85,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'djoshea/vim-autoread'
   " " A color theme
   Plug 'jcherven/jummidark.vim', {'branch': 'main'}
+  " another color theme
+  Plug '4513ECHO/vim-colors-hatsunemiku'
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
   " let g:AutoPairs['{%']='%}'
@@ -312,4 +314,4 @@ set statusline+=%3p%%\
 " source "./prototype-init.lua"
 
 " set termguicolors
-colorscheme jummidark
+colorscheme hatsunemiku_light
