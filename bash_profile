@@ -31,8 +31,8 @@ elif [ -x "$(command -v vi)" ]; then
 fi
 
 # enable keychain for ssh on machines with it installed
-# keychain ~/.ssh/id_github_choro-artichoke-wsl
-# . ~/.keychain/${HOSTNAME}-sh
+keychain ~/.ssh/id_github_choro@carrot
+. ~/.keychain/${HOSTNAME}-sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
