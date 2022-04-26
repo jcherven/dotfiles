@@ -4,9 +4,24 @@
 set nocompatible
 set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
-set fileformats=unix,dos,mac
+" set fileformats=unix,dos,mac
 set lazyredraw
-set clipboard+=unnamed
+set clipboard+=unnamedplus "{{{
+" easy 2-way clipboard in windows wsl or gvim
+" depends on win32yank.exe in $PATH (github.com/equalsraf/win32yank)
+let g:clipboard = {
+      \'name': 'win32yank-wsl',
+      \'copy': {
+        \'+': 'win32yank.exe -i --crlf',
+        \'*': 'win32yank.exe -i --crlf',
+      \},
+      \'paste': {
+        \'+': 'win32yank.exe -o --lf',
+        \'*': 'win32yank.exe -o --lf',
+      \},
+      \'cache_enabled': 0,
+\}
+"}}}
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
@@ -309,7 +324,7 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
-source "./prototype-init.lua"
+" source "./prototype-init.lua"
 
 " set termguicolors
 colorscheme jummidark

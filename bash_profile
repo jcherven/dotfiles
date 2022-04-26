@@ -5,7 +5,7 @@
 # Add the dotfiles bash_scripts directory to $PATH
 # export PATH="$PATH:$HOME/dotfiles/bash_scripts"
 
-export PATH="$PATH:$HOME/.local/bin:/windir/c/WINDOWS:/windir/c/Windows/System32/"
+export PATH="$PATH:$HOME/.local/bin:/windir/c/WINDOWS:/windir/c/Windows/System32/:/windir/c/Users/jcherven/bin/"
 
 # Editor preference is for vi-likes
 if [ -x "$(command -v nvim)" ]; then
