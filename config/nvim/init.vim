@@ -147,10 +147,10 @@ call plug#begin('~/.vim/plugged')
       return ''
     endif
     endfunction
-    " let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()}) "
+    let g:taboo_tab_format="|%N %P%m (%{GitInfo()}) "
+    let g:taboo_renamed_tab_format="|%N %l%m (%{GitInfo()}) "
+    " let g:taboo_tab_format="|%N %f%m (git:%{GitInfo()}) "
     " let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()}) "
-    let g:taboo_tab_format="|%N %f%m (git:%{GitInfo()}) "
-    let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()}) "
     let g:taboo_unnamed_tab_label="unnamed file"
   "}}}
   " automatically closes html/xml/jsx/hbs tags
@@ -255,6 +255,7 @@ autocmd FileType python set nowrap
 
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Format :call CocAction('format')
 
 " COC KEYBINDS {{{
 " initiates autocomplete menu
@@ -267,7 +268,7 @@ nmap <Leader>/ :CocCommand explorer --sources=file+<CR>
 nmap <Leader>b :CocCommand explorer --sources=buffer+<CR>
 nmap <Leader>l :CocList<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
-nmap <Leader>f <Plug>(coc-format-selected)
+nmap <Leader>fa :Format<CR>
 
 " goto things{{{
 nmap <silent> gd <Plug>(coc-definition)
