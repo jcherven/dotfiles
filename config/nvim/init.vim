@@ -1,10 +1,27 @@
+" ex: foldmethod=marker
+
 " nvim basic settings {{{
 set nocompatible
 set directory^=$HOME/.vim/tmp//
 set encoding=utf-8
-set fileformats=unix,dos,mac
+" set fileformats=unix,dos,mac
 set lazyredraw
-set clipboard=unnamed
+set clipboard+=unnamedplus "{{{
+" easy 2-way clipboard in windows wsl or gvim
+" depends on win32yank.exe in $PATH (github.com/equalsraf/win32yank)
+let g:clipboard = {
+      \'name': 'win32yank-wsl',
+      \'copy': {
+        \'+': 'win32yank.exe -i --crlf',
+        \'*': 'win32yank.exe -i --crlf',
+      \},
+      \'paste': {
+        \'+': 'win32yank.exe -o --lf',
+        \'*': 'win32yank.exe -o --lf',
+      \},
+      \'cache_enabled': 0,
+\}
+"}}}
 set backspace=indent,eol,start
 set showtabline=2
 " set noshowmode
@@ -39,18 +56,20 @@ set scrolloff=8
 " set splitright
 set eadirection=both
 set equalalways
-set foldmethod=marker
+set foldmethod=syntax
 set relativenumber
 " }}}
 
 " System conditional settings {{{
+" On WSL Gentoo nvim wants to see this set according to :checkhealth
+let g:python3_host_prog="/usr/bin/python"
 " sets the default shell to homebrew's bash if installed
 " if has('macunix')
 "   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
 " endif
 
 " Filetype specific settings
-autocmd FileType help setlocal colorcolumn=80
+" autocmd FileType help setlocal colorcolumn=80
 " }}}
 
 " Keybindings {{{
@@ -61,6 +80,7 @@ nnoremap <space> :
 " Leader keybindings
 map ; <Leader>
 let mapleader = ";"
+nmap <Leader>ts i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><esc>
 
 " Ctrl keybindings
 nnoremap <C-J> <C-w><C-J>
@@ -74,20 +94,21 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
   " automatically renames closing html/xml tags
   Plug 'AndrewRadev/tagalong.vim'
-  " provide sass/scss syntax
-  Plug 'cakebaker/scss-syntax.vim'
   " preview colors in vim
   Plug 'chrisbra/colorizer'
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
-  " A color theme
-  Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  " " A color theme
+  Plug 'jcherven/jummidark.vim', {'branch': 'main'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
+  " let g:AutoPairs['{%']='%}'
   " update and install plugins within vim
   Plug 'junegunn/vim-plug'
   " calendar view and nav in vimwiki
   Plug 'mattn/calendar-vim'
+  " color highlighter for nvim in lua
+  Plug 'norcalli/nvim-colorizer.lua'
   " automatic loading of syntax highlighting schemes
   Plug 'sheerun/vim-polyglot'
   " smooth line scrolling on page jumps
@@ -98,17 +119,24 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomtom/tcomment_vim'
   " unix readline bindings in insert and command modes
   Plug 'tpope/vim-rsi'
+  " Provides Jinja filetype detection for use by syntax/highlight/snippets plugins
+  Plug 'glench/vim-jinja2-syntax'
   " git wrapper for vim
   Plug 'tpope/vim-fugitive'
   " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
-  " Plug 'vim-scripts/camelcasemotion'
+  " required for nvim-orgmode
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " orgmode implementation for neovim
+  Plug 'nvim-orgmode/orgmode'
   " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
   " }}}
   " customizes tab labels with useful information
   Plug 'gcmt/taboo.vim' "{{{
+    " enables taboo in gui tabs
+    set guioptions-=e
     let g:taboo_tabline=1
     let g:taboo_modified_tab_flag="[+]"
     fun! GitInfo()
@@ -119,8 +147,11 @@ call plug#begin('~/.vim/plugged')
       return ''
     endif
     endfunction
-    let g:taboo_tab_format="|%N %P%m (git:%{GitInfo()})|"
-    let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()})|"
+    let g:taboo_tab_format="|%N %P%m (%{GitInfo()}) "
+    let g:taboo_renamed_tab_format="|%N %l%m (%{GitInfo()}) "
+    " let g:taboo_tab_format="|%N %f%m (git:%{GitInfo()}) "
+    " let g:taboo_renamed_tab_format="|%N %l%m (git:%{GitInfo()}) "
+    let g:taboo_unnamed_tab_label="unnamed file"
   "}}}
   " automatically closes html/xml/jsx/hbs tags
   Plug 'alvan/vim-closetag' " {{{
@@ -129,6 +160,8 @@ call plug#begin('~/.vim/plugged')
     let g:closetag_regions = {
       \ 'typescript.tsx': 'jsxRegion,tsxRegion',
       \ 'javascript.jsx': 'jsxRegion',
+      \ 'typescriptreact': 'jsxRegion,tsxRegion',
+      \ 'javascriptreact': 'jsxRegion',
       \ }
     let g:closetag_shortcut = '>'
     " Add > at current position without closing the current tag, default is ''
@@ -154,13 +187,12 @@ call plug#begin('~/.vim/plugged')
       \ 'html.handlebars' : 1,
       \ 'javascript' : 1,
       \ 'javascriptreact' : 1,
+      \ 'jinja' : 1,
     \}
     "}}}
   " coc is to vim as evil mode is to emacs
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
     let g:coc_global_extensions=[
-      \'coc-clangd',
-      \'coc-cmake',
       \'coc-css',
       \'coc-cssmodules',
       \'coc-ember',
@@ -173,10 +205,12 @@ call plug#begin('~/.vim/plugged')
       \'coc-lists',
       \'coc-markdownlint',
       \'coc-prettier',
-      \'coc-python',
+      \'coc-pyright',
       \'coc-sh',
+      \'coc-snippets',
       \'coc-sql',
       \'coc-tag',
+      \'coc-tailwindcss',
       \'coc-tsserver',
       \'coc-vimlsp',
       \'coc-yaml',
@@ -189,12 +223,19 @@ call plug#begin('~/.vim/plugged')
     " }}}
   " for taking/publishing notes
   Plug 'vimwiki/vimwiki' "{{{
-    let g:vimwiki_list = [{'path': '$HOME/Desktop/vimwiki/wiki/', 'path_html': '$HOME/Desktop/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
+    let g:vimwiki_list = [{'path': '$HOME/vimwiki/wiki/', 'path_html': '$HOME/Projects/vimwiki/site', 'autotoc': 1, 'syntax': 'markdown', 'ext': '.md'}]
   "}}}
   " clunky way of using sqlworkbench in vim
   " Plug 'cosminadrianpopescu/vim-sql-workbench' "{{{
   "   let g:sw_exe="/Users/choro/bin/Workbench-Build127-with-optional-libs/sqlwbconsole.sh"
   " "}}}
+  " much faster code folding than the builtin folding
+  Plug 'Konfekt/FastFold' "{{{
+  " nmap zuz <Plug>(FastFoldUpdate)
+  " }}}
+  " less gregarious indent-style code folding for python files
+  Plug 'tmhedberg/SimpylFold' "{{{
+  " }}}
   call plug#end()
 " }}}
 
@@ -207,24 +248,49 @@ set updatetime=300
 set signcolumn=yes
 set complete-=t
 
+" Let's see if this fixes coc-pyright
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
+autocmd FileType python set nowrap
+
+
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Format :call CocAction('format')
 
 " COC KEYBINDS {{{
 " initiates autocomplete menu
 inoremap <silent><expr> <C-n> coc#refresh()
+
 " provides a file browser tree
 nmap <Leader>/ :CocCommand explorer --sources=file+<CR>
+
 " provides a buffer list browser
 nmap <Leader>b :CocCommand explorer --sources=buffer+<CR>
 nmap <Leader>l :CocList<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
-nmap <Leader>f <Plug>(coc-format-selected)
+nmap <Leader>fa :Format<CR>
 
+" goto things{{{
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" }}}
+
+" coc-snippets bindings{{{
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+"
+" let g:coc_snippet_next = '<tab>'
+"}}}
 
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -239,6 +305,8 @@ endif
 " Statusline (Builtin) Configuration {{{
 " Left alignment for the below customizations
 set statusline=
+" Current file's git status via Fugitive
+set statusline+=\ %{FugitiveStatusline()}
 " Current buffer's file path relative to the git project root
 set statusline+=\ %f
 " Read-only marker
@@ -257,6 +325,7 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
+source "./prototype-init.lua"
+
 " set termguicolors
-" silent! colorscheme jummilight
-silent! colorscheme jummidark
+colorscheme jummidark

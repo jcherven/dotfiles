@@ -1,4 +1,4 @@
-set guifont=Dina:h16
+set guifont=Cozette:h10
 GuiPopupmenu 0
 set guioptions+="ac"
 set laststatus=2

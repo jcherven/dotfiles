@@ -1,7 +1,5 @@
 {
-  "coc.preferences.extensionUpdateCheck": "daily",
-  "codeLens.enable": false,
-  "javascript.suggestionActions.enabled": false,
+  "codeLens.enable": true,
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "highlight.disableLanguages": ["xml", "html", "html.handlebars"],
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
@@ -9,13 +7,15 @@
     "line_length": false
   },
   "javascript.referencesCodeLens.enable": false,
-  "python.jediEnabled": false,
-
   "explorer.quitOnOpen": true,
   "explorer.width": 30,
   "explorer.keyMappings.global": {
     "v": "open:vsplit"
   },
-
-  "sql.database": "postgresql"
+  "sql.lintOnOpen": true,
+  "sql.lintOnChange": true,
+  "sql.lintOnSave": true,
+  "python.pythonPath": "/usr/bin/python",
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black"
 }
