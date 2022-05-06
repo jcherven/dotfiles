@@ -9,18 +9,20 @@ set lazyredraw
 set clipboard+=unnamedplus "{{{
 " easy 2-way clipboard in windows wsl or gvim
 " depends on win32yank.exe in $PATH (github.com/equalsraf/win32yank)
-let g:clipboard = {
-      \'name': 'win32yank-wsl',
-      \'copy': {
-        \'+': 'win32yank.exe -i --crlf',
-        \'*': 'win32yank.exe -i --crlf',
-      \},
-      \'paste': {
-        \'+': 'win32yank.exe -o --lf',
-        \'*': 'win32yank.exe -o --lf',
-      \},
-      \'cache_enabled': 0,
-\}
+if has('wsl' && executable('win32yank.exe')) 
+  let g:clipboard = {
+        \'name': 'win32yank-wsl',
+        \'copy': {
+          \'+': 'win32yank.exe -i --crlf',
+          \'*': 'win32yank.exe -i --crlf',
+        \},
+        \'paste': {
+          \'+': 'win32yank.exe -o --lf',
+          \'*': 'win32yank.exe -o --lf',
+        \},
+        \'cache_enabled': 0,
+  \}
+endif
 "}}}
 set backspace=indent,eol,start
 set showtabline=2
@@ -51,7 +53,7 @@ autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave,BufLeave * setlocal nocursorline
 augroup END
 " }}}
-set scrolloff=8
+" set scrolloff=8
 " set splitbelow
 " set splitright
 set eadirection=both
@@ -125,10 +127,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
-  " required for nvim-orgmode
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  " orgmode implementation for neovim
-  Plug 'nvim-orgmode/orgmode'
   " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
@@ -324,8 +322,6 @@ set statusline+=%y
 " Current percentage through the file
 set statusline+=%3p%%\ 
 " }}}
-
-source "./prototype-init.lua"
 
 " set termguicolors
 colorscheme jummidark
