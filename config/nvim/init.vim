@@ -126,9 +126,9 @@ call plug#begin('~/.vim/plugged')
   " shortcuts for enclosing brackets/text
   Plug 'tpope/vim-surround'
   " required for nvim-orgmode
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " orgmode implementation for neovim
-  Plug 'nvim-orgmode/orgmode'
+  " Plug 'nvim-orgmode/orgmode'
   " it's emmet
   Plug 'mattn/emmet-vim' "{{{
     let g:user_emmet_leader_key=','
@@ -325,7 +325,7 @@ set statusline+=%y
 set statusline+=%3p%%\ 
 " }}}
 
-source "./prototype-init.lua"
+" source "./prototype-init.lua"
 
 " set termguicolors
 colorscheme jummidark
