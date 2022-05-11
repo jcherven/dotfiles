@@ -35,6 +35,10 @@ elif [ -d "/windir/c/Windows" ] ; then
   PATH="$PATH:/windir/c/Windows:/windir/c/Windows/System32" ;
 fi
 
+# golang paths fix?
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:usr/local/go/bin:$PATH
+
 export QT_QPA_PLATFORMTHEME=gtk2
 
 # MacPorts Installer addition on 2021-03-05_at_11:59:15: adding an appropriate PATH variable for use with MacPorts.

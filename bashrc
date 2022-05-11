@@ -113,7 +113,7 @@ alias ds="date +%Y-%m-%d"
 # alias tmux="tmux -2"
 # }}}
 
-# ex: set foldmethod=marker:
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# ex: set foldmethod=marker:

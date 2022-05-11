@@ -201,6 +201,7 @@ call plug#begin('~/.vim/plugged')
       \'coc-emmet',
       \'coc-explorer',
       \'coc-git',
+      \'coc-go',
       \'coc-highlight',
       \'coc-html',
       \'coc-json',
@@ -238,6 +239,7 @@ call plug#begin('~/.vim/plugged')
   " less gregarious indent-style code folding for python files
   Plug 'tmhedberg/SimpylFold' "{{{
   " }}}
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   call plug#end()
 " }}}
 
