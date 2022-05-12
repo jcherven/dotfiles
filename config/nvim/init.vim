@@ -142,7 +142,7 @@ call plug#begin('~/.vim/plugged')
     let g:taboo_tabline=1
     let g:taboo_modified_tab_flag="[+]"
     fun! GitInfo()
-    let git = fugitive#head()
+    let git = FugitiveHead()
     if git != ''
       return ''.git.''
     else
