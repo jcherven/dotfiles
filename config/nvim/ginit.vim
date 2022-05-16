@@ -1,4 +1,4 @@
-GuiFont! DinaRemaster:h12
+GuiFont! DinaRemasterII:h12
 GuiPopupmenu 0
 GuiTabline 1
 GuiPopupmenu 0
@@ -11,3 +11,7 @@ map <F4> :emenu <C-Z>
 set belloff=all
 set guicursor+=a:blinkon0
 set termguicolors
+
+if has("win32")
+	let &shell='bash.exe'
+endif

@@ -61,7 +61,7 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 #[[ -f "/opt/local/etc/profile.d/bash_completion.sh" ]] && source "/opt/local/etc/profile.d/bash_completion.sh"
 
 # bash_completion for nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Git completion for branch names, subcommands, and more
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
@@ -77,7 +77,8 @@ fi
 # https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
 # GNU ls closest equivalent is:
 # ls -F -h --color=always --group-directories-first -v
-alias ls='ls -G -F -h'
+# alias ls='ls -G -F -h'
+alias ls='ls -Fhv --color=always --group-directories-first'
 
 # ts to print the current time
 alias ts="date +%H:%M"
@@ -89,8 +90,8 @@ alias ds="date +%Y-%m-%d"
 # alias tmux="tmux -2"
 # }}}
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # ex: set foldmethod=marker:
 
