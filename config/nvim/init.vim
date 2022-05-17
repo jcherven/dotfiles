@@ -100,7 +100,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'chrisbra/colorizer'
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
-  " " A color theme
+  " golang development environment
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  " A color theme
   Plug 'jcherven/jummidark.vim', {'branch': 'main'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
@@ -239,7 +241,6 @@ call plug#begin('~/.vim/plugged')
   " less gregarious indent-style code folding for python files
   Plug 'tmhedberg/SimpylFold' "{{{
   " }}}
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   call plug#end()
 " }}}
 
@@ -256,7 +257,6 @@ set complete-=t
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 autocmd FileType python set nowrap
 
-
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command! -nargs=0 Format :call CocAction('format')
@@ -266,10 +266,10 @@ command! -nargs=0 Format :call CocAction('format')
 inoremap <silent><expr> <C-n> coc#refresh()
 
 " provides a file browser tree
-nmap <Leader>/ :CocCommand explorer --sources=file+<CR>
+nmap <Leader>/ :CocCommand explorer --toggle --sources=file+<CR>
 
 " provides a buffer list browser
-nmap <Leader>b :CocCommand explorer --sources=buffer+<CR>
+nmap <Leader>b :CocCommand explorer --toggle --sources=buffer+<CR>
 nmap <Leader>l :CocList<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>fa :Format<CR>
