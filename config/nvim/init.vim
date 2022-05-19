@@ -133,9 +133,9 @@ call plug#begin('~/.vim/plugged')
   " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " orgmode implementation for neovim
   " Plug 'nvim-orgmode/orgmode'
-  " it's emmet
-  Plug 'mattn/emmet-vim' "{{{
-    let g:user_emmet_leader_key=','
+  " it's emmet. disable when using neovim with coc
+  " Plug 'mattn/emmet-vim' "{{{
+  "   let g:user_emmet_leader_key=','
   " }}}
   " customizes tab labels with useful information
   Plug 'gcmt/taboo.vim' "{{{
