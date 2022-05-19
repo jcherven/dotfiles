@@ -201,6 +201,7 @@ call plug#begin('~/.vim/plugged')
       \'coc-cssmodules',
       \'coc-ember',
       \'coc-emmet',
+      \'coc-eslint',
       \'coc-explorer',
       \'coc-git',
       \'coc-go',
@@ -208,6 +209,7 @@ call plug#begin('~/.vim/plugged')
       \'coc-html',
       \'coc-json',
       \'coc-lists',
+      \'coc-lightbulb',
       \'coc-markdownlint',
       \'coc-prettier',
       \'coc-pyright',
@@ -219,7 +221,6 @@ call plug#begin('~/.vim/plugged')
       \'coc-tsserver',
       \'coc-vimlsp',
       \'coc-yaml',
-      \'coc-eslint',
       \]
     let g:markdown_fenced_languages=[
       \ 'vim',
