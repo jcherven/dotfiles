@@ -9,18 +9,18 @@ set lazyredraw
 set clipboard+=unnamedplus "{{{
 " easy 2-way clipboard in windows wsl or gvim
 " depends on win32yank.exe in $PATH (github.com/equalsraf/win32yank)
-let g:clipboard = {
-      \'name': 'win32yank-wsl',
-      \'copy': {
-        \'+': 'win32yank.exe -i --crlf',
-        \'*': 'win32yank.exe -i --crlf',
-      \},
-      \'paste': {
-        \'+': 'win32yank.exe -o --lf',
-        \'*': 'win32yank.exe -o --lf',
-      \},
-      \'cache_enabled': 0,
-\}
+" let g:clipboard = {
+"       \'name': 'win32yank-wsl',
+"       \'copy': {
+"         \'+': 'win32yank.exe -i --crlf',
+"         \'*': 'win32yank.exe -i --crlf',
+"       \},
+"       \'paste': {
+"         \'+': 'win32yank.exe -o --lf',
+"         \'*': 'win32yank.exe -o --lf',
+"       \},
+"       \'cache_enabled': 0,
+" \}
 "}}}
 set backspace=indent,eol,start
 set showtabline=2
@@ -62,7 +62,7 @@ set relativenumber
 
 " System conditional settings {{{
 " On WSL Gentoo nvim wants to see this set according to :checkhealth
-let g:python3_host_prog="/usr/bin/python"
+" let g:python3_host_prog="/usr/bin/python"
 " sets the default shell to homebrew's bash if installed
 " if has('macunix')
 "   set shell=/usr/local/bin/bash\ --rcfile\ ~/.bash_profile
@@ -129,10 +129,6 @@ call plug#begin('~/.vim/plugged')
   " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " orgmode implementation for neovim
   " Plug 'nvim-orgmode/orgmode'
-  " it's emmet
-  Plug 'mattn/emmet-vim' "{{{
-    let g:user_emmet_leader_key=','
-  " }}}
   " customizes tab labels with useful information
   Plug 'gcmt/taboo.vim' "{{{
     " enables taboo in gui tabs
