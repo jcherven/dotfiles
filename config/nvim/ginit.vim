@@ -1,4 +1,3 @@
-set guifont=Cozette:h10
 GuiPopupmenu 0
 set guioptions+="ac"
 set laststatus=2
