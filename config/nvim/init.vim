@@ -218,7 +218,6 @@ call plug#begin('~/.vim/plugged')
       \'coc-snippets',
       \'coc-sql',
       \'coc-tag',
-      \'coc-tailwindcss',
       \'coc-tsserver',
       \'coc-vimlsp',
       \'coc-yaml',
