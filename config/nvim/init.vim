@@ -197,6 +197,7 @@ call plug#begin('~/.vim/plugged')
   " coc is to vim as evil mode is to emacs
   Plug 'neoclide/coc.nvim', {'branch': 'release'} "{{{
     let g:coc_global_extensions=[
+      \'coc-angular',
       \'coc-css',
       \'coc-cssmodules',
       \'coc-ember',
