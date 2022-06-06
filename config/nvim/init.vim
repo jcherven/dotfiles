@@ -333,5 +333,5 @@ set statusline+=%3p%%\
 
 " source "./prototype-init.lua"
 
-set termguicolors
+" set termguicolors
 colorscheme jummidark

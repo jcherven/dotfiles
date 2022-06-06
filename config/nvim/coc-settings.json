@@ -16,7 +16,9 @@
   "sql.lintOnChange": true,
   "sql.lintOnSave": true,
   "python.pythonPath": "/usr/bin/python",
-  "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "max-line-length 100"
+  ],
   "python.formatting.provider": "black"
 }
