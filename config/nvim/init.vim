@@ -213,6 +213,7 @@ call plug#begin('~/.vim/plugged')
       \'coc-json',
       \'coc-lists',
       \'coc-markdownlint',
+      \'coc-perl',
       \'coc-prettier',
       \'coc-pyright',
       \'coc-sh',
