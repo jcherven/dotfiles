@@ -35,14 +35,15 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set tabstop=2
-set shiftwidth=2
-" set expandtab
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
 set autoindent
 set smartindent
 set linebreak
 set breakindent
+set showbreak=↪
 set magic
 set number
 set noautochdir
@@ -53,9 +54,9 @@ autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave,BufLeave * setlocal nocursorline
 augroup END
 " }}}
-" set scrolloff=8
-" set splitbelow
-" set splitright
+set scrolloff=8
+set splitbelow
+set splitright
 set eadirection=both
 set equalalways
 set foldmethod=syntax
@@ -258,7 +259,7 @@ set complete-=t
 
 " Let's see if this fixes coc-pyright
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
-autocmd FileType python set nowrap
+" autocmd FileType python set nowrap
 
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
