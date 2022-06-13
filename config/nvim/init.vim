@@ -104,7 +104,8 @@ call plug#begin('~/.vim/plugged')
   " golang development environment
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " A color theme
-  Plug 'jcherven/jummidark.vim', {'branch': 'main'}
+  " Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  Plug '~/Projects/jummidark.vim', {'branch': 'testing'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
   " let g:AutoPairs['{%']='%}'
