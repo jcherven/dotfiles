@@ -42,7 +42,7 @@ __git_ps1_venv() {
 # RESETCOLOR="\[\033[0m\]"
 
 # PS1="$NORMALBLUE\u $NORMALMAGENTA\W$NORMALRED\$(__git_ps1)$RESETCOLOR \$ "
-PS1='\[\033[01;32m\]\u \[\033[01;34m\]\W\[\033[00m\]\$ '
+PS1='\[\033[01;32m\]\u \[\033[01;34m\]\W\[\033[00m\] '
 
 # Gentoo has a built in version of this script that is easier to update
 GITPROMPT="/usr/share/git/git-prompt.sh"
@@ -54,10 +54,10 @@ if [[ -r  "$GITPROMPT" ]]; then
    GIT_PS1_SHOWDIRTYSTATE=1
    GIT_PS1_SHOWSTASHSTATE=1
    GIT_PS1_SHOWUNTRACKEDFILES=1
-   GIT_PS1_SHOWUPSTREAM="verbose name"
+   # GIT_PS1_SHOWUPSTREAM="verbose name"
 
    # PROMPT_COMMAND='__git_ps1 "$BRIGHTGREEN\u $BRIGHTBLUE\w$BRIGHTMAGENTA" "$RESETCOLOR\\\$ "'
-   PROMPT_COMMAND='__git_ps1_venv "'"${PS1%\\\$ }"'" "\\\$ "'
+   PROMPT_COMMAND='__git_ps1_venv "'"${PS1%\\ }"'" "\\\$ "'
 fi
 
 # }}}
@@ -105,6 +105,9 @@ alias ts="date +%H:%M"
 
 # ds to print the current date
 alias ds="date +%Y-%m-%d"
+
+#grep output always color highlighted
+alias grep="grep --color=always"
 
 # source the local aliases file
 #source "$HOME/.bash_aliases"
