@@ -20,5 +20,6 @@
   "python.linting.flake8Args": [
     "max-line-length 100"
   ],
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/bin/black"
 }
