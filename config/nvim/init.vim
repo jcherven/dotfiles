@@ -104,7 +104,7 @@ call plug#begin('~/.vim/plugged')
   " golang development environment
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " A color theme
-  " Plug 'jcherven/jummidark.vim', {'branch': 'testing'}
+  " Plug 'jcherven/jummidark.vim', {'branch': 'main'}
   Plug '~/Projects/jummidark.vim', {'branch': 'testing'}
   " insert or delete brackets in matching pairs
   Plug 'jiangmiao/auto-pairs'
@@ -285,21 +285,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " }}}
-
-" coc-snippets bindings{{{
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? coc#_select_confirm() :
-"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-"
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-"
-" let g:coc_snippet_next = '<tab>'
-"}}}
 
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
