@@ -1,0 +1,25 @@
+{
+  "codeLens.enable": true,
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  "highlight.disableLanguages": ["xml", "html", "html.handlebars"],
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "markdownlint.config": {
+    "line_length": false
+  },
+  "javascript.referencesCodeLens.enable": false,
+  "explorer.quitOnOpen": true,
+  "explorer.width": 30,
+  "explorer.keyMappings.global": {
+    "v": "open:vsplit"
+  },
+  "sql.lintOnOpen": true,
+  "sql.lintOnChange": true,
+  "sql.lintOnSave": true,
+  "python.pythonPath": "/usr/bin/python",
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "max-line-length 100"
+  ],
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/bin/black"
+}

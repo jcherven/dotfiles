@@ -1,0 +1,116 @@
+!*termName: screen-256color
+!! utf8 support
+!*utf8: 1
+!XTerm.vt100.locale: true
+!*loginShell: true
+!*metaSendsEscape: true
+!*backarrowKey : false
+!*ttyModes: erase ^?
+
+!Xft.antialias: true
+!Xft.rgba: rgb
+!Xft.hinting: true
+!Xft.lcdfilter: lcddefault
+!Xft.hintstyle: hintslight
+
+!*.cursorBlink: true
+
+!*faceName: Cozette:size=10:antialias=false
+
+
+!XTerm.vt100.saveLines: 10000
+
+! White text on black instead of the default
+!*reverseVideo: true
+!XTerm.vt100.foreground: #ffffff
+!XTerm.vt100.background: black
+
+! Disable bold font faces, use color instead
+! *.colorBDMode: true
+! *.colorBD: blue
+
+!XTerm*rightScrollBar:   false
+!XTerm*ScrollBar:    true
+!XTerm*scrollbar.width: 16
+
+! All typography
+! *.font: xft:Cozette:style=Medium:size:10:antialias=false
+
+! Colors
+*.foreground:   rgb:ff/ff/ff
+*.background:   rgb:00/00/00
+*.cursorColor:  rgb:00/aa/00
+! black
+*.color0:       rgb:00/00/00
+*.color8:       rgb:55/55/55
+! red
+*.color1:       rgb:aa/00/00
+*.color9:       rgb:ff/55/55
+! green
+*.color2:       rgb:00/aa/00
+*.color10:      rgb:55/ff/55
+! yellow
+*.color3:       rgb:aa/55/00
+*.color11:      rgb:ff/ff/55
+! blue
+*.color4:       rgb:00/00/aa
+*.color12:      rgb:55/55/ff
+! magenta
+*.color5:       rgb:aa/00/aa
+*.color13:      rgb:ff/55/ff
+! cyan
+*.color6:       rgb:00/aa/aa
+*.color14:      rgb:55/ff/ff
+! white
+*.color7:       rgb:aa/aa/aa
+*.color15:      rgb:ff/ff/ff
+
+!! X Resources used by URXvt
+! Appearance
+!URxvt.scrollBar: false
+!URxvt.scrollBar_right: false
+!URxvt.borderLess: false
+!URxvt.internalBorder: 3
+!URxvt.fading: 25
+!URxvt.fadeColor: #262626
+! Typography
+! URxvt.font: xft:Cozette:style=Medium:size:10:antialias=false
+! URxvt.letterSpace: 0
+! URxvt.linespace: 0
+! URxvt.intensityStyles: true
+
+! Urxvt.internalBorder: 3
+
+! URxvt perl extensions located in ~/.urxvt/ext
+! URxvt.perl-ext-common: ibeamcursor
+
+! Jummidark color scheme
+! Urxvt.depth: 24
+! special
+! *.foreground:   rgb:ff/ff/ff
+! *.background:   rgb:00/00/00
+! *.cursorColor:  rgb:00/aa/00
+! ! black
+! *.color0:       rgb:1c/1c/1c
+! *.color8:       rgb:4e/4e/4e
+! ! red
+! *.color1:       rgb:d7/00/5f
+! *.color9:       rgb:d7/5f/87
+! ! green
+! *.color2:       rgb:00/d7/d7
+! *.color10:      rgb:00/d7/d7
+! ! yellow
+! *.color3:       rgb:00/ff/af
+! *.color11:      rgb:00/ff/af
+! ! blue
+! *.color4:       rgb:af/5f/ff
+! *.color12:      rgb:af/af/ff
+! ! magenta
+! *.color5:       rgb:af/af/ff
+! *.color13:      rgb:af/af/ff
+! ! cyan
+! *.color6:       rgb:00/d7/d7
+! *.color14:      rgb:00/d7/d7
+! ! white
+! *.color7:       rgb:8a/8a/8a
+! *.color15:      rgb:e4/e4/e4
