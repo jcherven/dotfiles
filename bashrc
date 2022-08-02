@@ -119,6 +119,7 @@ alias grep="grep --color=always"
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-tmux -2 -q has-session && exec tmux attach -d || exec tmux new
+# enabling this interferes with tmux windows/tabs
+# tmux -2 -q has-session && exec tmux attach -d || exec tmux new
 
 # ex: set foldmethod=marker:

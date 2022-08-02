@@ -111,6 +111,8 @@ call plug#begin('~/.vim/plugged')
   " let g:AutoPairs['{%']='%}'
   " update and install plugins within vim
   Plug 'junegunn/vim-plug'
+  " colorscheme modeled after firefox devtools
+  Plug 'kjssad/quantum.vim'
   " calendar view and nav in vimwiki
   Plug 'mattn/calendar-vim'
   " color highlighter for nvim in lua
@@ -321,5 +323,6 @@ set statusline+=%3p%%\
 
 " source "./prototype-init.lua"
 
-" set termguicolors
-colorscheme jummidark
+set termguicolors
+set background=dark
+colorscheme quantum
