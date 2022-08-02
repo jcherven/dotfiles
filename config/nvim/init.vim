@@ -103,6 +103,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'DanilaMihailov/beacon.nvim'
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
+  " display a scrollbar
+  Plug 'dstein64/nvim-scrollview'
   " golang development environment
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " A color theme
@@ -325,10 +327,10 @@ set statusline+=%3p%%\
 
 " source "./prototype-init.lua"
 
-colorscheme quantum
+set background=dark
+set termguicolors
+colorscheme jummidark
 if colors_name=='quantum'
-    set background=dark
-    set termguicolors
     hi Comment gui=NONE
     hi Type gui=BOLD
     hi StorageClass gui=BOLD
