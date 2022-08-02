@@ -99,6 +99,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/tagalong.vim'
   " preview colors in vim
   Plug 'chrisbra/colorizer'
+  " emacs-like cursor beacon
+  Plug 'DanilaMihailov/beacon.nvim'
   " automatically reload changed files
   Plug 'djoshea/vim-autoread'
   " golang development environment
@@ -323,6 +325,15 @@ set statusline+=%3p%%\
 
 " source "./prototype-init.lua"
 
-set termguicolors
-set background=dark
 colorscheme quantum
+if colors_name=='quantum'
+    set background=dark
+    set termguicolors
+    hi Comment gui=NONE
+    hi Type gui=BOLD
+    hi StorageClass gui=BOLD
+    hi jsFuncArgs gui=BOLD
+    hi jsThis gui=BOLD
+    hi jsSuper gui=BOLD
+    hi htmlTagName gui=BOLD
+endif
