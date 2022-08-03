@@ -1,4 +1,4 @@
 .DS_Store
 *.swp
-emacs.d/elpa/
-emacs.d/auto-save-list/
+emacs.d/*
+!emacs.d/init.el

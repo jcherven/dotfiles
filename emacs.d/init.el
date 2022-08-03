@@ -99,7 +99,8 @@
      ("\\?\\?\\?+" . "#dc752f")))
  '(package-selected-packages
    '(dracula-theme beacon spacemacs-theme which-key use-package))
- '(pdf-view-midnight-colors '("#655370" . "#fbf8ef")))
+ '(pdf-view-midnight-colors '("#655370" . "#fbf8ef"))
+ '(warning-suppress-types '((use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
