@@ -67,10 +67,14 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 GITCOMPLETION="$HOME/dotfiles/bash_scripts/git-completion.bash"
 [[ -f "$GITCOMPLETION" ]] && source "$GITCOMPLETION"
 
+# ssh-agent and keys for windows git bash
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_jcherven
+
 # In a tmux environment, attach to a session or start tmux in a new one
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t 0 || tmux new -s 0
-fi
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#   tmux attach -t 0 || tmux new -s 0
+# fi
 
 # ALIASES {{{
 # makes FreeBSD ls work the way i want it to

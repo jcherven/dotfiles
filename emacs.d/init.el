@@ -1,7 +1,7 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+         '("melpa" . "https://melpa.org/packages/"))
 
 (package-initialize)
 
@@ -9,9 +9,13 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(unless (package-installed-p 'spacemacs-theme)
+;;(unless (package-installed-p 'spacemacs-theme)
+;;  (package-refresh-contents)
+;;  (package-install 'spacemacs-theme))
+
+(unless (package-installed-p 'dracula-theme)
   (package-refresh-contents)
-  (package-install 'spacemacs-theme))
+  (package-install 'dracula-theme))
 
 ;; Disable autosaving and temp file pollution
 (setq make-backup-file nil)
@@ -52,6 +56,12 @@
   :init
   (beacon-mode 1))
 
+;; Evil Mode
+(use-package evil
+  :ensure t
+  :init
+  (evil-mode 1))
+
 ;; GUI view settings
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -70,7 +80,7 @@
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes '(spacemacs-dark))
  '(custom-safe-themes
-   '("e5dc5b39fecbeeb027c13e8bfbf57a865be6e0ed703ac1ffa96476b62d1fae84" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))
+   '("73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "e5dc5b39fecbeeb027c13e8bfbf57a865be6e0ed703ac1ffa96476b62d1fae84" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
      ("NEXT" . "#dc752f")
@@ -87,11 +97,12 @@
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
- '(package-selected-packages '(beacon spacemacs-theme which-key use-package))
+ '(package-selected-packages
+   '(dracula-theme beacon spacemacs-theme which-key use-package))
  '(pdf-view-midnight-colors '("#655370" . "#fbf8ef")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 161 :width normal :foundry "nil" :family "Dina")))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#292b2e" :foreground "#b2b2b2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "DinaRemasterII")))))
