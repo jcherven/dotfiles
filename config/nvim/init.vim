@@ -98,7 +98,7 @@ call plug#begin('~/.vim/plugged')
   " automatically renames closing html/xml tags
   Plug 'AndrewRadev/tagalong.vim'
   " preview colors in vim
-  Plug 'chrisbra/colorizer'
+  " Plug 'chrisbra/colorizer'
   " emacs-like cursor beacon
   Plug 'DanilaMihailov/beacon.nvim'
   " automatically reload changed files
@@ -121,12 +121,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/calendar-vim'
   " color highlighter for nvim in lua
   Plug 'norcalli/nvim-colorizer.lua'
-  " automatic loading of syntax highlighting schemes
-  Plug 'sheerun/vim-polyglot'
   " smooth line scrolling on page jumps
   Plug 'psliwka/vim-smoothie'
+  " automatic loading of syntax highlighting schemes
+  Plug 'sheerun/vim-polyglot'
   " paste text with indentation adjusted to the surrounding context
   Plug 'sickill/vim-pasta'
+  " viml autocompletion server, dependency of coc-neco
+  Plug 'Shougo/neco-vim'
   " comment/uncomment lines with gc
   Plug 'tomtom/tcomment_vim'
   " unix readline bindings in insert and command modes
@@ -236,6 +238,7 @@ call plug#begin('~/.vim/plugged')
       \ 'vim',
       \ 'help'
       \]
+    Plug 'neoclide/coc-neco'
     " }}}
   " for taking/publishing notes
   Plug 'vimwiki/vimwiki' "{{{
@@ -270,22 +273,19 @@ autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 
 " Commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Format :call CocActionAsync('format')
 
 " COC KEYBINDS {{{
-" initiates autocomplete menu
-inoremap <silent><expr> <C-n> coc#refresh()
-
-" provides a file browser tree
+" provides a file browser tree (CocExplorer)
 nmap <Leader>/ :CocCommand explorer --toggle --sources=file+<CR>
 
-" provides a buffer list browser
+" provides a buffer list browser (CocExplorer)
 nmap <Leader>b :CocCommand explorer --toggle --sources=buffer+<CR>
 nmap <Leader>l :CocList<CR>
 xmap <Leader>f <Plug>(coc-format-selected)
 nmap <Leader>fa :Format<CR>
 
-" goto things{{{
+" goto things (via CoC){{{
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -297,6 +297,9 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
+" In the autocomplete menu, the currently selected item is automatically inserted
+inoremap <silect><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
 " end of COC KEYBINDS }}}
 

@@ -2,6 +2,8 @@
   "codeLens.enable": true,
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "highlight.disableLanguages": ["xml", "html", "html.handlebars"],
+  "diagnostic.refreshOnInsertMode": true,
+  "suggest.triggerCompletionWait": 50,
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
   "markdownlint.config": {
     "line_length": false
