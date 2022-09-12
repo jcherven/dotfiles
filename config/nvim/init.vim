@@ -35,10 +35,10 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set autoindent
 set smartindent
 set linebreak
@@ -117,6 +117,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug'
   " colorscheme modeled after firefox devtools
   Plug 'kjssad/quantum.vim'
+  " solarized-based colortheme
+  Plug 'lifepillar/vim-solarized8'
   " calendar view and nav in vimwiki
   Plug 'mattn/calendar-vim'
   " color highlighter for nvim in lua
@@ -299,7 +301,7 @@ else
 endif
 
 " In the autocomplete menu, the currently selected item is automatically inserted
-inoremap <silect><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
+inoremap <select><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
 " end of COC KEYBINDS }}}
 
@@ -330,9 +332,9 @@ set statusline+=%3p%%\
 
 " source "./prototype-init.lua"
 
-set background=dark
+set background=light
 set termguicolors
-colorscheme jummidark
+colorscheme solarized8_flat
 if colors_name=='quantum'
     hi Comment gui=NONE
     hi Type gui=BOLD
