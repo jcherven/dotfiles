@@ -332,9 +332,10 @@ set statusline+=%3p%%\
 
 " source "./prototype-init.lua"
 
-set background=light
+set background=dark
 set termguicolors
-colorscheme solarized8_flat
+" colorscheme solarized8_flat
+colorscheme jummidark
 if colors_name=='quantum'
     hi Comment gui=NONE
     hi Type gui=BOLD
