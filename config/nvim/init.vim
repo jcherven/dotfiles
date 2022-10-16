@@ -255,7 +255,7 @@ command! -nargs=0 Format :call CocAction('format')
 
 " COC KEYBINDS {{{
 " initiates autocomplete menu
-inoremap <silent><expr> <C-n> coc#refresh()
+" inoremap <silent><expr> <C-n> coc#refresh()
 
 " provides a file browser tree
 nmap <Leader>/ :CocCommand explorer --sources=file+<CR>
