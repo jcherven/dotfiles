@@ -84,6 +84,8 @@ nnoremap <space> :
 map ; <Leader>
 let mapleader = ";"
 nmap <Leader>ts i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><esc>
+nnoremap <silent> <Leader>n :call SwitchToNextBuffer(1)<CR>
+nnoremap <silent> <Leader>p :call SwitchToNextBuffer(-1)<CR>
 
 " Ctrl keybindings
 nnoremap <C-J> <C-w><C-J>
@@ -116,8 +118,6 @@ function! SwitchToNextBuffer(incr) "{{{
   endwhile
 endfunction
 "}}}
-nnoremap <silent> <Leader>n :call SwitchToNextBuffer(1)<CR>
-nnoremap <silent> <Leader>p :call SwitchToNextBuffer(-1)<CR>
 " }}}
 
 " vim-plug {{{
