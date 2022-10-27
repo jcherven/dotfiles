@@ -24,6 +24,7 @@
 # set vi-cmd-mode-string \1\e[2 q\2
 
 set colored-stats On
+set colored-completion-prefix on
 
 set completion-ignore-case On
 
