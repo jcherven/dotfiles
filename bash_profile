@@ -15,6 +15,9 @@ export PATH="`brew --prefix`/bin:$PATH"
 # Add the dotfiles bash_scripts directory to $PATH
 export PATH="$PATH:$HOME/dotfiles/bash_scripts"
 
+# Fix brew complaining about having things installed in sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # Use the homebrew installed jdk. needs to be updated for the macports version
 # if [[ "$OSTYPE" == "darwin"* ]]; then
 # 	export PATH="/usr/local/opt/java/bin:$PATH"
